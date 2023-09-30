@@ -1,0 +1,25 @@
+- scaricare gli oggetti 3d da mettere
+	- moto
+	- elefante
+	- scravnia
+	- sedia
+	- portatile
+	- tastiera e mouse
+	- valorant
+	- rocky
+	- loghi eidosmedia in svg
+	- loghi del comics in svg
+
+formato gltf
+puoi testare se funziona l'ggetto a questo sito
+https://sandbox.babylonjs.com/
+
+- trovare dei font che funzionano a modino
+
+- lista delle skill con dei loghi
+
+- roba da mettere per il comics
+
+- logo comics
+
+- thumbnail dei siti
