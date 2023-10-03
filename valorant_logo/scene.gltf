@@ -1,0 +1,337 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 212,
+      "max": [
+        0.6705734729766846,
+        0.6704319715499878,
+        0.1080000028014183
+      ],
+      "min": [
+        -0.6705734729766846,
+        -0.6704320311546326,
+        -0.1080000028014183
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 2544,
+      "componentType": 5126,
+      "count": 212,
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 212,
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 564,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 5088,
+      "componentType": 5126,
+      "count": 96,
+      "max": [
+        0.6916329860687256,
+        0.6093772649765015,
+        0.008295347914099693
+      ],
+      "min": [
+        -0.8633632659912109,
+        -0.6709043383598328,
+        -0.007952571846544743
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 6240,
+      "componentType": 5126,
+      "count": 96,
+      "max": [
+        0.9999995827674866,
+        0.9999983310699463,
+        0.9999994039535522
+      ],
+      "min": [
+        -0.9999994039535522,
+        -0.9903397560119629,
+        -0.9999994039535522
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 1696,
+      "componentType": 5126,
+      "count": 96,
+      "max": [
+        0.0,
+        0.0
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 2256,
+      "componentType": 5125,
+      "count": 168,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "sludud (https://sketchfab.com/sludud)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/valorant-logo-42b3bb8a35e04851898e26a2ee6e79f8",
+      "title": "Valorant Logo"
+    },
+    "generator": "Sketchfab-15.5.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 2928,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 2464,
+      "byteOffset": 2928,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 7392,
+      "byteOffset": 5392,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 12784,
+      "uri": "scene.bin"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "Material.004",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1.0,
+          0.0612458,
+          0.0908417,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.9411999613728146
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Material.003",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.8,
+          0.8,
+          0.8,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.8390934832589925
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Curve.004_Material.004_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "VALORANT LOGO_Material.003_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 5,
+            "POSITION": 4,
+            "TEXCOORD_0": 6
+          },
+          "indices": 7,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.009999999776482582,
+        0.0,
+        0.0,
+        -0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "734f346ac90741d2880c069d79c41e1b.fbx"
+    },
+    {
+      "children": [
+        3,
+        5
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4
+      ],
+      "matrix": [
+        15.403178215026855,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        15.40317821502665,
+        2.5094965639827655e-06,
+        0.0,
+        0.0,
+        -2.5094965639827655e-06,
+        15.40317821502665,
+        0.0,
+        90.19479370117188,
+        37.58650588989258,
+        6.118844339653151e-06,
+        1.0
+      ],
+      "name": "Curve.004"
+    },
+    {
+      "mesh": 0,
+      "name": "Curve.004_Material.004_0"
+    },
+    {
+      "children": [
+        6
+      ],
+      "matrix": [
+        7.838963508605928,
+        6.853039807088781e-07,
+        -9.275777774090061e-30,
+        -0.0,
+        -6.853039807088762e-07,
+        7.838963508605905,
+        -5.918252929851709e-07,
+        -0.0,
+        2.15101297333068e-12,
+        -2.460471948088699e-05,
+        -325.8993835449209,
+        -0.0,
+        90.6136703491211,
+        38.30197525024414,
+        -0.0411856472492218,
+        1.0
+      ],
+      "name": "VALORANT LOGO"
+    },
+    {
+      "mesh": 1,
+      "name": "VALORANT LOGO_Material.003_0"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}
