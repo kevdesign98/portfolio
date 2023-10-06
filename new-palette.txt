@@ -1,0 +1,7 @@
+blu scuro: 404f94
+
+celeste: a8bbdd
+
+giallo: fcbf00
+
+arancione: f08300
