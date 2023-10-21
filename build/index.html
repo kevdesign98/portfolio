@@ -81,7 +81,7 @@
     </script>
     <a-scene vr-mode-ui="enabled: false">
 
-        <a-asset-item id="other" src="assets/imgs/eidos.svg"></a-asset-item>
+        <!-- <a-asset-item id="other" src="assets/imgs/eidos.svg"></a-asset-item> -->
 
         <a-entity gltf-model="./assets/gltf/stanze-vuote.glb"></a-entity>
         <!-- <a-entity gltf-model="./assets/gltf/eidos.glb"></a-entity> -->
@@ -93,16 +93,16 @@
         <a-sky color="#ECECEC"></a-sky>
         <a-entity follow camera position="0 2 0"></a-entity>
 
-        <a-image src="assets/imgs/nome-outline.svg"></a-image>
-        <a-image src="assets/imgs/cognome-outline.svg"></a-image>
-        <a-image src="assets/imgs/comics-outline.svg"></a-image>
-        <a-image src="assets/imgs/eidos.svg"></a-image>
-        <a-image src="assets/imgs/illustrator.svg"></a-image>
-        <a-image src="assets/imgs/photoshop.svg"></a-image>
-        <a-image src="assets/imgs/premiere.svg"></a-image>
-        <a-image src="assets/imgs/utl-outline.svg"></a-image>
-        <a-image src="assets/imgs/wb-outline.svg"></a-image>
-        <a-image src="assets/imgs/xd.svg"></a-image>
+        <a-image id="name" src="assets/imgs/nome-outline.svg"></a-image>
+        <a-image id="surname" src="assets/imgs/cognome-outline.svg"></a-image>
+        <a-image id="comics" src="assets/imgs/comics-outline.svg"></a-image>
+        <a-image id="eidosmedia" src="assets/imgs/eidos.svg"></a-image>
+        <a-image id="ai" src="assets/imgs/illustrator.svg"></a-image>
+        <a-image id="ps" src="assets/imgs/photoshop.svg"></a-image>
+        <a-image id="pr" src="assets/imgs/premiere.svg"></a-image>
+        <a-image id="utl" src="assets/imgs/utl-outline.svg"></a-image>
+        <a-image id="wd" src="assets/imgs/wb-outline.svg"></a-image>
+        <a-image id="xd" src="assets/imgs/xd.svg"></a-image>
 
         <a-box color="tomato" position="0.7 -0.37 -3.5" depth="0.25" height="0.25" width="0.1"></a-box>
 
@@ -113,10 +113,10 @@
         </a-assets>
         <a-sky src="#sky"></a-sky>
 
-        <a-image id="eidos-ff" scale="1.92 1 1" src="assets/portfolio/Eidos-FF.png"></a-image>
-        <a-image id="eidos-foc" scale="1.92 1 1" src="assets/portfolio/Eidos-FOC.png"></a-image>
-        <a-image id="eidos-hp" scale="1.92 1 1" src="assets/portfolio/Eidos-HP.png"></a-image>
-        <a-image id="utl-tco" scale="1.92 1 1" src="assets/portfolio/TCO.png"></a-image>
+        <a-image id="eidos-ff" scale="1.92 1 1" position="-5.995 2.304 -9.807" rotation="0 90 0" src="assets/portfolio/Eidos-FF.png"></a-image>
+        <a-image id="eidos-foc" scale="1.92 1 1" position="-5.995 2.304 -7.603" rotation="0 90 0" src="assets/portfolio/Eidos-FOC.png"></a-image>
+        <a-image id="eidos-hp" scale="1.92 1 1" position="-5.960 2.304 -5.379" rotation="0 90 0" src="assets/portfolio/Eidos-HP.png"></a-image>
+        <a-image id="utl-tco" scale="1.92 1 1" position="-4.404 2.304 -10.989" rotation="0 180 0" src="assets/portfolio/TCO.png"></a-image>
 
 
     </a-scene>
