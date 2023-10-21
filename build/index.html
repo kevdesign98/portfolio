@@ -11,6 +11,7 @@
         var camPosIndex = 0;
         // https://codepen.io/wiledal/embed/WvNvEq?#js-box
 
+        // position spline
         const spline = new THREE.CatmullRomCurve3([
             new THREE.Vector3(-10, 0, 10),
             new THREE.Vector3(-5, 5, 5),
@@ -23,6 +24,40 @@
             new THREE.Vector3(-10, 0, 10),
         ]);
 
+        const pos_spline = new THREE.CatmullRomCurve3([
+            new THREE.Vector3( -1.56 ,  2.00 ,  0.53 ),
+            new THREE.Vector3( 3.50 ,  2.00 ,  -0.55 ),
+            new THREE.Vector3( 4.79 ,  0.80 ,  -5.20 ),
+            new THREE.Vector3( 2.06 ,  1.00 ,  -5.33 ),
+            new THREE.Vector3( 4.11 ,  1.00 ,  -9.80 ),
+            new THREE.Vector3( -0.37 ,  0.60 ,  -9.55 ),
+            new THREE.Vector3( -2.01 ,  2.30 ,  -9.61 ),
+            new THREE.Vector3( -4.56 ,  2.30 ,  -8.91 ),
+            new THREE.Vector3( -3.74 ,  2.10 ,  -9.07 ),
+            new THREE.Vector3( -3.10 ,  2.00 ,  -6.28 ),
+            new THREE.Vector3( -4.42 ,  2.00 ,  -4.80 ),
+            new THREE.Vector3( -4.57 ,  1.70 ,  -1.40 ),
+            new THREE.Vector3( -1.56 ,  2.00 ,  0.53 ),
+
+        ]);
+
+        const rot_spline = new THREE.CatmullRomCurve3([
+            new THREE.Vector3( -0.26 ,  0.01 ,  0.00 ),
+            new THREE.Vector3( -0.63 ,  0.89 ,  0.00 ),
+            new THREE.Vector3( -0.10 ,  1.59 ,  0.00 ),
+            new THREE.Vector3( -0.06 ,  -0.01 ,  0.00 ),
+            new THREE.Vector3( -0.17 ,  1.49 ,  0.00 ),
+            new THREE.Vector3( -0.00 ,  1.53 ,  0.00 ),
+            new THREE.Vector3( -0.03 ,  1.57 ,  0.00 ),
+            new THREE.Vector3( 0.02 ,  -0.01 ,  0.00 ),
+            new THREE.Vector3( -0.00 ,  1.54 ,  0.00 ),
+            new THREE.Vector3( -0.01 ,  1.53 ,  0.00 ),
+            new THREE.Vector3( -0.16 ,  3.16 ,  0.00 ),
+            new THREE.Vector3( -0.38 ,  4.72 ,  0.00 ),
+            new THREE.Vector3( -0.26 ,  0.01 ,  0.00 ),
+        ]);
+        
+
         addEventListener("wheel", (event) => {
             // console.log("pippo",event)
             camPosIndex += event.deltaY * 0.1;
@@ -34,14 +69,7 @@
             }
         });
 
-        // document.getElementById('main').
-
         const steps = 1000;
-
-        AFRAME.registerComponent('contiuos-rotation', {
-            tick: function (t) {
-            }
-        });
 
         AFRAME.registerComponent('follow', {
             tick: function (t) {
@@ -51,6 +79,8 @@
                 camPosIndex = t * 0.1; 
                 console.log(t)
                 */
+
+                // camPosIndex è gestito dal mouse
                 if (camPosIndex > steps) {
                     camPosIndex = 0;
                 } else if (camPosIndex < 0) {
@@ -58,16 +88,16 @@
                 }
 
 
-                var camPos = spline.getPoint(camPosIndex / steps);
-                var camRot = spline.getTangent(camPosIndex / steps);
+                var camPos = pos_spline.getPoint(camPosIndex / steps);
+                var camRot = rot_spline.getPoint(camPosIndex / steps);
 
                 camera.position.x = camPos.x;
                 camera.position.y = camPos.y;
                 camera.position.z = camPos.z;
 
-                // camera.rotation.x = camRot.x;
-                // camera.rotation.y = camRot.y;
-                // camera.rotation.z = camRot.z;
+                camera.rotation.x = camRot.x;
+                camera.rotation.y = camRot.y;
+                camera.rotation.z = camRot.z;
 
                 // camera.lookAt(0,0,0);
 
@@ -78,8 +108,46 @@
         });
 
 
+        window.onkeydown = function (e) {
+            if (e.keyCode == 81) {
+                console.log("q");
+                document.getElementById('camera').object3D.position.y += 0.1;
+            }
+            if (e.keyCode == 90) {
+                console.log("z");
+                document.getElementById('camera').object3D.position.y -= 0.1;
+            }
+        }
+
+        window.onkeyup = function (e) {
+            // var pressed = "h";
+            // if (e.shiftKey) {
+            //     pressed += " + Shift";
+            // } else if (e.ctrlKey) {
+            //     pressed += " + Ctrl";
+            // } //and so on
+            // pressed += e.keyCode;
+            // console.log(pressed);
+            if (e.keyCode == 72) {
+                console.log("piru");
+                var pos = document.getElementById('camera').object3D.position;
+                var rot = document.getElementById('camera').object3D.rotation;
+                // console.log(">> pos ", pos, " rot ", rot)
+                console.log("position=\"",pos.x.toFixed(2)," ",pos.y.toFixed(2)," ", pos.z.toFixed(2),"\" rotation=\"",rot.x.toFixed(2)," ",rot.y.toFixed(2)," ", rot.z.toFixed(2),"\"")
+                console.log("pos: new THREE.Vector3(",pos.x.toFixed(2),", ",pos.y.toFixed(2),", ", pos.z.toFixed(2),"),");
+                console.log("rotaa: new THREE.Vector3(",rot.x.toFixed(2),", ",rot.y.toFixed(2),", ", rot.z.toFixed(2),"),");
+            }
+
+
+            console.log(e.keyCode);
+        }
+
+
+
     </script>
     <a-scene vr-mode-ui="enabled: false">
+
+        <a-sphere position="0 0 0" radius="0.1" color="red"></a-sphere>
 
         <a-asset-item id="other" src="assets/imgs/eidos.svg"></a-asset-item>
 
@@ -87,11 +155,12 @@
         <!-- <a-entity gltf-model="./assets/gltf/eidos.glb"></a-entity> -->
         <a-entity gltf-model="./assets/gltf/comics.glb"></a-entity>
         <a-entity id="adobeps" gltf-model="./assets/gltf/adobebox.glb"></a-entity>
-        <a-entity scale="0.1 0.1 0.1" gltf-model="./assets/gltf/testa.min.glb"  
+        <a-entity scale="0.1 0.1 0.1" gltf-model="./assets/gltf/testa.min.glb"
             animation__rotation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 5000; easing: linear"
             animation__position="property: position; from: 0 0 0; to: 0 0.2 0; loop: true; dur: 3000; easing: linear; dir: alternate"></a-entity>
         <a-sky color="#ECECEC"></a-sky>
-        <a-entity follow camera position="0 2 0"></a-entity>
+        <!-- <a-entity id="camera" cam-reader wasd-controls="acceleration:10" look-controls camera position="0 2 0"></a-entity> -->
+        <a-entity id="camera" follow camera></a-entity>
 
         <a-image src="assets/imgs/nome-outline.svg"></a-image>
         <a-image src="assets/imgs/cognome-outline.svg"></a-image>
