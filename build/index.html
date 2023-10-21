@@ -149,30 +149,28 @@
 
         <a-sphere position="0 0 0" radius="0.1" color="red"></a-sphere>
 
-        <a-asset-item id="other" src="assets/imgs/eidos.svg"></a-asset-item>
+        <!-- <a-asset-item id="other" src="assets/imgs/eidos.svg"></a-asset-item> -->
 
         <a-entity gltf-model="./assets/gltf/stanze-vuote.glb"></a-entity>
         <!-- <a-entity gltf-model="./assets/gltf/eidos.glb"></a-entity> -->
         <a-entity gltf-model="./assets/gltf/comics.glb"></a-entity>
-        <a-entity id="adobeps" gltf-model="./assets/gltf/adobebox.glb"></a-entity>
-        <a-entity scale="0.1 0.1 0.1" gltf-model="./assets/gltf/testa.min.glb"
+        <!-- <a-entity id="adobeps" gltf-model="./assets/gltf/adobebox.glb"></a-entity> -->
+        <a-entity scale="0.1 0.1 0.1" gltf-model="./assets/gltf/testa.min.glb"  
             animation__rotation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 5000; easing: linear"
             animation__position="property: position; from: 0 0 0; to: 0 0.2 0; loop: true; dur: 3000; easing: linear; dir: alternate"></a-entity>
         <a-sky color="#ECECEC"></a-sky>
-        <!-- <a-entity id="camera" cam-reader wasd-controls="acceleration:10" look-controls camera position="0 2 0"></a-entity> -->
-        <a-entity id="camera" follow camera></a-entity>
+        <a-entity follow camera position="0 2 0"></a-entity>
 
-        <a-image src="assets/imgs/nome-outline.svg"></a-image>
-        <a-image src="assets/imgs/cognome-outline.svg"></a-image>
-        <a-image src="assets/imgs/comics-outline.svg"></a-image>
-        <a-image src="assets/imgs/eidos.svg"></a-image>
-        <a-image src="assets/imgs/illustrator.svg"></a-image>
-        <a-image src="assets/imgs/photoshop.svg"></a-image>
-        <a-image src="assets/imgs/premiere.svg"></a-image>
-        <a-image src="assets/imgs/utl-outline.svg"></a-image>
-        <a-image src="assets/imgs/wb-outline.svg"></a-image>
-        <a-image src="assets/imgs/xd.svg"></a-image>
-
+        <a-image id="name" scale="4.100 2.460 1.000" position="-1.524 1.401 -2.992" rotation="0 0 0" src="assets/imgs/nome-outline.svg"></a-image>       
+        <a-image id="surname" scale="4.100 2.460 1.000" position="-1.494 0.975 -2.976" rotation="0 0 0" src="assets/imgs/cognome-outline.svg"></a-image>
+        <a-image id="wd" scale="2.900 1.730 1.000" position="-1.447 0.650 -2.951" rotation="0 0 0" src="assets/imgs/wb-outline.svg"></a-image>
+        <a-image id="comics" scale="2.210 0.390 1.000" position="-6.000 2.941 -7.626" rotation="0 90 0" src="assets/imgs/comics-outline.svg"></a-image>
+        <a-image id="eidosmedia" scale="2.210 0.390 1.000" position="-6.000 2.941 -7.626" rotation="0 90 0" src="assets/imgs/eidos.svg"></a-image>
+        <a-image id="ai" scale="0.500 0.500 0.500" position="0.719 1.102 -3.482" rotation="0 90 0" src="assets/imgs/illustrator.svg"></a-image>
+        <a-image id="ps" scale="0.500 0.500 0.500" position="0.719 1.102 -3.889" rotation="0 90 0" src="assets/imgs/photoshop.svg"></a-image>
+        <a-image id="pr" scale="0.500 0.500 0.500" position="0.719 1.102 -4.291" rotation="0 90 0" src="assets/imgs/premiere.svg"></a-image>
+        <a-image id="utl" scale="1.000 1.000 1.000" position="-4.424 2.743 -10.998"rotation="0 360 0"src="assets/imgs/utl-outline.svg"></a-image>
+        <a-image id="xd" scale="0.500 0.500 0.500" position="0.719 1.102 -4.665" rotation="0 90 0" src="assets/imgs/xd.svg"></a-image>
         <a-box color="tomato" position="0.7 -0.37 -3.5" depth="0.25" height="0.25" width="0.1"></a-box>
 
         <!-- <a-sky color="#6EBAA7"></a-sky> -->
@@ -182,10 +180,10 @@
         </a-assets>
         <a-sky src="#sky"></a-sky>
 
-        <a-image id="eidos-ff" scale="1.92 1 1" src="assets/portfolio/Eidos-FF.png"></a-image>
-        <a-image id="eidos-foc" scale="1.92 1 1" src="assets/portfolio/Eidos-FOC.png"></a-image>
-        <a-image id="eidos-hp" scale="1.92 1 1" src="assets/portfolio/Eidos-HP.png"></a-image>
-        <a-image id="utl-tco" scale="1.92 1 1" src="assets/portfolio/TCO.png"></a-image>
+        <a-image id="eidos-ff" scale="1.92 1 1" position="-5.995 2.032 -9.807" rotation="0 90 0" src="assets/portfolio/Eidos-FF.png"></a-image>
+        <a-image id="eidos-foc" scale="1.92 1 1" position="-5.995 2.032 -7.603" rotation="0 90 0" src="assets/portfolio/Eidos-FOC.png"></a-image>
+        <a-image id="eidos-hp" scale="1.92 1 1" position="-5.960 2.032 -5.379" rotation="0 90 0" src="assets/portfolio/Eidos-HP.png"></a-image>
+        <a-image id="utl-tco" scale="1.92 1 1" position="-4.404 2.032 -10.989" rotation="0 360 0" src="assets/portfolio/TCO.png"></a-image>
 
 
     </a-scene>
