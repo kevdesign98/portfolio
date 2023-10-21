@@ -1,0 +1,125 @@
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-svg-extruder@1.0.0/dist/index.min.js"></script>
+</head>
+
+<body id="main">
+    <script>
+
+        var camPosIndex = 0;
+        // https://codepen.io/wiledal/embed/WvNvEq?#js-box
+
+        const spline = new THREE.CatmullRomCurve3([
+            new THREE.Vector3(-10, 0, 10),
+            new THREE.Vector3(-5, 5, 5),
+            new THREE.Vector3(0, 0, 0),
+            new THREE.Vector3(5, -5, 5),
+            new THREE.Vector3(10, 0, 10),
+            new THREE.Vector3(5, -5, 5),
+            new THREE.Vector3(0, 0, 0),
+            new THREE.Vector3(-5, 5, 5),
+            new THREE.Vector3(-10, 0, 10),
+        ]);
+
+        addEventListener("wheel", (event) => {
+            // console.log("pippo",event)
+            camPosIndex += event.deltaY * 0.1;
+            console.log(camPosIndex);
+            if (camPosIndex > steps) {
+                camPosIndex = 0;
+            } else if (camPosIndex < 0) {
+                camPosIndex = steps;
+            }
+        });
+
+        // document.getElementById('main').
+
+        const steps = 1000;
+
+        AFRAME.registerComponent('contiuos-rotation', {
+            tick: function (t) {
+            }
+        });
+
+        AFRAME.registerComponent('follow', {
+            tick: function (t) {
+                var camera = this.el.object3D;
+
+                /*
+                camPosIndex = t * 0.1; 
+                console.log(t)
+                */
+                if (camPosIndex > steps) {
+                    camPosIndex = 0;
+                } else if (camPosIndex < 0) {
+                    camPosIndex = steps;
+                }
+
+
+                var camPos = spline.getPoint(camPosIndex / steps);
+                var camRot = spline.getTangent(camPosIndex / steps);
+
+                camera.position.x = camPos.x;
+                camera.position.y = camPos.y;
+                camera.position.z = camPos.z;
+
+                // camera.rotation.x = camRot.x;
+                // camera.rotation.y = camRot.y;
+                // camera.rotation.z = camRot.z;
+
+                // camera.lookAt(0,0,0);
+
+            },
+            update: function () {
+                console.log("update!!!!")
+            }
+        });
+
+
+    </script>
+    <a-scene vr-mode-ui="enabled: false">
+
+        <a-asset-item id="other" src="assets/imgs/eidos.svg"></a-asset-item>
+
+        <a-entity gltf-model="./assets/gltf/stanze-vuote.glb"></a-entity>
+        <!-- <a-entity gltf-model="./assets/gltf/eidos.glb"></a-entity> -->
+        <a-entity gltf-model="./assets/gltf/comics.glb"></a-entity>
+        <a-entity id="adobeps" gltf-model="./assets/gltf/adobebox.glb"></a-entity>
+        <a-entity scale="0.1 0.1 0.1" gltf-model="./assets/gltf/testa.min.glb"  
+            animation__rotation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 5000; easing: linear"
+            animation__position="property: position; from: 0 0 0; to: 0 0.2 0; loop: true; dur: 3000; easing: linear; dir: alternate"></a-entity>
+        <a-sky color="#ECECEC"></a-sky>
+        <a-entity follow camera position="0 2 0"></a-entity>
+
+        <a-image src="assets/imgs/nome-outline.svg"></a-image>
+        <a-image src="assets/imgs/cognome-outline.svg"></a-image>
+        <a-image src="assets/imgs/comics-outline.svg"></a-image>
+        <a-image src="assets/imgs/eidos.svg"></a-image>
+        <a-image src="assets/imgs/illustrator.svg"></a-image>
+        <a-image src="assets/imgs/photoshop.svg"></a-image>
+        <a-image src="assets/imgs/premiere.svg"></a-image>
+        <a-image src="assets/imgs/utl-outline.svg"></a-image>
+        <a-image src="assets/imgs/wb-outline.svg"></a-image>
+        <a-image src="assets/imgs/xd.svg"></a-image>
+
+        <a-box color="tomato" position="0.7 -0.37 -3.5" depth="0.25" height="0.25" width="0.1"></a-box>
+
+        <!-- <a-sky color="#6EBAA7"></a-sky> -->
+        <!-- <a-gradient-sky material="topColor:1 1 0; bottomColor:1 0 0;"></a-gradient-sky> -->
+        <a-assets>
+            <img id="sky" src="assets/imgs/bg3.png">
+        </a-assets>
+        <a-sky src="#sky"></a-sky>
+
+        <a-image id="eidos-ff" scale="1.92 1 1" src="assets/portfolio/Eidos-FF.png"></a-image>
+        <a-image id="eidos-foc" scale="1.92 1 1" src="assets/portfolio/Eidos-FOC.png"></a-image>
+        <a-image id="eidos-hp" scale="1.92 1 1" src="assets/portfolio/Eidos-HP.png"></a-image>
+        <a-image id="utl-tco" scale="1.92 1 1" src="assets/portfolio/TCO.png"></a-image>
+
+
+    </a-scene>
+</body>
+
+</html>
