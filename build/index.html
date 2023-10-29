@@ -3,9 +3,114 @@
 <head>
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-svg-extruder@1.0.0/dist/index.min.js"></script>
+
+    <!-- Remember to include jQuery :) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+
+    <!-- jQuery Modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+
+
 </head>
 
 <body id="main">
+
+    <!-- MODALS -->
+
+    <div id="home" class="modal">
+        <h1>Ciao! I'm Kevin a web designer located in Tuscany</h1>
+        <p>Thanks for clicking. That felt good.</p>
+    </div>
+
+    <div id="utl" class="modal">
+        <p>utl Thanks for clicking. That felt good.</p>
+    </div>
+
+    <div id="eidos" class="modal">
+        <p>eidos Thanks for clicking. That felt good.</p>
+    </div>
+
+    <div id="comics" class="modal">
+        <p>comics Thanks for clicking. That felt good.</p>
+    </div>
+
+
+    <a-scene vr-mode-ui="enabled: false">
+
+        <!-- SETUP GENERALE -->
+        <a-entity id="camera" follow camera></a-entity>
+        <a-entity gltf-model="./assets/gltf/stanze-v1-alternative-1.glb"></a-entity>
+        <a-entity cursor="rayOrigin:mouse" raycaster="objects: .clickable"></a-entity>
+        <a-assets>
+            <img id="sky" src="assets/imgs/skyb-2.png">
+        </a-assets>
+        <a-sky src="#sky"></a-sky>
+
+        <!-- HOME -->
+        <a-entity id="totem-home" gltf-model="./assets/gltf/totem-small.glb" 
+                position="-0.82661 0 -2.47105" 
+                modal="div: home" class="clickable" scale="0.7 0.7 0.7" rotation="0 0 0">
+                <a-image src="assets/imgs/handwhite.png" 
+                            position="0 1.28 0.21"
+                            animation="property: opacity; from: 0; to: 1.0; dur: 2000; easing: linear; loop: true" 
+                             rotation="-30 0 0" material="" geometry="" scale="0.3 0.4 0.5"></a-image>           
+        </a-entity>
+        <a-image id="name" scale="1.5 0.9 1" position="-1.5 1.6 -3.1" rotation="0 360 0" src="assets/imgs/title.png"
+            material="" geometry=""></a-image>
+        
+        <!-- SKILLS -->
+        <a-image id="name" scale="2.4 1.4 1" position="1.09225 1.17824 -5.14496" rotation="0 90 0" src="assets/imgs/skills.png" material="" geometry=""></a-image>
+        <!-- <a-image id="name" scale="2.4 1.4 1" position="-1.5 1.6 -3.1" rotation="0 90 0" src="assets/imgs/skills.png"></a-image> -->
+
+        <!-- COMICS -->
+        <a-entity id="totem-comics" gltf-model="./assets/gltf/totem-small.glb" 
+            position="4 -0.6 -9" 
+            modal="div: comics" class="clickable" scale="0.7 0.7 0.7" rotation="0 -40 0">
+            <a-image src="assets/imgs/handwhite.png" 
+                    position="0 1.28 0.21"
+                    animation="property: opacity; from: 0; to: 1.0; dur: 2000; easing: linear; loop: true" 
+                     rotation="-30 0 0" material="" geometry="" scale="0.3 0.4 0.5"></a-image>           
+        </a-entity>
+
+        <a-entity id="headjs" scale="0.1 0.1 0.1" gltf-model="./assets/gltf/testa.min.glb"
+            animation__rotation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 5000; easing: linear"
+            animation__position="property: position; from: -0.2073 -0.2 -10.232; to: -0.2073 0.2 -10.232; loop: true; dur: 3000; easing: linear; dir: alternate"></a-entity>
+        <a-entity scale="0.1 0.1 0.1" position="3.30 0 -10.24" gltf-model="./assets/gltf/testa.min.glb"></a-entity>
+        <a-entity scale="0.1 0.1 0.1" position="1.53 0 -10.24" gltf-model="./assets/gltf/testa.min.glb"></a-entity>
+
+
+        <!-- EXPIRIENCE -->
+
+        <a-image id="utl-tco" scale="1.92 1 1" position="-6.51032 2.78 -12.69735" rotation="0 360 0"
+            src="assets/portfolio/TCO.png" material="" geometry=""></a-image>
+        <a-image id="eidos-ff" scale="1.92 1 1" position="-7.89248 2.78 -10.87226" rotation="0 90 0"
+            src="assets/portfolio/Eidos-FF.png" material="" geometry=""></a-image>
+        <a-image id="eidos-foc" scale="1.92 1 1" position="-7.96326 2.78 -8.56344" rotation="0 90 0"
+            src="assets/portfolio/Eidos-FOC.png" material="" geometry=""></a-image>
+        <a-image id="eidos-hp" scale="1.92 1 1" position="-7.95302 2.78 -6.19935" rotation="0 90 0"
+            src="assets/portfolio/Eidos-HP.png" material="" geometry=""></a-image>
+
+        <a-entity id="totem-utl" gltf-model="./assets/gltf/totem-small.glb" position="-5.92466 1.2 -12.42115" modal="div: utl"
+            class="clickable" scale="0.7 0.7 0.7" rotation="0 0 0">
+            <a-image src="assets/imgs/handwhite.png" position="0 1.28 0.21"
+                animation="property: opacity; from: 0; to: 1.0; dur: 2000; easing: linear; loop: true" rotation="-30 0 0"
+                material="" geometry="" scale="0.3 0.4 0.5"></a-image>
+        </a-entity>
+
+        <a-entity id="totem-eidos" gltf-model="./assets/gltf/totem-small.glb" position="-7.46462 1.2 -10.67" modal="div: eidos"
+            class="clickable" scale="0.7 0.7 0.7" rotation="0 90 0">
+            <a-image src="assets/imgs/handwhite.png" position="0 1.28 0.21"
+                animation="property: opacity; from: 0; to: 1.0; dur: 2000; easing: linear; loop: true" rotation="-30 0 0"
+                material="" geometry="" scale="0.3 0.4 0.5"></a-image>
+        </a-entity>
+
+
+    </a-scene>
+
+
+
     <script>
 
         var gpos = [];
@@ -30,7 +135,7 @@
         const pos_spline = new THREE.CatmullRomCurve3([new THREE.Vector3(-1.79, 1.80, 0.79), new THREE.Vector3(2.37, 1.00, 0.76), new THREE.Vector3(3.01, 1.00, -4.85), new THREE.Vector3(2.26, 0.80, -6.20), new THREE.Vector3(2.22, 0.80, -8.19), new THREE.Vector3(-0.45, 0.80, -9.66), new THREE.Vector3(-4.82, 2.00, -9.64), new THREE.Vector3(-6.06, 2.60, -11.14), new THREE.Vector3(-6.06, 2.60, -11.14), new THREE.Vector3(-6.06, 2.60, -8.16), new THREE.Vector3(-6.07, 2.60, -6.18), new THREE.Vector3(-6.07, 2.60, -6.18), new THREE.Vector3(-1.54, 2.60, 0.31),]);
 
         const rot_spline = new THREE.CatmullRomCurve3([new THREE.Vector3(-0.33, 0.01, 0.00), new THREE.Vector3(-0.33, 0.01, 0.00), new THREE.Vector3(-0.03, 1.60, 0.00), new THREE.Vector3(-0.30, 0.02, 0.00), new THREE.Vector3(-0.30, 0.02, 0.00), new THREE.Vector3(-0.25, 1.56, 0.00), new THREE.Vector3(0.00, 0.85, 0.00), new THREE.Vector3(-0.02, 0.35, 0.00), new THREE.Vector3(-0.04, 1.57, 0.00), new THREE.Vector3(-0.04, 1.57, 0.00), new THREE.Vector3(-0.04, 1.57, 0.00), new THREE.Vector3(-0.21, 3.08, 0.00), new THREE.Vector3(-0.25, 6.34, 0.00),]);
-        
+
 
         addEventListener("wheel", (event) => {
             // console.log("pippo",event)
@@ -94,6 +199,7 @@
         });
 
 
+
         window.onkeydown = function (e) {
             if (e.keyCode == 81) {
                 console.log("q");
@@ -119,11 +225,11 @@
                 var pos = document.getElementById('camera').object3D.position;
                 var rot = document.getElementById('camera').object3D.rotation;
                 // console.log(">> pos ", pos, " rot ", rot)
-                console.log("position=\"",pos.x.toFixed(2)," ",pos.y.toFixed(2)," ", pos.z.toFixed(2),"\" rotation=\"",rot.x.toFixed(2)," ",rot.y.toFixed(2)," ", rot.z.toFixed(2),"\"")
-                console.log("pos: new THREE.Vector3(",pos.x.toFixed(2),", ",pos.y.toFixed(2),", ", pos.z.toFixed(2),"),");
-                console.log("rotaa: new THREE.Vector3(",rot.x.toFixed(2),", ",rot.y.toFixed(2),", ", rot.z.toFixed(2),"),");
-                gpos.push("new THREE.Vector3("+pos.x.toFixed(2)+", "+pos.y.toFixed(2)+", "+ pos.z.toFixed(2)+"),");
-                grot.push("new THREE.Vector3("+rot.x.toFixed(2)+", "+rot.y.toFixed(2)+", "+ rot.z.toFixed(2)+"),");
+                console.log("position=\"", pos.x.toFixed(2), " ", pos.y.toFixed(2), " ", pos.z.toFixed(2), "\" rotation=\"", rot.x.toFixed(2), " ", rot.y.toFixed(2), " ", rot.z.toFixed(2), "\"")
+                console.log("pos: new THREE.Vector3(", pos.x.toFixed(2), ", ", pos.y.toFixed(2), ", ", pos.z.toFixed(2), "),");
+                console.log("rotaa: new THREE.Vector3(", rot.x.toFixed(2), ", ", rot.y.toFixed(2), ", ", rot.z.toFixed(2), "),");
+                gpos.push("new THREE.Vector3(" + pos.x.toFixed(2) + ", " + pos.y.toFixed(2) + ", " + pos.z.toFixed(2) + "),");
+                grot.push("new THREE.Vector3(" + rot.x.toFixed(2) + ", " + rot.y.toFixed(2) + ", " + rot.z.toFixed(2) + "),");
             }
 
 
@@ -131,65 +237,25 @@
         }
 
 
+        AFRAME.registerComponent('modal', {
+            schema: {
+                div: {type: 'string', default: ''},
+            },
+            init: function () {
+                 var data = this.data;
+                console.log("init")
+                this.el.addEventListener('click', function () {
+                    $("#"+data.div).modal({
+                        fadeDuration: 100
+                    });
+                });
+            }
+        });
+
 
     </script>
-    <a-scene vr-mode-ui="enabled: false">
 
-        <!-- <a-entity id="camera" wasd-controls="accelaration:10;" look-controls camera ></a-entity> -->
-        <a-entity id="camera" follow camera ></a-entity>
-
-        <a-entity gltf-model="./assets/gltf/stanze-v1-alternative.glb"></a-entity>
-
-
-        <!-- COMICS -->
-        <a-entity gltf-model="./assets/gltf/comics.glb"></a-entity>
-
-        <a-entity id="headjs" scale="0.1 0.1 0.1" gltf-model="./assets/gltf/testa.min.glb" 
-        animation__rotation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 5000; easing: linear"
-        animation__position="property: position; from: -0.2073 -0.2 -10.232; to: -0.2073 0.2 -10.232; loop: true; dur: 3000; easing: linear; dir: alternate"></a-entity>
-        <a-entity scale="0.1 0.1 0.1" position="3.30 0 -10.24" gltf-model="./assets/gltf/testa.min.glb"></a-entity>
-        <a-entity scale="0.1 0.1 0.1" position="1.53 0 -10.24" gltf-model="./assets/gltf/testa.min.glb"></a-entity>
-
-        <!-- <a-image id="name" scale="4.100 2.460 1.000" position="-1.524 1.401 -2.992" rotation="0 0 0" src="assets/imgs/nome-outline.svg"></a-image>       
-        <a-image id="surname" scale="4.100 2.460 1.000" position="-1.494 0.975 -2.976" rotation="0 0 0" src="assets/imgs/cognome-outline.svg"></a-image>
-        <a-image id="wd" scale="2.900 1.730 1.000" position="-1.447 0.650 -2.951" rotation="0 0 0" src="assets/imgs/wb-outline.svg"></a-image>
-        <a-image id="comics" scale="2.210 0.390 1.000" position="-6.000 2.941 -7.626" rotation="0 90 0" src="assets/imgs/comics-outline.svg"></a-image>
-        <a-image id="eidosmedia" scale="2.210 0.390 1.000" position="-6.000 2.941 -7.626" rotation="0 90 0" src="assets/imgs/eidos.svg"></a-image>
-        <a-image id="ai" scale="0.500 0.500 0.500" position="0.719 1.102 -3.482" rotation="0 90 0" src="assets/imgs/illustrator.svg"></a-image>
-        <a-image id="ps" scale="0.500 0.500 0.500" position="0.719 1.102 -3.889" rotation="0 90 0" src="assets/imgs/photoshop.svg"></a-image>
-        <a-image id="pr" scale="0.500 0.500 0.500" position="0.719 1.102 -4.291" rotation="0 90 0" src="assets/imgs/premiere.svg"></a-image>
-        <a-image id="utl" scale="1.000 1.000 1.000" position="-4.424 2.743 -10.998"rotation="0 360 0"src="assets/imgs/utl-outline.svg"></a-image>
-        <a-image id="xd" scale="0.500 0.500 0.500" position="0.719 1.102 -4.665" rotation="0 90 0" src="assets/imgs/xd.svg"></a-image>
-        <a-box color="tomato" position="0.7 -0.37 -3.5" depth="0.25" height="0.25" width="0.1"></a-box> -->
-
-        <!-- <a-sky color="#6EBAA7"></a-sky> -->
-        <!-- <a-gradient-sky material="topColor:1 1 0; bottomColor:1 0 0;"></a-gradient-sky> -->
-        <a-assets>
-            <img id="sky" src="assets/imgs/skyb-2.png">
-        </a-assets>
-        <a-sky src="#sky"></a-sky>
-
-        <!-- <a-image id="eidos-ff" scale="1.92 1 1" position="-5.995 2.032 -9.807" rotation="0 90 0" src="assets/portfolio/Eidos-FF.png"></a-image>
-        <a-image id="eidos-foc" scale="1.92 1 1" position="-5.995 2.032 -7.603" rotation="0 90 0" src="assets/portfolio/Eidos-FOC.png"></a-image>
-        <a-image id="eidos-hp" scale="1.92 1 1" position="-5.960 2.032 -5.379" rotation="0 90 0" src="assets/portfolio/Eidos-HP.png"></a-image>
-        <a-image id="utl-tco" scale="1.92 1 1" position="-4.404 2.032 -10.989" rotation="0 360 0" src="assets/portfolio/TCO.png"></a-image> -->
-
-        <a-image id="eidos-ff" scale="1.92 1 1" position="-7.89248 2.78 -10.87226" rotation="0 90 0" src="assets/portfolio/Eidos-FF.png" material="" geometry=""></a-image>
-        <a-image id="eidos-foc" scale="1.92 1 1" position="-7.96326 2.78 -8.56344" rotation="0 90 0" src="assets/portfolio/Eidos-FOC.png" material="" geometry=""></a-image>
-        <a-image id="eidos-hp" scale="1.92 1 1" position="-7.95302 2.78 -6.19935" rotation="0 90 0" src="assets/portfolio/Eidos-HP.png" material="" geometry=""></a-image>   
-        <a-image id="utl-tco" scale="1.92 1 1" position="-6.51032 2.78 -12.69735" rotation="0 360 0" src="assets/portfolio/TCO.png" material="" geometry=""></a-image>
-
-        <a-entity gltf-model="./assets/gltf/totem.glb" scale="0.4 0.4 0.4" position="-5.92466 1.2 -12.42115"></a-entity>
-        <a-entity gltf-model="./assets/gltf/totem.glb" scale="0.4 0.4 0.4" position="-7.46462 1.2 -10.67" rotation="0 90 0"></a-entity>
-
-        <!-- SKILLS -->
-        <a-entity gltf-model="assets/gltf/totem-small.glb" scale="0.7 0.7 0.7" rotation="0 90 0" position="1.2 -0.5 -3.5"></a-entity>
-        <a-entity gltf-model="assets/gltf/totem-small.glb" scale="0.7 0.7 0.7" rotation="0 90 0" position="1.2 -0.5 -4.3"></a-entity>
-        <a-entity gltf-model="assets/gltf/totem-small.glb" scale="0.7 0.7 0.7" rotation="0 90 0" position="1.2 -0.5 -5.1"></a-entity>
-        <a-entity gltf-model="assets/gltf/totem-small.glb" scale="0.7 0.7 0.7" rotation="0 90 0" position="1.2 -0.5 -5.9"></a-entity>
-
-
-    </a-scene>
+    
 </body>
 
 </html>
