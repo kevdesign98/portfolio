@@ -85,14 +85,23 @@
 
 
         <!-- EXPIRIENCE -->
-
+<!-- 
         <a-image id="utl-tco" scale="1.92 1 1" position="-6.51032 2.78 -12.69735" rotation="0 360 0"
-            src="assets/portfolio/TCO.png" material="" geometry=""></a-image>
+            linkable="link:https://www.tcospedizioni.it" class="clickable"
+            src="assets/portfolio/TCO.png" material="" geometry=""></a-image> -->
+
+        <a-image id="utl-romiti" scale="1.92 1 1" position="-6.51032 2.78 -12.69735" rotation="0 360 0"
+            linkable="link:https://www.romitivivai.it/en/home-en/" class="clickable"
+            src="assets/portfolio/romiti.png" material="" geometry=""></a-image>
+    
         <a-image id="eidos-ff" scale="1.92 1 1" position="-7.89248 2.78 -10.87226" rotation="0 90 0"
+            linkable="link:https://www.google.com" class="clickable"
             src="assets/portfolio/Eidos-FF.png" material="" geometry=""></a-image>
         <a-image id="eidos-foc" scale="1.92 1 1" position="-7.96326 2.78 -8.56344" rotation="0 90 0"
+            linkable="link:https://www.google.com" class="clickable"
             src="assets/portfolio/Eidos-FOC.png" material="" geometry=""></a-image>
         <a-image id="eidos-hp" scale="1.92 1 1" position="-7.95302 2.78 -6.19935" rotation="0 90 0"
+            linkable="link:https://www.google.com" class="clickable"
             src="assets/portfolio/Eidos-HP.png" material="" geometry=""></a-image>
 
         <a-entity id="totem-utl" gltf-model="./assets/gltf/totem-small.glb" position="-5.92466 1.2 -12.42115" modal="div: utl"
@@ -252,6 +261,19 @@
                     $("#"+data.div).modal({
                         fadeDuration: 100
                     });
+                });
+            }
+        });
+
+        AFRAME.registerComponent('linkable', {
+            schema: {
+                link: {type: 'string', default: ''},
+            },
+            init: function () {
+                 var data = this.data;
+                console.log("init")
+                this.el.addEventListener('click', function () {
+                    window.open(data.link, "_blank");
                 });
             }
         });
