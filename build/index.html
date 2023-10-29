@@ -61,8 +61,8 @@
             material="" geometry=""></a-image>
         
         <!-- SKILLS -->
-        <a-image id="name" scale="2.4 1.4 1" position="1.09225 1.17824 -5.14496" rotation="0 90 0" src="assets/imgs/skills.png" material="" geometry=""></a-image>
-        <!-- <a-image id="name" scale="2.4 1.4 1" position="-1.5 1.6 -3.1" rotation="0 90 0" src="assets/imgs/skills.png"></a-image> -->
+        <a-image id="name" scale="3.09 1.4 1" position="1.092 1.15965 -4.9115" rotation="0 90 0" src="assets/imgs/skills.png"
+                    animation="property: opacity; from: 0.5; to: 1.0; dur: 500; easing: linear; loop: true; dir:alternate;  "></a-image>
 
         <!-- COMICS -->
         <a-entity id="totem-comics" gltf-model="./assets/gltf/totem-small.glb" 
@@ -74,10 +74,13 @@
                      rotation="-30 0 0" material="" geometry="" scale="0.3 0.4 0.5"></a-image>           
         </a-entity>
 
+        <a-image id="js" scale="0.5 0.2 1" position="-0.2073 1.2 -10.232" src="assets/imgs/js.png"></a-image>
         <a-entity id="headjs" scale="0.1 0.1 0.1" gltf-model="./assets/gltf/testa.min.glb"
             animation__rotation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 5000; easing: linear"
             animation__position="property: position; from: -0.2073 -0.2 -10.232; to: -0.2073 0.2 -10.232; loop: true; dur: 3000; easing: linear; dir: alternate"></a-entity>
+        
         <a-entity scale="0.1 0.1 0.1" position="3.30 0 -10.24" gltf-model="./assets/gltf/testa.min.glb"></a-entity>
+
         <a-entity scale="0.1 0.1 0.1" position="1.53 0 -10.24" gltf-model="./assets/gltf/testa.min.glb"></a-entity>
 
 
@@ -139,7 +142,8 @@
 
         addEventListener("wheel", (event) => {
             // console.log("pippo",event)
-            camPosIndex += event.deltaY * 0.1;
+            camPosIndex += event.deltaY * -0.1;
+            // camPosIndex += 20 * 0.1;
             console.log(camPosIndex);
             if (camPosIndex > steps) {
                 camPosIndex = 0;
