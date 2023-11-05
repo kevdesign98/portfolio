@@ -1,3 +1,24 @@
-h1 {
-    font-family: aquire;
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap');
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    font-family: 'Orbitron', sans-serif;;
+    text-align: left;
+}
+
+h2{
+    font-family: 'Orbitron', sans-serif;;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 30px;
+}
+
+p {
+    font-family: 'Orbitron', sans-serif;;
+    font-size: 20px;
+    font-weight: 500;
 }
