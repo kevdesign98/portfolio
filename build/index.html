@@ -24,15 +24,17 @@
         <h1>Ciao! I'm Kevin a web designer based in Tuscany</h1>
         <p>My social are:</p>
         <div style="display: flex;align-items: center;justify-content: space-evenly;float: left;">
-            <p style="margin-right: 15px;"><a href="https://www.instagram.com/kevdesign_98/"><img src="assets/imgs/insta.png"></a></p>
+            <p style="margin-right: 15px;"><a href="https://www.instagram.com/kevdesign_98/"><img
+                        src="assets/imgs/insta.png"></a></p>
             <p><a href="https://www.linkedin.com/in/kevin-cooray-236133179"><img src="assets/imgs/linkedin.png"></a></p>
         </div>
-        
-     </div>
+
+    </div>
 
     <div id="utl" class="modal">
         <h2>UTL Informatica</h2>
-        <p>I was mainly involved in Web Design, creating dynamic and responsive websites with WordPress. I indexed sites with Google Search Console, and other technologies.</p>
+        <p>I was mainly involved in Web Design, creating dynamic and responsive websites with WordPress. I indexed sites
+            with Google Search Console, and other technologies.</p>
     </div>
 
     <div id="eidos" class="modal">
@@ -52,7 +54,8 @@
 
     <div id="comics" class="modal">
         <h2>Scuola Internazionale di Comics</h2>
-        <p>I attended the International School of Comics in Florence, where I took a course in web design, acquiring the necessary skills to design, develop and manage dynamic websites.</p>
+        <p>I attended the International School of Comics in Florence, where I took a course in web design, acquiring the
+            necessary skills to design, develop and manage dynamic websites.</p>
     </div>
 
 
@@ -68,54 +71,57 @@
         <a-sky src="#sky"></a-sky>
 
         <!-- HOME -->
-        <a-entity id="totem-home" gltf-model="./assets/gltf/totem-small.glb" 
-                position="-0.82661 0 -2.47105" 
-                modal="div: home" class="clickable" scale="0.7 0.7 0.7" rotation="0 0 0">
-                <a-image src="assets/imgs/handwhite.png" 
-                            position="0 1.28 0.21"
-                            animation="property: opacity; from: 0; to: 1.0; dur: 2000; easing: linear; loop: true" 
-                             rotation="-30 0 0" material="" geometry="" scale="0.3 0.4 0.5"></a-image>           
+        <a-entity id="totem-home" gltf-model="./assets/gltf/totem-small.glb" position="-0.82661 0 -2.47105"
+            modal="div: home" class="clickable" scale="0.7 0.7 0.7" rotation="0 0 0">
+            <a-image src="assets/imgs/handwhite.png" position="0 1.28 0.21"
+                animation="property: opacity; from: 0; to: 1.0; dur: 2000; easing: linear; loop: true"
+                rotation="-30 0 0" material="" geometry="" scale="0.3 0.4 0.5"></a-image>
         </a-entity>
-        <a-image id="name" scale="1.5 0.9 1" position="-1.5 1.6 -3.1" rotation="0 360 0" src="assets/imgs/new-titles.png"
-            material="" geometry=""></a-image>
-        
+        <a-image id="name" scale="1.5 0.9 1" position="-1.5 1.6 -3.1" rotation="0 360 0"
+            src="assets/imgs/new-titles.png" material="" geometry=""></a-image>
+
+
+        <a-entity id="omino" gltf-model="./assets/gltf/" position="-1.95801 0.33695 -2.471" scale="0.7 0.7 0.7" rotation=""></a-entity>
+
+
         <!-- SKILLS -->
-        <a-image id="name" scale="3.09 1.4 1" position="1.092 1.15965 -4.9115" rotation="0 90 0" src="assets/imgs/hud-blue.png"
-                    animation="property: opacity; from: 0.5; to: 1.0; dur: 500; easing: linear; loop: true; dir:alternate;  "></a-image>
+        <a-image id="name" scale="3.09 1.4 1" position="1.092 1.15965 -4.9115" rotation="0 90 0"
+            src="assets/imgs/hud-blue.png"
+            animation="property: opacity; from: 0.5; to: 1.0; dur: 500; easing: linear; loop: true; dir:alternate;  "></a-image>
 
         <!-- COMICS -->
-        <a-entity id="totem-comics" gltf-model="./assets/gltf/totem-small.glb" 
-            position="4 -0.6 -9" 
-            modal="div: comics" class="clickable" scale="0.7 0.7 0.7" rotation="0 -40 0">
-            <a-image src="assets/imgs/comics-white-1.png" 
-                    position="0.031 1.280 0.218"
-                    animation="property: opacity; from: 0; to: 1.0; dur: 2000; easing: linear; loop: true" 
-                     rotation="-30 0 0" material="" geometry="" scale="0.600 0.280 0.510"></a-image>           
+        <a-entity id="totem-comics" gltf-model="./assets/gltf/totem-small.glb" position="4 -0.6 -9" modal="div: comics"
+            class="clickable" scale="0.7 0.7 0.7" rotation="0 -40 0">
+            <a-image src="assets/imgs/comics-white-1.png" position="0.031 1.280 0.218"
+                animation="property: opacity; from: 0; to: 1.0; dur: 2000; easing: linear; loop: true"
+                rotation="-30 0 0" material="" geometry="" scale="0.600 0.280 0.510"></a-image>
         </a-entity>
 
         <a-image id="js" scale="0.5 0.2 1" position="-0.2073 1.2 -10.232" src="assets/imgs/js.png"></a-image>
         <a-entity id="headjs" scale="0.1 0.1 0.1" gltf-model="./assets/gltf/testa.min.glb"
             animation__rotation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 5000; easing: linear"
             animation__position="property: position; from: -0.2073 -0.2 -10.232; to: -0.2073 0.2 -10.232; loop: true; dur: 3000; easing: linear; dir: alternate"></a-entity>
-        
+
         <a-image id="css" scale="0.5 0.2 1" position="1.510 1.200 -10.232" src="assets/imgs/css.png"></a-image>
-        <a-entity scale="0.1 0.1 0.1" position="3.30 0 -10.24" rotation="0 -89.762 0" gltf-model="./assets/gltf/testa.min.glb"></a-entity>
+        <a-entity scale="0.1 0.1 0.1" position="3.30 0 -10.24" rotation="0 -89.762 0"
+            gltf-model="./assets/gltf/testa.min.glb"></a-entity>
 
 
         <a-image id="html" scale="0.600 0.2 1" position="3.338 1.200 -10.232" src="assets/imgs/html.png"></a-image>
-        <a-entity scale="0.1 0.1 0.1" position="1.53 0 -10.24" rotation="0 -89.762 0" gltf-model="./assets/gltf/testa.min.glb"></a-entity>
+        <a-entity scale="0.1 0.1 0.1" position="1.53 0 -10.24" rotation="0 -89.762 0"
+            gltf-model="./assets/gltf/testa.min.glb"></a-entity>
 
-        
+
         <!-- EXPIRIENCE -->
-<!-- 
+        <!-- 
         <a-image id="utl-tco" scale="1.92 1 1" position="-6.51032 2.78 -12.69735" rotation="0 360 0"
             linkable="link:https://www.tcospedizioni.it" class="clickable"
             src="assets/portfolio/TCO.png" material="" geometry=""></a-image> -->
 
         <a-image id="utl-romiti" scale="1.92 1 1" position="-6.51032 2.78 -12.69735" rotation="0 360 0"
-            linkable="link:https://www.romitivivai.it/en/home-en/" class="clickable"
-            src="assets/portfolio/romiti.png" material="" geometry=""></a-image>
-    
+            linkable="link:https://www.romitivivai.it/en/home-en/" class="clickable" src="assets/portfolio/romiti.png"
+            material="" geometry=""></a-image>
+
         <a-image id="eidos-ff" scale="1.92 1 1" position="-7.89248 2.78 -10.87226" rotation="0 90 0"
             linkable="link:https://www.eidosmedia.com/future-financial" class="clickable"
             src="assets/portfolio/Eidos-FF.png" material="" geometry=""></a-image>
@@ -123,22 +129,22 @@
             linkable="link:https://www.eidosmedia.com/future-of-content-2022" class="clickable"
             src="assets/portfolio/Eidos-FOC.png" material="" geometry=""></a-image>
         <a-image id="eidos-hp" scale="1.92 1 1" position="-7.95302 2.78 -6.19935" rotation="0 90 0"
-            linkable="link:https://www.eidosmedia.com" class="clickable"
-            src="assets/portfolio/Eidos-HP.png" material="" geometry=""></a-image>
+            linkable="link:https://www.eidosmedia.com" class="clickable" src="assets/portfolio/Eidos-HP.png" material=""
+            geometry=""></a-image>
 
-        <a-entity id="totem-utl" gltf-model="./assets/gltf/totem-small.glb" position="-5.92466 1.2 -12.42115" modal="div: utl"
-            class="clickable" scale="0.7 0.7 0.7" rotation="0 0 0">
+        <a-entity id="totem-utl" gltf-model="./assets/gltf/totem-small.glb" position="-5.92466 1.2 -12.42115"
+            modal="div: utl" class="clickable" scale="0.7 0.7 0.7" rotation="0 0 0">
             <a-image src="assets/imgs/utl-logo.png" position="0.010 1.275 0.210"
-                animation="property: opacity; from: 0; to: 1.0; dur: 2000; easing: linear; loop: true" rotation="-30 0 0"
-                material="" geometry="" scale="0.410 0.410 0.550"></a-image>
+                animation="property: opacity; from: 0; to: 1.0; dur: 2000; easing: linear; loop: true"
+                rotation="-30 0 0" material="" geometry="" scale="0.410 0.410 0.550"></a-image>
         </a-entity>
 
-        <a-entity id="totem-eidos-ff" gltf-model="./assets/gltf/totem-small.glb" position="-7.465 1.2 -10.848" modal="div: eidos"
-            class="clickable" scale="0.7 0.7 0.7" rotation="0 90 0">
+        <a-entity id="totem-eidos-ff" gltf-model="./assets/gltf/totem-small.glb" position="-7.465 1.2 -10.848"
+            modal="div: eidos" class="clickable" scale="0.7 0.7 0.7" rotation="0 90 0">
             <a-image src="assets/imgs/handwhite.png" position="0 1.28 0.21"
-                animation="property: opacity; from: 0; to: 1.0; dur: 2000; easing: linear; loop: true" rotation="-30 0 0"
-                material="" geometry="" scale="0.3 0.4 0.5"></a-image>
-        </a-entity> 
+                animation="property: opacity; from: 0; to: 1.0; dur: 2000; easing: linear; loop: true"
+                rotation="-30 0 0" material="" geometry="" scale="0.3 0.4 0.5"></a-image>
+        </a-entity>
 
         <!-- <a-entity id="totem-eidos-foc" gltf-model="./assets/gltf/totem-small.glb" position="-7.465 1.2 -8.534" modal="div: eidos"
             class="clickable" scale="0.7 0.7 0.7" rotation="0 90 0">
@@ -288,13 +294,13 @@
 
         AFRAME.registerComponent('modal', {
             schema: {
-                div: {type: 'string', default: ''},
+                div: { type: 'string', default: '' },
             },
             init: function () {
-                 var data = this.data;
+                var data = this.data;
                 console.log("init")
                 this.el.addEventListener('click', function () {
-                    $("#"+data.div).modal({
+                    $("#" + data.div).modal({
                         fadeDuration: 100
                     });
                 });
@@ -303,10 +309,10 @@
 
         AFRAME.registerComponent('linkable', {
             schema: {
-                link: {type: 'string', default: ''},
+                link: { type: 'string', default: '' },
             },
             init: function () {
-                 var data = this.data;
+                var data = this.data;
                 console.log("init")
                 this.el.addEventListener('click', function () {
                     window.open(data.link, "_blank");
@@ -317,7 +323,7 @@
 
     </script>
 
-    
+
 </body>
 
 </html>
