@@ -2,8 +2,10 @@
 
 <head>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-svg-extruder@1.0.0/dist/index.min.js"></script>
+
 
     <!-- Remember to include jQuery :) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
@@ -23,17 +25,13 @@
     <div id="home" class="modal">
         <h1>Ciao! I'm Kevin a web designer based in Tuscany</h1>
         <p>My social are:</p>
-        <div style="display: flex;align-items: center;justify-content: center;">
-            
-                <ul class="social-icons">
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                 </ul>
-            <!-- <p style="margin-right: 15px;"><a href="https://www.instagram.com/kevdesign_98/"><img
-                        src="assets/imgs/insta.png"></a></p>
-            <p><a href="https://www.linkedin.com/in/kevin-cooray-236133179"><img src="assets/imgs/linkedin.png"></a></p> -->
-        </div>
+        <div style="display: flex;align-items: center;justify-content: center;padding-bottom: 5%;">
 
+                <div class="social-links">
+                    <a href="https://www.instagram.com/kevdesign_98/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/kevin-cooray-236133179"><i class="fab fa-linkedin-in"></i></a>
+                </div>    
+        </div>
     </div>
 
     <div id="utl" class="modal">
@@ -86,7 +84,8 @@
             src="assets/imgs/new-titles.png" material="" geometry=""></a-image>
 
 
-        <a-entity id="omino" gltf-model="./assets/gltf/" position="-1.95801 0.33695 -2.471" scale="0.7 0.7 0.7" rotation=""></a-entity>
+        <a-entity id="omino" gltf-model="./assets/gltf/" position="-1.95801 0.33695 -2.471" scale="0.7 0.7 0.7"
+            rotation=""></a-entity>
 
 
         <!-- SKILLS -->
@@ -151,19 +150,19 @@
                 rotation="-30 0 0" material="" geometry="" scale="0.3 0.4 0.5"></a-image>
         </a-entity>
 
-         <a-entity id="totem-eidos-foc" gltf-model="./assets/gltf/totem-small.glb" position="-7.465 1.2 -8.534" modal="div: eidos"
-            class="clickable" scale="0.7 0.7 0.7" rotation="0 90 0">
+        <a-entity id="totem-eidos-foc" gltf-model="./assets/gltf/totem-small.glb" position="-7.465 1.2 -8.534"
+            modal="div: eidos" class="clickable" scale="0.7 0.7 0.7" rotation="0 90 0">
             <a-image src="assets/imgs/handwhite.png" position="0 1.28 0.21"
-                animation="property: opacity; from: 0; to: 1.0; dur: 2000; easing: linear; loop: true" rotation="-30 0 0"
-                material="" geometry="" scale="0.3 0.4 0.5"></a-image>
-        </a-entity>    
+                animation="property: opacity; from: 0; to: 1.0; dur: 2000; easing: linear; loop: true"
+                rotation="-30 0 0" material="" geometry="" scale="0.3 0.4 0.5"></a-image>
+        </a-entity>
 
-         <a-entity id="totem-eidos" gltf-model="./assets/gltf/totem-small.glb" position="-7.465 1.2 -6.205" modal="div: eidos"
-            class="clickable" scale="0.7 0.7 0.7" rotation="0 90 0">
+        <a-entity id="totem-eidos" gltf-model="./assets/gltf/totem-small.glb" position="-7.465 1.2 -6.205"
+            modal="div: eidos" class="clickable" scale="0.7 0.7 0.7" rotation="0 90 0">
             <a-image src="assets/imgs/handwhite.png" position="0 1.28 0.21"
-                animation="property: opacity; from: 0; to: 1.0; dur: 2000; easing: linear; loop: true" rotation="-30 0 0"
-                material="" geometry="" scale="0.3 0.4 0.5"></a-image>
-        </a-entity>  
+                animation="property: opacity; from: 0; to: 1.0; dur: 2000; easing: linear; loop: true"
+                rotation="-30 0 0" material="" geometry="" scale="0.3 0.4 0.5"></a-image>
+        </a-entity>
 
 
     </a-scene>
