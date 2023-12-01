@@ -24,31 +24,34 @@
 
     <div id="home" class="modal">
         <h1>Hi Everyone!</h1>
-            <p>My name is Kevin Cooray, and I'm a creative web designer based in Italy.<br><br>
-                You can contact me at <a href="mailto:kevin.cooray98@gmail.com">kevin.cooray98@gmail.com</a> or you can find me on my socials.
-            </p>
-            
-            
+        <p>My name is Kevin Cooray, and I'm a creative web designer based in Italy.<br><br>
+            You can contact me at <a href="mailto:kevin.cooray98@gmail.com">kevin.cooray98@gmail.com</a> or you can find
+            me on my socials.
+        </p>
+
+
         <p>My social are:</p>
         <div style="display: flex;align-items: center;justify-content: center;padding-bottom: 5%;">
 
-                <div class="social-links">
-                    <a href="https://www.instagram.com/kevdesign_98/"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/kevin-cooray-236133179"><i class="fab fa-linkedin-in"></i></a>
-                </div>    
+            <div class="social-links">
+                <a href="https://www.instagram.com/kevdesign_98/"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/kevin-cooray-236133179"><i class="fab fa-linkedin-in"></i></a>
+            </div>
         </div>
     </div>
 
     <div id="utl" class="modal">
         <img src="assets/imgs/utl-logo.png" style="width: 20%;" />
         <h2>UTL Informatica</h2>
+        <h3>2019 - 2020</h3>
         <p>I was mainly involved in Web Design, creating dynamic and responsive websites with WordPress. I indexed sites
             with Google Search Console, and other technologies.</p>
     </div>
 
     <div id="eidos" class="modal">
         <img src="assets/imgs/eidos.svg" style="width: 70%;">
-        <p>eidos Thanks for clicking. That felt good.</p>
+        <h3>2021 - 2023</h3>
+        <p>Thanks for clicking. That felt good.</p>
     </div>
 
     <!-- <div id="eidos-ff" class="modal">
@@ -61,9 +64,15 @@
         <p>eidos sas dsaaThanks for clicking. That felt good.</p>
     </div> -->
 
+    <div id="totem-skills" class="modal">
+        <h2>My skills</h2>
+        <p>Good ability to use Adobe Creative Suite (Illustrator and Photoshop) to create attractive and modern graphics. Extensive knowledge of HTML, CSS (frameworks such as bootstrap) and JavaScript for web development, such as implementing js libraries (swiper, aos etc.). <br> I have honed my soft skills such as time management, problem solving and teamwork, and the flexibility to adapt to new jobs and challenges.</p>
+    </div>
+
     <div id="comics" class="modal">
         <img src="assets/imgs/logo_scuola_comics.png" style="width: 80%;" />
         <h2>Scuola Internazionale di Comics</h2>
+        <h3>2018 - 2019</h3>
         <p>I attended the International School of Comics in Florence, where I took a course in web design, acquiring the
             necessary skills to design, develop and manage dynamic websites.</p>
     </div>
@@ -96,9 +105,17 @@
 
 
         <!-- SKILLS -->
-        <a-image id="name" scale="3.09 1.4 1" position="1.092 1.15965 -4.9115" rotation="0 90 0"
+        <a-image id="skills" scale="3.09 1.4 1" position="1.092 1.15965 -4.9115" rotation="0 90 0"
             src="assets/imgs/hud-blue.png"
             animation="property: opacity; from: 0.5; to: 1.0; dur: 500; easing: linear; loop: true; dir:alternate;  "></a-image>
+
+
+        <a-entity id="totem-skills" gltf-model="./assets/gltf/totem-small.glb" position="1.13477 -0.6 -4.97955"
+            modal="div: totem-skills" class="clickable" scale="0.7 0.7 0.7" rotation="0 90 0">
+            <a-image src="assets/imgs/handwhite.png" position="0.031 1.28 0.218"
+                animation="property: opacity; from: 0; to: 1.0; dur: 2000; easing: linear; loop: true"
+                rotation="-30 0 0" material="" geometry="" scale="0.3 0.4 0.5" opacity="0.2565"></a-image>
+        </a-entity>
 
         <!-- COMICS -->
         <a-entity id="totem-comics" gltf-model="./assets/gltf/totem-small.glb" position="4 -0.6 -9" modal="div: comics"
@@ -157,19 +174,19 @@
                 rotation="-30 0 0" material="" geometry="" scale="0.3 0.4 0.5"></a-image>
         </a-entity>
 
-        <a-entity id="totem-eidos-foc" gltf-model="./assets/gltf/totem-small.glb" position="-7.465 1.2 -8.534"
+        <!-- <a-entity id="totem-eidos-foc" gltf-model="./assets/gltf/totem-small.glb" position="-7.465 1.2 -8.534"
             modal="div: eidos" class="clickable" scale="0.7 0.7 0.7" rotation="0 90 0">
             <a-image src="assets/imgs/handwhite.png" position="0 1.28 0.21"
                 animation="property: opacity; from: 0; to: 1.0; dur: 2000; easing: linear; loop: true"
                 rotation="-30 0 0" material="" geometry="" scale="0.3 0.4 0.5"></a-image>
-        </a-entity>
+        </a-entity>   -->
 
-        <a-entity id="totem-eidos" gltf-model="./assets/gltf/totem-small.glb" position="-7.465 1.2 -6.205"
+        <!-- <a-entity id="totem-eidos" gltf-model="./assets/gltf/totem-small.glb" position="-7.465 1.2 -6.205"
             modal="div: eidos" class="clickable" scale="0.7 0.7 0.7" rotation="0 90 0">
             <a-image src="assets/imgs/handwhite.png" position="0 1.28 0.21"
                 animation="property: opacity; from: 0; to: 1.0; dur: 2000; easing: linear; loop: true"
                 rotation="-30 0 0" material="" geometry="" scale="0.3 0.4 0.5"></a-image>
-        </a-entity>
+        </a-entity> -->
 
 
     </a-scene>
