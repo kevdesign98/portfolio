@@ -13,9 +13,7 @@
     <!-- jQuery Modal -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-
-
-
+    
 </head>
 
 <body id="main">
@@ -24,6 +22,7 @@
 
     <div id="home" class="modal">
         <h1>Hi Everyone!</h1>
+
         <p>My name is Kevin Cooray, and I'm a creative web designer based in Italy.<br><br>
             You can contact me at <a href="mailto:kevin.cooray98@gmail.com">kevin.cooray98@gmail.com</a> or you can find
             me on my socials.
@@ -51,10 +50,14 @@
     <div id="eidos" class="modal">
         <img src="assets/imgs/eidos.svg" style="width: 70%;">
         <h3>2021 - 2023</h3>
-        <p>I joined Eidosmedia as an intern with limited prior knowledge in the web design sector. Through consistent effort and strong dedication, I turned this experience into a meaningful learning journey. 
-            <br>During my internship, I gained essential knowledge in HTML, CSS, JS, and the Adobe suite, and honed soft skills such as time management and effective communication. 
-            <br>This opportunity served as a launching pad for my professional growth, resulting in tangible outcomes like landing pages for corporate events, webinars, and graphic materials for various occasions. 
-            <br>My rapid evolution demonstrates my eagerness to learn and adapt to challenges in a dynamic environment.</p>
+        <p>I joined Eidosmedia as an intern with limited prior knowledge in the web design sector. Through consistent
+            effort and strong dedication, I turned this experience into a meaningful learning journey.
+            <br>During my internship, I gained essential knowledge in HTML, CSS, JS, and the Adobe suite, and honed soft
+            skills such as time management and effective communication.
+            <br>This opportunity served as a launching pad for my professional growth, resulting in tangible outcomes
+            like landing pages for corporate events, webinars, and graphic materials for various occasions.
+            <br>My rapid evolution demonstrates my eagerness to learn and adapt to challenges in a dynamic environment.
+        </p>
     </div>
 
     <!-- <div id="eidos-ff" class="modal">
@@ -69,7 +72,10 @@
 
     <div id="totem-skills" class="modal">
         <h2>My skills</h2>
-        <p>Good ability to use Adobe Creative Suite (Illustrator and Photoshop) to create attractive and modern graphics. Extensive knowledge of HTML, CSS (like bootstrap) and JavaScript for web development, such as implementing js libraries (swiper, aos etc.). <br> I have honed my soft skills such as time management, problem solving and teamwork, and the flexibility to adapt to new jobs and challenges.</p>
+        <p>Good ability to use Adobe Creative Suite (Illustrator and Photoshop) to create attractive and modern
+            graphics. Extensive knowledge of HTML, CSS (like bootstrap) and JavaScript for web development, such as
+            implementing js libraries (swiper, aos etc.). <br> I have honed my soft skills such as time management,
+            problem solving and teamwork, and the flexibility to adapt to new jobs and challenges.</p>
     </div>
 
     <div id="comics" class="modal">
@@ -99,12 +105,17 @@
                 animation="property: opacity; from: 0; to: 1.0; dur: 2000; easing: linear; loop: true"
                 rotation="-30 0 0" material="" geometry="" scale="0.3 0.4 0.5"></a-image>
         </a-entity>
-        <a-image id="name" scale="1.5 0.9 1" position="-1.5 1.6 -3.1" rotation="0 360 0"
-            src="assets/imgs/new-titles.png" material="" geometry=""></a-image>
+        <a-image id="name" scale="1.5 0.9 1" position="-1.5 1.6 -3.1" rotation="0 360 0" src="assets/imgs/titles.png"
+            material="" geometry=""></a-image>
 
 
-        <a-entity id="omino" gltf-model="./assets/gltf/" position="-1.95801 0.33695 -2.471" scale="0.7 0.7 0.7"
-            rotation=""></a-entity>
+
+
+        <!-- <a-entity id="omino" scale="0.1 0.1 0.1" position="-1.95801 0.33695 -2.471" 
+            gltf-model="./assets/gltf/omino.gltf"></a-entity> -->
+
+        <a-entity id="omino" scale="0.008 0.008 0.008" position="-1.57705 0.13236 -1.60781"
+            gltf-model="./assets/gltf/omino.gltf" rotation=""></a-entity>
 
 
         <!-- SKILLS -->
