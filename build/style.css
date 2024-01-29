@@ -25,6 +25,7 @@ p {
   font-weight: 500;
 }
 
+/* SOCIAL STYLE */
 
 .social-container {
   display: flex;
@@ -84,23 +85,30 @@ p {
   transition: all 0.3s ease;
 }
 .sweep-style .social-icons a.ic-facebook {
-  color: #006FFF;
+  color: #006fff;
 }
 .sweep-style .social-icons a.ic-facebook:after {
-  background-color: #006FFF;
+  background-color: #006fff;
 }
 .sweep-style .social-icons a.ic-instagram {
   color: #ff5f40;
 }
 .sweep-style .social-icons a.ic-instagram:after {
   background: #feda75;
-  background: linear-gradient(130deg, #feda75 0%, #fa7e1e 25%, #d62976 50%, #962fbf 75%, #4f5bd5 100%);
+  background: linear-gradient(
+    130deg,
+    #feda75 0%,
+    #fa7e1e 25%,
+    #d62976 50%,
+    #962fbf 75%,
+    #4f5bd5 100%
+  );
 }
 .sweep-style .social-icons a.ic-twitter {
-  color: #00C6FB;
+  color: #00c6fb;
 }
 .sweep-style .social-icons a.ic-twitter:after {
-  background-color: #00C6FB;
+  background-color: #00c6fb;
 }
 .sweep-style .social-icons a.ic-tiktok {
   color: #000;
@@ -116,7 +124,6 @@ p {
   background-color: #ff0000;
 }
 
-
 .hover_img a {
   position: relative;
 }
@@ -128,3 +135,87 @@ p {
 .hover_img a:hover span {
   display: block;
 }
+
+ 
+/* LOADING SCREEN */
+.intro-title{
+  font-size: 96px;
+  font-weight: 600;
+  line-height: 100%;
+  text-transform: uppercase;
+  font-family: "Nunito", sans-serif;
+}
+
+.btn-intro{
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  border: none;
+  background-color: white;
+  color: black;
+  border-radius: 99px;
+}
+
+.btn-intro:hover {
+  cursor: pointer;
+  color: white; 
+  background-color: #542BEC;
+}
+.btn-intro:active { 
+  cursor: pointer;
+  color: white; 
+  background-color: black;
+}
+
+#loadingscreen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: black;
+  z-index: 1000;
+  color: white;
+}
+
+#loader-wrapper {
+  position: absolute;
+  width: 90%;
+  max-width: 1080px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  justify-content: space-between;
+}
+
+ 
+.cta {
+  width: 320px;
+  height: 64px;
+  font-size: 20px;
+  background: #542bec;
+  color: white;
+}
+
+.cta:hover {
+  background: white;
+  color: black;
+}
+
+@media only screen and (max-width: 600px) {
+  .cta {
+    width: 100%;
+  }
+  #progress {
+    width: 100%;
+  }
+}
+
+
+/* MOUSE ICON */
