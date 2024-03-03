@@ -1,0 +1,407 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-svg-extruder@1.0.0/dist/index.min.js"></script>
+
+
+    <!-- Remember to include jQuery :) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+
+    <!-- jQuery Modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+</head>
+
+<body id="main">
+
+
+
+
+    <!-- MODALS -->
+
+    <!-- <div id="intro" class="modal">
+         
+        <div class="intro-scroll">
+            <h3>Scroll up and down for to look at the portfolio.</h3>
+            <a href="javascript:;" class="scroll-down mouse effect1"
+                style="display: flex;justify-content: center;align-items: center;"><span></span></a>
+        </div>
+        
+    </div> -->
+
+    <div id="home" class="modal">
+        <img src="assets/imgs/kev-circle.png" style="border-radius: 50%; height: 10%;">
+
+        <h1>Hi Everyone! 👋🏽</h1>
+        <div class="intro-scroll">
+            <h3>Scroll up and down for to look at the portfolio.</h3>
+            <a href="javascript:;" class="scroll-down mouse effect1"
+                style="display: flex;justify-content: center;align-items: center;"><span></span></a>
+        </div>
+        <p>My name is Kevin Cooray, and I'm a creative web designer based in Italy.<br><br>
+            You can contact me at <a href="mailto:kevin.cooray98@gmail.com">kevin.cooray98@gmail.com</a> or you can find
+            me on my socials.
+        </p>
+
+        <p style="margin-bottom: 0px;">My social are:</p>
+        <div style="display: flex;align-items: center;justify-content: center;padding-bottom: 5%;">
+
+            <div class="social-container sweep-style">
+                <ul class="social-icons">
+                    <li>
+                        <a href="https://www.linkedin.com/in/kevin-cooray-236133179" class="ic-facebook">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/kevdesign_98/" class="ic-instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="utl" class="modal">
+        <img src="assets/imgs/utl-logo.png" style="width: 20%;" />
+        <h2>UTL Informatica</h2>
+        <h3>2019 - 2020</h3>
+        <p>I was mainly involved in Web Design, creating dynamic and responsive websites with WordPress. I indexed sites
+            with Google Search Console, and other technologies.</p>
+    </div>
+
+    <div id="eidos" class="modal">
+        <img src="assets/imgs/eidos.svg" style="width: 70%;">
+        <h3>2021 - 2023</h3>
+        <p>I joined Eidosmedia as an intern with limited prior knowledge in the web design sector. Through consistent
+            effort and strong dedication, I turned this experience into a meaningful learning journey.
+            <br>During my internship, I gained essential knowledge in HTML, CSS, JS, and the Adobe suite, and honed soft
+            skills such as time management and effective communication.
+            <br>This opportunity served as a launching pad for my professional growth, resulting in tangible outcomes
+            like landing pages for corporate events, webinars, and graphic materials for various occasions.
+            <br>My rapid evolution demonstrates my eagerness to learn and adapt to challenges in a dynamic environment.
+        </p>
+    </div>
+
+    <!-- <div id="eidos-ff" class="modal">
+        <h2>Eidosmedia Future Financial</h2>
+        <p>eidos sas Thanks for clicking. That felt good.</p>
+    </div> -->
+
+    <!-- <div id="eidos-foc" class="modal">
+        <h2>Eidosmedia Future of Content</h2>
+        <p>eidos sas dsaaThanks for clicking. That felt good.</p>
+    </div> -->
+
+    <div id="totem-skills" class="modal">
+        <h2>My skills 🛠️</h2>
+        <p>Good ability to use Adobe Creative Suite (Illustrator and Photoshop) to create attractive and modern
+            graphics. Extensive knowledge of HTML, CSS (like bootstrap) and JavaScript for web development, such as
+            implementing js libraries (swiper, aos etc.). <br> I have honed my soft skills such as time management,
+            problem solving and teamwork, and the flexibility to adapt to new jobs and challenges.</p>
+    </div>
+
+    <div id="comics" class="modal">
+        <img src="assets/imgs/logo_scuola_comics.png" style="width: 80%;" />
+        <h2>Scuola Internazionale di Comics</h2>
+        <h3>2018 - 2019</h3>
+        <p>I attended the International School of Comics in Florence, where I took a course in web design, acquiring the
+            necessary skills to design, develop and manage dynamic websites.</p>
+    </div>
+
+
+    <a-scene vr-mode-ui="enabled: false">
+
+        <!-- SETUP GENERALE -->
+        <a-entity id="camera" follow camera></a-entity>
+        <a-entity gltf-model="./assets/gltf/stanze-v1-alternative-1.glb"></a-entity>
+        <a-entity cursor="rayOrigin:mouse" raycaster="objects: .clickable"></a-entity>
+        <a-assets>
+            <img id="sky" src="assets/imgs/sky-3-grey.png">
+        </a-assets>
+        <a-sky src="#sky"></a-sky>
+
+        <!-- HOME -->
+        <a-entity id="totem-home" gltf-model="./assets/gltf/totem-small.glb" position="-0.82661 0 -2.47105"
+            modal="div: home" class="clickable" scale="0.7 0.7 0.7" rotation="0 0 0">
+            <a-image src="assets/imgs/handwhite.png" position="0 1.28 0.21"
+                animation="property: opacity; from: 0; to: 1.0; dur: 2000; easing: linear; loop: true"
+                rotation="-30 0 0" material="" geometry="" scale="0.3 0.4 0.5"></a-image>
+        </a-entity>
+        <a-image id="name" scale="1.5 0.9 1" position="-1.5 1.6 -3.1" rotation="0 360 0" src="assets/imgs/titles.png"
+            material="" geometry=""></a-image>
+
+
+
+
+        <!-- <a-entity id="omino" scale="0.1 0.1 0.1" position="-1.95801 0.33695 -2.471" 
+            gltf-model="./assets/gltf/omino.gltf"></a-entity>  -->
+
+        <!-- <a-entity id="omino" scale="0.008 0.008 0.008" position="-1.556 0.132 -1.609"
+            gltf-model="./assets/gltf/omino.gltf" rotation=""></a-entity> -->
+
+
+        <!-- SKILLS -->
+        <a-image id="skills" scale="3.09 1.4 1" position="1.092 1.15965 -4.9115" rotation="0 90 0"
+            src="assets/imgs/hud-blue.png"
+            animation="property: opacity; from: 0.5; to: 1.0; dur: 500; easing: linear; loop: true; dir:alternate;  "></a-image>
+
+
+        <a-entity id="totem-skills" gltf-model="./assets/gltf/totem-small.glb" position="1.13477 -0.6 -4.97955"
+            modal="div: totem-skills" class="clickable" scale="0.7 0.7 0.7" rotation="0 90 0">
+            <a-image src="assets/imgs/handwhite.png" position="0.031 1.28 0.218"
+                animation="property: opacity; from: 0; to: 1.0; dur: 2000; easing: linear; loop: true"
+                rotation="-30 0 0" material="" geometry="" scale="0.3 0.4 0.5" opacity="0.2565"></a-image>
+        </a-entity>
+
+        <!-- COMICS -->
+        <a-entity id="totem-comics" gltf-model="./assets/gltf/totem-small.glb" position="4 -0.6 -9" modal="div: comics"
+            class="clickable" scale="0.7 0.7 0.7" rotation="0 -40 0">
+            <a-image src="assets/imgs/comics-white-1.png" position="0.031 1.280 0.218"
+                animation="property: opacity; from: 0; to: 1.0; dur: 2000; easing: linear; loop: true"
+                rotation="-30 0 0" material="" geometry="" scale="0.600 0.280 0.510"></a-image>
+        </a-entity>
+
+        <a-image id="js" scale="0.5 0.2 1" position="-0.2073 1.2 -10.232" src="assets/imgs/js.png"></a-image>
+        <a-entity id="headjs" scale="0.1 0.1 0.1" gltf-model="./assets/gltf/testa.min.glb"
+            animation__rotation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 5000; easing: linear"
+            animation__position="property: position; from: -0.2073 -0.2 -10.232; to: -0.2073 0.2 -10.232; loop: true; dur: 3000; easing: linear; dir: alternate"></a-entity>
+
+        <a-image id="css" scale="0.5 0.2 1" position="1.510 1.200 -10.232" src="assets/imgs/css.png"></a-image>
+        <a-entity scale="0.1 0.1 0.1" position="3.30 0 -10.24" rotation="0 -89.762 0"
+            gltf-model="./assets/gltf/testa.html.glb"></a-entity>
+
+
+        <a-image id="html" scale="0.600 0.2 1" position="3.338 1.200 -10.232" src="assets/imgs/html.png"></a-image>
+        <a-entity scale="0.1 0.1 0.1" position="1.53 0 -10.24" rotation="0 -89.762 0"
+            gltf-model="./assets/gltf/testa.min.glb"></a-entity>
+
+
+        <!-- EXPIRIENCE -->
+        <!-- 
+        <a-image id="utl-tco" scale="1.92 1 1" position="-6.51032 2.78 -12.69735" rotation="0 360 0"
+            linkable="link:https://www.tcospedizioni.it" class="clickable"
+            src="assets/portfolio/TCO.png" material="" geometry=""></a-image> -->
+
+        <a-image id="utl-romiti" scale="1.92 1 1" position="-6.51032 2.78 -12.69735" rotation="0 360 0"
+            linkable="link:https://www.romitivivai.it/en/home-en/" class="clickable" src="assets/portfolio/romiti.png"
+            material="" geometry=""></a-image>
+
+        <a-image id="eidos-ff" scale="1.92 1 1" position="-7.89248 2.78 -10.87226" rotation="0 90 0"
+            linkable="link:https://www.eidosmedia.com/future-financial" class="clickable"
+            src="assets/portfolio/Eidos-FF.png" material="" geometry=""></a-image>
+        <a-image id="eidos-foc" scale="1.92 1 1" position="-7.96326 2.78 -8.56344" rotation="0 90 0"
+            linkable="link:https://www.eidosmedia.com/future-of-content-2022" class="clickable"
+            src="assets/portfolio/Eidos-FOC.png" material="" geometry=""></a-image>
+        <a-image id="eidos-hp" scale="1.92 1 1" position="-7.95302 2.78 -6.19935" rotation="0 90 0"
+            linkable="link:https://www.eidosmedia.com" class="clickable" src="assets/portfolio/Eidos-HP.png" material=""
+            geometry=""></a-image>
+
+        <a-entity id="totem-utl" gltf-model="./assets/gltf/totem-small.glb" position="-5.92466 1.2 -12.42115"
+            modal="div: utl" class="clickable" scale="0.7 0.7 0.7" rotation="0 0 0">
+            <a-image src="assets/imgs/utl-logo.png" position="0.010 1.275 0.210"
+                animation="property: opacity; from: 0; to: 1.0; dur: 2000; easing: linear; loop: true"
+                rotation="-30 0 0" material="" geometry="" scale="0.410 0.410 0.550"></a-image>
+        </a-entity>
+
+        <a-entity id="totem-eidos-ff" gltf-model="./assets/gltf/totem-small.glb" position="-7.465 1.2 -10.848"
+            modal="div: eidos" class="clickable" scale="0.7 0.7 0.7" rotation="0 90 0">
+            <a-image src="assets/imgs/handwhite.png" position="0 1.28 0.21"
+                animation="property: opacity; from: 0; to: 1.0; dur: 2000; easing: linear; loop: true"
+                rotation="-30 0 0" material="" geometry="" scale="0.3 0.4 0.5"></a-image>
+        </a-entity>
+
+        <!-- <a-entity id="totem-eidos-foc" gltf-model="./assets/gltf/totem-small.glb" position="-7.465 1.2 -8.534"
+            modal="div: eidos" class="clickable" scale="0.7 0.7 0.7" rotation="0 90 0">
+            <a-image src="assets/imgs/handwhite.png" position="0 1.28 0.21"
+                animation="property: opacity; from: 0; to: 1.0; dur: 2000; easing: linear; loop: true"
+                rotation="-30 0 0" material="" geometry="" scale="0.3 0.4 0.5"></a-image>
+        </a-entity>   -->
+
+        <!-- <a-entity id="totem-eidos" gltf-model="./assets/gltf/totem-small.glb" position="-7.465 1.2 -6.205"
+            modal="div: eidos" class="clickable" scale="0.7 0.7 0.7" rotation="0 90 0">
+            <a-image src="assets/imgs/handwhite.png" position="0 1.28 0.21"
+                animation="property: opacity; from: 0; to: 1.0; dur: 2000; easing: linear; loop: true"
+                rotation="-30 0 0" material="" geometry="" scale="0.3 0.4 0.5"></a-image>
+        </a-entity> -->
+
+
+    </a-scene>
+
+
+
+    <script>
+
+        var gpos = [];
+        var grot = [];
+
+        var camPosIndex = 0;
+        // https://codepen.io/wiledal/embed/WvNvEq?#js-box
+
+        // position spline
+        const spline = new THREE.CatmullRomCurve3([
+            new THREE.Vector3(-10, 0, 10),
+            new THREE.Vector3(-5, 5, 5),
+            new THREE.Vector3(0, 0, 0),
+            new THREE.Vector3(5, -5, 5),
+            new THREE.Vector3(10, 0, 10),
+            new THREE.Vector3(5, -5, 5),
+            new THREE.Vector3(0, 0, 0),
+            new THREE.Vector3(-5, 5, 5),
+            new THREE.Vector3(-10, 0, 10),
+        ]);
+
+        const pos_spline = new THREE.CatmullRomCurve3([new THREE.Vector3(-1.79, 1.80, 0.79), new THREE.Vector3(2.37, 1.00, 0.76), new THREE.Vector3(3.01, 1.00, -4.85), new THREE.Vector3(2.26, 0.80, -6.20), new THREE.Vector3(2.22, 0.80, -8.19), new THREE.Vector3(-0.45, 0.80, -9.66), new THREE.Vector3(-4.82, 2.00, -9.64), new THREE.Vector3(-6.06, 2.60, -11.14), new THREE.Vector3(-6.06, 2.60, -11.14), new THREE.Vector3(-6.06, 2.60, -8.16), new THREE.Vector3(-6.07, 2.60, -6.18), new THREE.Vector3(-6.07, 2.60, -6.18), new THREE.Vector3(-1.54, 2.60, 0.31),]);
+
+        const rot_spline = new THREE.CatmullRomCurve3([new THREE.Vector3(-0.33, 0.01, 0.00), new THREE.Vector3(-0.33, 0.01, 0.00), new THREE.Vector3(-0.03, 1.60, 0.00), new THREE.Vector3(-0.30, 0.02, 0.00), new THREE.Vector3(-0.30, -1.00, 0.00), new THREE.Vector3(-0.25, 1.56, 0.00), new THREE.Vector3(0.00, 0.85, 0.00), new THREE.Vector3(-0.02, 0.35, 0.00), new THREE.Vector3(-0.04, 1.57, 0.00), new THREE.Vector3(-0.04, 1.57, 0.00), new THREE.Vector3(-0.04, 1.57, 0.00), new THREE.Vector3(-0.21, 3.08, 0.00), new THREE.Vector3(-0.25, 6.34, 0.00),]);
+
+
+        addEventListener("wheel", (event) => {
+            // console.log("pippo",event)
+            camPosIndex += event.deltaY * -0.1;
+            // camPosIndex += 20 * 0.1;
+            console.log(camPosIndex);
+            if (camPosIndex > steps) {
+                camPosIndex = 0;
+            } else if (camPosIndex < 0) {
+                camPosIndex = steps;
+            }
+        });
+
+        addEventListener("touchmove", (event) => {
+            // console.log("pippo",event)
+            camPosIndex += 20 * 0.1;
+            console.log(camPosIndex);
+            if (camPosIndex > steps) {
+                camPosIndex = 0;
+            } else if (camPosIndex < 0) {
+                camPosIndex = steps;
+            }
+        });
+
+
+        const steps = 1000;
+
+        AFRAME.registerComponent('follow', {
+            tick: function (t) {
+                var camera = this.el.object3D;
+
+                /*
+                camPosIndex = t * 0.1; 
+                console.log(t)
+                */
+
+                // camPosIndex è gestito dal mouse
+                if (camPosIndex > steps) {
+                    camPosIndex = 0;
+                } else if (camPosIndex < 0) {
+                    camPosIndex = steps;
+                }
+
+
+                var camPos = pos_spline.getPoint(camPosIndex / steps);
+                var camRot = rot_spline.getPoint(camPosIndex / steps);
+
+                camera.position.x = camPos.x;
+                camera.position.y = camPos.y;
+                camera.position.z = camPos.z;
+
+                camera.rotation.x = camRot.x;
+                camera.rotation.y = camRot.y;
+                camera.rotation.z = camRot.z;
+
+                // console.log("camRot", camRot)
+
+                // camera.lookAt(0,0,0);
+
+            },
+            update: function () {
+                console.log("update!!!!")
+            }
+        });
+
+
+
+        window.onkeydown = function (e) {
+            if (e.keyCode == 81) {
+                console.log("q");
+                document.getElementById('camera').object3D.position.y += 0.1;
+            }
+            if (e.keyCode == 90) {
+                console.log("z");
+                document.getElementById('camera').object3D.position.y -= 0.1;
+            }
+        }
+
+        window.onkeyup = function (e) {
+            // var pressed = "h";
+            // if (e.shiftKey) {
+            //     pressed += " + Shift";
+            // } else if (e.ctrlKey) {
+            //     pressed += " + Ctrl";
+            // } //and so on
+            // pressed += e.keyCode;
+            // console.log(pressed);
+            if (e.keyCode == 72) {
+                console.log("piru");
+                var pos = document.getElementById('camera').object3D.position;
+                var rot = document.getElementById('camera').object3D.rotation;
+                // console.log(">> pos ", pos, " rot ", rot)
+                console.log("position=\"", pos.x.toFixed(2), " ", pos.y.toFixed(2), " ", pos.z.toFixed(2), "\" rotation=\"", rot.x.toFixed(2), " ", rot.y.toFixed(2), " ", rot.z.toFixed(2), "\"")
+                console.log("pos: new THREE.Vector3(", pos.x.toFixed(2), ", ", pos.y.toFixed(2), ", ", pos.z.toFixed(2), "),");
+                console.log("rotaa: new THREE.Vector3(", rot.x.toFixed(2), ", ", rot.y.toFixed(2), ", ", rot.z.toFixed(2), "),");
+                gpos.push("new THREE.Vector3(" + pos.x.toFixed(2) + ", " + pos.y.toFixed(2) + ", " + pos.z.toFixed(2) + "),");
+                grot.push("new THREE.Vector3(" + rot.x.toFixed(2) + ", " + rot.y.toFixed(2) + ", " + rot.z.toFixed(2) + "),");
+            }
+
+
+            console.log(e.keyCode);
+        }
+
+
+        AFRAME.registerComponent('modal', {
+            schema: {
+                div: { type: 'string', default: '' },
+            },
+            init: function () {
+                var data = this.data;
+                console.log("init")
+                this.el.addEventListener('click', function () {
+                    $("#" + data.div).modal({
+                        fadeDuration: 100
+                    });
+                });
+            }
+        });
+
+        AFRAME.registerComponent('linkable', {
+            schema: {
+                link: { type: 'string', default: '' },
+            },
+            init: function () {
+                var data = this.data;
+                console.log("init")
+                this.el.addEventListener('click', function () {
+                    window.open(data.link, "_blank");
+                });
+            }
+        });
+
+
+     
+
+    </script>
+
+
+
+
+</body>
+
+</html>
