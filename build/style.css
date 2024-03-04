@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
 
 h1,
@@ -40,7 +40,7 @@ a {
   border-radius: 99px;
   /* height: 26px;
   width: 288px; */
-    
+
   background: #542bec;
   color: white;
 
@@ -48,12 +48,11 @@ a {
   font-family: "Nunito", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
-  font-style: normal;  
+  font-style: normal;
   text-align: center;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
   transition: all 0.3s ease;
-
 }
 
 .primary-btn:hover {
@@ -172,9 +171,8 @@ a {
   display: block;
 }
 
- 
 /* LOADING SCREEN */
-.intro-title{
+.intro-title {
   text-align: center;
   font-size: 96px;
   font-weight: 600;
@@ -231,11 +229,11 @@ a {
   justify-content: space-between;
 }
 
-.intro-scroll{
+.intro-scroll {
   font-size: 20px;
   font-weight: 800;
 }
- 
+
 /* .cta {
   width: 320px;
   height: 64px;
@@ -250,7 +248,7 @@ a {
 } */
 
 @media only screen and (max-width: 600px) {
-  .intro-title{
+  .intro-title {
     font-size: 50px;
     font-weight: 600;
     line-height: 100%;
@@ -258,59 +256,54 @@ a {
     font-family: "Nunito", sans-serif;
     text-align: center;
   }
-  .intro-scroll{
+  .intro-scroll {
     text-align: center;
     font-weight: 800;
     font-size: 18px;
     padding-bottom: 5%;
   }
-  
-  .primary-btn  {
-    width: 90%;
+
+  .primary-btn {
+    /*! width: 90%; */
     font-weight: 700;
+    margin-bottom: 20px;
+    padding: 12px 12px 12px 12px;
+    display: block;
   }
 }
 
 /* MOUSE ICON EFFECT */
 .scroll-down.mouse span {
-  position:relative;
-  display:inline-block;
-  width:30px;
-  height:60px;
-  border:2px solid #202020;
-  border-radius:50px;
-  top:5px;
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 60px;
+  border: 2px solid #202020;
+  border-radius: 50px;
+  top: 5px;
 }
 .scroll-down.mouse.effect1 span:after {
-  position:absolute;
-  content:"";
-  top:10px;
-  left:0;
-  right:0;
-  margin:0 auto;
-  width:6px;
-  height:6px;
-  border-radius:100%;
-  background:#202020;
-  animation:animateMousePointer 1.5s infinite
+  position: absolute;
+  content: "";
+  top: 10px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  background: #202020;
+  animation: animateMousePointer 1.5s infinite;
 }
 @keyframes animateMousePointer {
   0% {
-    transform:translateY(0)
+    transform: translateY(0);
   }
   50% {
-    opacity:.7
+    opacity: 0.7;
   }
   to {
-    opacity:0;
-    transform:translateY(20px)
+    opacity: 0;
+    transform: translateY(20px);
   }
-}
-
-.intro-portfolio{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  justify-content: space-around;
-  align-items: center;
 }
