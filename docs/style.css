@@ -60,6 +60,10 @@ a {
   color: black;
 }
 
+.txt-center {
+  text-align: center;
+}
+
 /* SOCIAL STYLE */
 
 .social-container {
@@ -247,31 +251,6 @@ a {
   color: black;
 } */
 
-@media only screen and (max-width: 600px) {
-  .intro-title {
-    font-size: 50px;
-    font-weight: 600;
-    line-height: 100%;
-    text-transform: uppercase;
-    font-family: "Nunito", sans-serif;
-    text-align: center;
-  }
-  .intro-scroll {
-    text-align: center;
-    font-weight: 800;
-    font-size: 18px;
-    padding-bottom: 5%;
-  }
-
-  .primary-btn {
-    /*! width: 90%; */
-    font-weight: 700;
-    margin-bottom: 20px;
-    padding: 12px 12px 12px 12px;
-    display: block;
-  }
-}
-
 /* MOUSE ICON EFFECT */
 .scroll-down.mouse span {
   position: relative;
@@ -308,14 +287,7 @@ a {
   }
 }
 
-@media only screen  and (min-width : 1824px){
-  .button-hide {
-    display: none;
-  }
-}
-
-
-.button-mobile-up {
+/* .button-mobile-up {
   user-select: none;
   position: fixed;
   bottom: calc(155px);
@@ -386,4 +358,45 @@ a {
   background-image: url(assets/imgs/down.png);
   background-size: cover;
   transform: rotate(180deg);
+} */
+
+@media only screen and (min-width: 1824px) {
+  .button-hide {
+    display: none;
+  }
+  #intro-mobile {
+    display: none;
+  }
+  .intro-swipe-mobile{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .intro-title {
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 100%;
+    text-transform: uppercase;
+    font-family: "Nunito", sans-serif;
+    text-align: center;
+  }
+  .intro-scroll {
+    text-align: center;
+    font-weight: 800;
+    font-size: 18px;
+    padding-bottom: 5%;
+  }
+
+  .intro-scroll-desktop{
+    display: none;
+  }
+
+  .primary-btn {
+    /*! width: 90%; */
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding: 12px 12px 12px 12px;
+    display: block;
+  }
 }

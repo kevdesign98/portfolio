@@ -17,12 +17,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 
-    <title>Hey,you! I'm Kevin Cooray</title>
+    <title>Kevin's World</title>
 
 </head>
 
 <body id="main">
-   
+
     <!-- BUTTON MOBILE -->
     <!-- <section class="button-hide">
         <div class="button-mobile-up">
@@ -35,20 +35,29 @@
             <div class="button-down-icon"></div>
         </div>
     </section> -->
-   
+
 
 
     <!-- MODALS -->
-
-    <!-- <div id="intro" class="modal">
-         
+    <div id="intro" class="modal">
         <div class="intro-scroll">
-            <h3>Scroll up and down for to look at the portfolio.</h3>
+            <h2 class="txt-center">Hello Visitors👋🏽</h2>
             <a href="javascript:;" class="scroll-down mouse effect1"
                 style="display: flex;justify-content: center;align-items: center;"><span></span></a>
+            <h3 class="txt-center intro-scroll-desktop">Scroll up and down to explore. &#128526</h3>
+            <h3 class="txt-center intro-swipe-mobile">Swipe up and down to explore. &#128526</h3>
+                
         </div>
-        
-    </div> -->
+    </div>
+
+    <div id="intro-mobile" class="modal">
+        <div class="intro-scroll-mobile">
+            <h2 class="txt-center" style="font-size: 31px;">Hello Visitors👋🏽</h2>
+            <a href="javascript:;" class="scroll-down mouse effect1"
+                style="display: flex;justify-content: center;align-items: center;"><span></span></a>
+            <h3 class="txt-center">Swipe up and down for to look at the portfolio &#128526</h3>     
+        </div>
+    </div> 
 
     <div id="home" class="modal">
         <!-- <img src="assets/imgs/kev-circle.png" style="border-radius: 50%;width: 30%; height: 10%;"> -->
@@ -412,6 +421,10 @@
         });
 
 
+        // MODALE INTRO
+        $(document).ready(function () {
+            $('#intro').modal('show');
+        });
 
 
     </script>
