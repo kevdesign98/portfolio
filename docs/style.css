@@ -367,9 +367,20 @@ a {
   #intro-mobile {
     display: none;
   }
-  .intro-swipe-mobile{
+  .intro-swipe-mobile {
     display: none;
   }
+}
+
+@media only screen and (max-width: 810px) {
+  .intro-scroll-desktop {
+    display: none;
+  }
+
+  .scroll-down.mouse.effect1 {
+    display: none !important;
+  }
+  
 }
 
 @media only screen and (max-width: 600px) {
@@ -388,7 +399,7 @@ a {
     padding-bottom: 5%;
   }
 
-  .intro-scroll-desktop{
+  .intro-scroll-desktop {
     display: none;
   }
 
@@ -400,10 +411,12 @@ a {
     display: block;
   }
 
-  .scroll-down.mouse.effect1{
+  .scroll-down.mouse.effect1 {
     display: none !important;
   }
-  #lottie-controls.toolbar{
+  #lottie-controls.toolbar {
     display: none !important;
   }
 }
+
+
