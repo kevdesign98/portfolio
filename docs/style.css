@@ -419,4 +419,7 @@ a {
   }
 }
 
+.toolbar{
+  display: none !important;
+}
 
