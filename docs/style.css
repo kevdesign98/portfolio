@@ -380,6 +380,7 @@ a {
   .scroll-down.mouse.effect1 {
     display: none !important;
   }
+  
 }
 
 @media only screen and (max-width: 600px) {
@@ -409,4 +410,10 @@ a {
     padding: 12px 12px 12px 12px;
     display: block;
   }
+
+  .scroll-down.mouse.effect1 {
+    display: none !important;
+  }
 }
+
+
