@@ -417,3 +417,31 @@ a {
 }
 
 
+.text-hover {
+  position: relative;
+  display: inline-block;
+}
+
+.image {
+  opacity: 0;
+  transition: opacity 0.3s ease; /* Aggiunta di transizione */
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%; /* Adattabile per la reattività */
+  max-width: 300px;
+  padding: 5px;
+  z-index: 9999999;
+}
+
+.text-hover:hover .image {
+  opacity: 1; 
+}
+
+@media (max-width: 600px) {
+  .image {
+      width: 90%; 
+      max-width: 200px; 
+  }
+}
