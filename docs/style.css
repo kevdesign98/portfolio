@@ -34,16 +34,13 @@ a {
 .primary-btn {
   -webkit-font-smoothing: antialiased;
   display: inline-block;
-
   padding: 12px 30px;
   border: none;
   border-radius: 99px;
   /* height: 26px;
   width: 288px; */
-
   background: #542bec;
   color: white;
-
   font-size: 20px;
   font-family: "Nunito", sans-serif;
   font-optical-sizing: auto;
@@ -176,7 +173,7 @@ a {
 }
 
 /* LOADING SCREEN */
-body {
+/* body {
   height: 100vh;
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
@@ -193,7 +190,7 @@ body {
   100% {
       background-position: 0% 50%;
   }
-}
+} */
 
 .intro-title {
   text-align: center;
@@ -462,4 +459,8 @@ body {
       width: 90%; 
       max-width: 200px; 
   }
+}
+
+.center-title h1, h2{
+  text-align: center;
 }
