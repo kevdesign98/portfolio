@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -18,26 +18,71 @@
 
 </head>
 
-<body id="main">
+<body>
 
-    <!-- INTRO  -->
-    <div id="loadingscreen">
-        <div id="loader-wrapper" style=" display: flex;align-items: center;justify-content: center;">
-            <img src="assets/imgs/Waving Hand.png" style="height: 3rem;">
-            <h1 style="text-align: center;color: #000;font-size: 56px;">
-                Hi there, I'm </h1>
-            <div class="intro-title" style="text-transform: none;">
-                Kevin Cooray
-            </div>
-            <div>
-                <a class="primary-btn" href="webgl.html"><span>Explore
-                        my world (webgl) <i class="fa-solid fa-arrow-right"></i></span></a>
-                <a class="primary-btn" href="https://kevdesign98.github.io/portfolio-html/"><span>Portfolio (HTML)<i
-                            class="fa-solid fa-arrow-right"></i></span></a>
-            </div>
-
-        </div>
+   <!-- INTRO  -->
+   <section class="py-lg-10 py-6 rounded-4 mx-xxl-10 mx-lg-6 position-relative">
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center rounded-4 bg-gradients ">
+      <div class="p-lg-5 mx-auto my-5">
+        <h1 class="display-3 fw-bold text-center text-white">Hello there!✌️
+        </h1>
+        <h3 class="mb-3 text-center text-white">Visit my portfolios</h3>
+      </div>
+      <div class="product-device shadow-sm d-none d-md-block"></div>
+      <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
     </div>
+  </section>
+
+
+
+
+  <section class="py-6 m-md-3 mx-lg-6">
+    <div class="container-fluid px-lg-0">
+      <div class="row gy-6">
+        <div class="col-xl-6 col-12 " id="cards">
+          <div class="bg-opacity-10 rounded-4 pt-6 darkblue-card animate glow delay-1">
+            <div class="text-center text-white px-xl-10 mx-xl-10 px-4">
+              <h2 class="fw-bold mb-2 pt-4">Portfolio WebGL</h2>
+              <p class="text-center">Build with HTML & CSS,JS, A-Frame with a Jquery plugin.</p>
+            </div>
+            <div class="position-relative text-center overflow-hidden z-1">
+              <div class="img-hover py-4">
+                <a href="https://kevdesign98.github.io/portfolio/webgl.html" target="_blank">
+                  <img src="assets/imgs/room.png" alt="Portfolio webgl" class="img-fluid">
+                </a>
+              </div>
+              <div class="pb-4">
+                <button href="https://kevdesign98.github.io/portfolio/webgl.html"
+                  class="rounded-pill text-link link-dark fw-semibold mt-3 d-inline-block text-white btn btn-primary"
+                  target="_blank"> Discover more </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-6 col-12" >
+          <div class=" rounded-4 pt-6 lightgrey-card animate glow delay-2">
+            <div class="text-center text-black px-xl-10 mx-xl-10 px-4">
+              <h2 class="fw-bold mb-2 pt-4">Portfolio</h2>
+              <p class="text-center">Build with HTML & CSS,JS, Bootstrap.</p>
+            </div>
+            <div class="position-relative text-center overflow-hidden z-1">
+              <div class="img-hover py-4">
+                <a href="https://kevdesign98.github.io/portfolio/webgl.html" target="_blank">
+                  <img src="assets/imgs/portfolio.png" alt="Portfolio webgl" class="img-fluid" style="width: 650px;">
+                </a>
+              </div>
+              <div class="pb-4">
+                <button href="https://kevdesign98.github.io/portfolio/webgl.html"
+                  class="rounded-pill text-link link-dark fw-semibold mt-3 d-inline-block text-white btn btn-primary"
+                  target="_blank"> Discover more </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
     
 </body>
 </html>

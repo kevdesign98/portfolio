@@ -68,6 +68,7 @@ a {
   flex-flow: column;
   border-bottom: 1px solid #fff;
 }
+
 .social-container:last-child {
   border-bottom: 0;
 }
@@ -77,11 +78,13 @@ a {
   margin: 0;
   padding: 0;
 }
+
 .sweep-style .social-icons li {
   position: relative;
   display: inline-block;
   margin: 10px;
 }
+
 .sweep-style .social-icons a {
   display: flex;
   position: relative;
@@ -94,6 +97,7 @@ a {
   text-decoration: none;
   transition: all 0.3s ease;
 }
+
 .sweep-style .social-icons a:after {
   content: "";
   width: 64px;
@@ -104,58 +108,70 @@ a {
   transition: all 0.3s ease;
   background-color: #000;
 }
+
 .sweep-style .social-icons a:hover {
   transform: translateY(-4px);
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.16);
 }
+
 .sweep-style .social-icons a:hover i {
   color: #fff;
 }
+
 .sweep-style .social-icons a:hover:after {
   transform: translate(0) scale(1.2);
 }
+
 .sweep-style .social-icons a i {
   margin: auto;
   font-size: 24px;
   z-index: 1;
   transition: all 0.3s ease;
 }
+
 .sweep-style .social-icons a.ic-facebook {
   color: #006fff;
 }
+
 .sweep-style .social-icons a.ic-facebook:after {
   background-color: #006fff;
 }
+
 .sweep-style .social-icons a.ic-instagram {
   color: #ff5f40;
 }
+
 .sweep-style .social-icons a.ic-instagram:after {
   background: #feda75;
-  background: linear-gradient(
-    130deg,
-    #feda75 0%,
-    #fa7e1e 25%,
-    #d62976 50%,
-    #962fbf 75%,
-    #4f5bd5 100%
-  );
+  background: linear-gradient(130deg,
+      #feda75 0%,
+      #fa7e1e 25%,
+      #d62976 50%,
+      #962fbf 75%,
+      #4f5bd5 100%);
 }
+
 .sweep-style .social-icons a.ic-twitter {
   color: #00c6fb;
 }
+
 .sweep-style .social-icons a.ic-twitter:after {
   background-color: #00c6fb;
 }
+
 .sweep-style .social-icons a.ic-tiktok {
   color: #000;
 }
+
 .sweep-style .social-icons a.ic-tiktok:after {
   background: #fe2c55;
   background: linear-gradient(130deg, #fe2c55 0%, black 50%, #25f4ee 100%);
 }
+
 .sweep-style .social-icons a.ic-youtube {
   color: #ff0000;
 }
+
 .sweep-style .social-icons a.ic-youtube:after {
   background-color: #ff0000;
 }
@@ -163,35 +179,18 @@ a {
 .hover_img a {
   position: relative;
 }
+
 .hover_img a span {
   position: absolute;
   display: none;
   z-index: 99;
 }
+
 .hover_img a:hover span {
   display: block;
 }
 
 /* LOADING SCREEN */
-body {
-  height: 100vh;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
-  animation: gradient 10s ease infinite;
-}
-
-@keyframes gradient {
-  0% {
-      background-position: 0% 50%;
-  }
-  50% {
-      background-position: 100% 50%;
-  }
-  100% {
-      background-position: 0% 50%;
-  }
-}
-
 .intro-title {
   text-align: center;
   font-size: 96px;
@@ -200,30 +199,6 @@ body {
   font-family: "Nunito", sans-serif;
   color: #000;
 }
-
-/* .btn-intro{
-  width: 100%;
-  padding: 16px;
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: .5px;
-  text-transform: uppercase;
-  border: none;
-  background-color: white;
-  color: black;
-  border-radius: 99px;
-}
-
-.btn-intro:hover {
-  cursor: pointer;
-  color: white; 
-  background-color: #542BEC;
-}
-.btn-intro:active { 
-  cursor: pointer;
-  color: white; 
-  background-color: black;
-} */
 
 #loadingscreen {
   width: 100%;
@@ -253,19 +228,6 @@ body {
   font-weight: 800;
 }
 
-/* .cta {
-  width: 320px;
-  height: 64px;
-  font-size: 20px;
-  background: #542bec;
-  color: white;
-}
-
-.cta:hover {
-  background: white;
-  color: black;
-} */
-
 /* MOUSE ICON EFFECT */
 .scroll-down.mouse span {
   position: relative;
@@ -276,6 +238,7 @@ body {
   border-radius: 50px;
   top: 5px;
 }
+
 .scroll-down.mouse.effect1 span:after {
   position: absolute;
   content: "";
@@ -289,99 +252,31 @@ body {
   background: #202020;
   animation: animateMousePointer 1.5s infinite;
 }
+
 @keyframes animateMousePointer {
   0% {
     transform: translateY(0);
   }
+
   50% {
     opacity: 0.7;
   }
+
   to {
     opacity: 0;
     transform: translateY(20px);
   }
 }
 
-/* .button-mobile-up {
-  user-select: none;
-  position: fixed;
-  bottom: calc(155px);
-  right: 0px;
-  width: 95px;
-  height: 70px;
-  transition: opacity 0.3s 0.3s;
-  will-change: opacity;
-  opacity: 1;
-  z-index: 9999999;
-}
-
-.button-up {
-  position: absolute;
-  top: calc(50% - 30px);
-  left: calc(50% - 30px);
-  width: 60px;
-  height: 60px;
-  border: 2px solid rgb(255, 255, 255);
-  border-radius: 10px;
-  box-sizing: border-box;
-  opacity: 0.25;
-  will-change: opacity;
-}
-
-.button-up-icon {
-  position: absolute;
-  top: calc(50% - 9px);
-  left: calc(50% - 11px);
-  width: 22px;
-  height: 18px;
-  background-image: url(assets/imgs/up.png);
-  background-size: cover;
-}
-
-.button-mobile-down {
-  user-select: none;
-  position: fixed;
-  bottom: 15px;
-  right: 0px;
-  width: 95px;
-  height: 210px;
-  transition: opacity 0.3s 0.1s;
-  will-change: opacity;
-  opacity: 1;
-  z-index: 9999999;
-}
-
-.button-down {
-  position: absolute;
-  top: calc(50% - 30px);
-  left: calc(50% - 30px);
-  width: 60px;
-  height: 60px;
-  border: 2px solid rgb(255, 255, 255);
-  border-radius: 10px;
-  box-sizing: border-box;
-  opacity: 0.25;
-  will-change: opacity;
-}
-
-.button-down-icon {
-  position: absolute;
-  top: calc(50% - 9px);
-  left: calc(50% - 11px);
-  width: 22px;
-  height: 18px;
-  background-image: url(assets/imgs/down.png);
-  background-size: cover;
-  transform: rotate(180deg);
-} */
-
 @media only screen and (min-width: 1824px) {
   .button-hide {
     display: none;
   }
+
   #intro-mobile {
     display: none;
   }
+
   .intro-swipe-mobile {
     display: none;
   }
@@ -395,7 +290,7 @@ body {
   .scroll-down.mouse.effect1 {
     display: none !important;
   }
-  
+
 }
 
 @media only screen and (max-width: 600px) {
@@ -407,6 +302,7 @@ body {
     font-family: "Nunito", sans-serif;
     text-align: center;
   }
+
   .intro-scroll {
     text-align: center;
     font-weight: 800;
@@ -439,28 +335,107 @@ body {
 
 .image {
   opacity: 0;
-  transition: opacity 0.3s ease; /* Aggiunta di transizione */
+  transition: opacity 0.3s ease;
+  /* Aggiunta di transizione */
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 100%; /* Adattabile per la reattività */
+  width: 100%;
+  /* Adattabile per la reattività */
   max-width: 300px;
   padding: 5px;
   z-index: 9999999;
 }
 
 .text-hover:hover .image {
-  opacity: 1; 
+  opacity: 1;
 }
 
 @media (max-width: 600px) {
   .image {
-      width: 90%; 
-      max-width: 200px; 
+    width: 90%;
+    max-width: 200px;
   }
 }
 
-.center-title h1, h2{
+.center-title h1,
+h2 {
   text-align: center;
+}
+
+.darkblue-card {
+  background-color: #08192a;
+}
+
+.lightgrey-card {
+  background-color: #eef1f6;
+}
+
+.animate {
+  animation-duration: 0.75s;
+  animation-delay: 0.5s;
+  animation-name: animate-fade;
+  animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
+  animation-fill-mode: backwards;
+}
+
+/* Glow In */
+.animate.glow {
+  animation-name: animate-glow;
+  animation-timing-function: ease;
+}
+
+@keyframes animate-glow {
+  0% {
+    opacity: 0;
+    filter: brightness(3) saturate(3);
+    transform: scale(0.8, 0.8);
+  }
+
+  100% {
+    opacity: 1;
+    filter: brightness(1) saturate(1);
+    transform: scale(1, 1);
+  }
+}
+
+.delay-1 {
+  animation-delay: 0.6s;
+}
+
+.delay-2 {
+  animation-delay: 0.7s;
+}
+
+.delay-3 {
+  animation-delay: 0.8s;
+}
+
+.bg-gradients {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  #cards {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 }
