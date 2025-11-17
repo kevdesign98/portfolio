@@ -484,3 +484,101 @@ h2 {
   padding-bottom: .3em;
   text-decoration: none;
 }
+
+.body-intro {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.result-title {
+  font-size: 20px;
+  color: #1a0dab;
+  text-decoration: none;
+}
+
+.result-title:hover {
+  text-decoration: underline;
+}
+
+.result-url {
+  font-size: 14px;
+  color: #006621;
+}
+
+.result-snippet {
+  font-size: 14px;
+}
+
+.dark-mode {
+  background-color: #121212 !important;
+  color: #e0e0e0;
+}
+
+.dark-mode .result-title {
+  color: #8ab4f8;
+}
+
+.dark-mode .result-url {
+  color: #34a853;
+}
+
+.dark-mode .form-control {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border-color: #333;
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Wrapper centrato verticalmente all'avvio */
+#search-wrapper {
+  transition: all 0.4s ease;
+  top: 40vh;
+  position: relative;
+}
+
+/* Search bar grande e responsive */
+.search-bar {
+  width: 90%;
+  max-width: 700px;
+  padding: 14px 24px;
+  font-size: 1.1rem;
+  border-radius: 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Dopo la ricerca, barra in alto */
+.search-active #search-wrapper {
+  top: 20px;
+}
+
+/* Risultati animati */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive tweaks (opzionale) */
+@media (max-width: 576px) {
+  .search-bar {
+    padding: 12px 18px;
+    font-size: 1rem;
+  }
+}
