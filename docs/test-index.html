@@ -1,187 +1,236 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="it">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Kevin's World | Front-end Developer">
-    <meta property="og:description" content="intro portfolio">
-    <meta property="og:url" content="https://github.com/kevdesign98/portfolio">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="it_IT">
-    <meta name="google-site-verification" content="vAZirXVoxZyU-DF1M8exTxCand3QVP1KKtUa_UzJXmA" />
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link rel="icon" type="image/png"
-        href="https://raw.githubusercontent.com/kevdesign98/portfolio/main/docs/assets/imgs/favicon.png"
-        sizes="16x16" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>Kevin's World | Front-end Developer</title>
+    <title>Kevin | Portals Gateway</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Syne:wght@800&display=swap"
+        rel="stylesheet">
 
+    <style>
+        :root {
+            --blue-portal: #00d2ff;
+            --red-portal: #ff0055;
+            --bg-color: #030303;
+        }
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: white;
+            font-family: 'Syne', sans-serif;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Container che forza il centro perfetto */
+        .gateway-wrapper {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Reset link */
+        .portal-link {
+            text-decoration: none !important;
+            display: block;
+            width: 100%;
+            transition: transform 0.4s ease;
+        }
+
+        /* --- DESIGN AD ARCO --- */
+        .arch {
+            position: relative;
+            width: 100%;
+            max-width: 300px;
+            /* Larghezza controllata */
+            aspect-ratio: 2 / 3;
+            /* Mantiene la proporzione verticale */
+            margin: 0 auto;
+            border-radius: 150px 150px 15px 15px;
+            /* Arco perfetto */
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            padding-bottom: 40px;
+            transition: all 0.5s ease;
+            overflow: hidden;
+        }
+
+        /* Colori e bagliori al passaggio */
+        .portal-link[data-type="exp"] {
+            --color: var(--blue-portal);
+            --rgb: 0, 210, 255;
+        }
+
+        .portal-link[data-type="eng"] {
+            --color: var(--red-portal);
+            --rgb: 255, 0, 85;
+        }
+
+        .arch {
+            border-bottom: 3px solid var(--color);
+        }
+
+        .portal-link:hover .arch {
+            transform: translateY(-10px);
+            border-color: var(--color);
+            box-shadow: 0 0 30px rgba(var(--rgb), 0.2);
+            background: rgba(var(--rgb), 0.03);
+        }
+
+        /* Testi interni */
+        .label-id {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.6rem;
+            letter-spacing: 4px;
+            color: var(--color);
+            margin-bottom: 5px;
+        }
+
+        .portal-name {
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            /* Scala il testo per non uscire */
+            font-weight: 800;
+            color: white;
+            text-transform: uppercase;
+            line-height: 0.9;
+            margin: 0;
+            text-align: center;
+        }
+
+        /* Velo di transizione */
+        #warp-veil {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            transform: scaleY(0);
+            transform-origin: bottom;
+            pointer-events: none;
+        }
+
+        /* Fix per Mobile */
+        @media (max-width: 767px) {
+
+            body,
+            html {
+                overflow-y: auto;
+                height: auto;
+            }
+
+            .gateway-wrapper {
+                height: auto;
+                padding: 60px 0;
+            }
+
+            .arch {
+                max-width: 260px;
+            }
+        }
+    </style>
 </head>
 
-<style>
-    .fw-black {
-        font-weight: 900;
-    }
-
-    .text-outline {
-        color: transparent;
-        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
-        letter-spacing: -2px;
-    }
-
-    .choice-link {
-        text-decoration: none;
-        display: block;
-    }
-
-    /* Quando passi sopra una scelta */
-    .choice-container:hover .text-outline {
-        color: white;
-        -webkit-text-stroke: 1px white;
-        transform: scale(1.15);
-        filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
-    }
-
-    .choice-desc {
-        color: white;
-        font-family: 'Syne', sans-serif;
-        letter-spacing: 5px;
-        margin-top: 20px;
-        transition: all 0.4s ease;
-    }
-
-    .choice-container:hover .choice-desc {
-        opacity: 1 !important;
-        transform: translateY(10px);
-    }
-
-    /* Effetto di contrasto: oscura l'altra scelta */
-    .gateway-v3:has(.choice-container:hover) .choice-container:not(:hover) {
-        opacity: 0.1;
-        filter: blur(5px);
-    }
-</style>
-
 <body>
-
-    <div id="transition-curtain"
-        style="position:fixed; top:0; left:0; width:100%; height:100%; background:#007aff; z-index:9999; transform:translateX(-100%);">
+    <div id="loader">
+        <div class="loader-text" id="loader-status">Initializing System...</div>
+        <div class="loader-bar">
+            <div class="loader-progress" id="loader-progress"></div>
+        </div>
     </div>
-    <main
-        class="gateway-v3 vh-100 bg-black d-flex align-items-center justify-content-center overflow-hidden position-relative">
 
-        <div id="bg-glow" class="position-absolute d-none d-md-block"
-            style="width: 600px; height: 600px; background: radial-gradient(circle, rgba(0,122,255,0.2) 0%, transparent 70%); filter: blur(80px); transition: all 0.5s ease; pointer-events: none;">
-        </div>
+    <div id="warp-veil"></div>
 
-        <div class="container text-center position-relative z-2">
-            <div class="row flex-column flex-md-row">
+    <main class="gateway-wrapper container">
+        <div class="row w-100 justify-content-center align-items-center g-4">
 
-                <div class="col-md-6 choice-container py-5 py-md-0" data-color="#007aff">
-                    <a href="https://kevdesign98.github.io/portfolio/webgl-version" class="choice-link">
-                        <h2 class="syne display-1 fw-black text-outline transition-all">EXPERIMENTAL</h2>
-                        <p class="choice-desc opacity-0">WebGL • Shaders • 3D Experience</p>
-                    </a>
-                </div>
-
-                <div class="col-md-6 choice-container py-5 py-md-0" data-color="#dd0031">
-                    <a href="portfolio-v2/index.html" class="choice-link">
-                        <h2 class="syne display-1 fw-black text-outline transition-all">ENGINEERING</h2>
-                        <p class="choice-desc opacity-0">Angular • UI/UX • Clean Code</p>
-                    </a>
-                </div>
-
+            <div class="col-12 col-md-5 d-flex flex-column align-items-center">
+                <a href="test1.html" class="portal-link" data-type="exp">
+                    <div class="arch">
+                        <div class="text-center px-3">
+                            <span class="label-id">NODE::01 // WEBGL</span>
+                            <h2 class="portal-name">VIRTUAL<br>REALM</h2>
+                        </div>
+                    </div>
+                    <div class="arch-shadow"></div>
+                </a>
             </div>
+
+            <div class="col-12 col-md-5 d-flex flex-column align-items-center">
+                <a href="test2.html" class="portal-link" data-type="eng">
+                    <div class="arch">
+                        <div class="text-center px-3">
+                            <span class="label-id">CORE::02 // HTML</span>
+                            <h2 class="portal-name">ARCHIVE<br>DATA</h2>
+                        </div>
+                    </div>
+                    <div class="arch-shadow"></div>
+                </a>
+            </div>
+
         </div>
-
-        <div id="curtain" class="position-fixed top-0 start-0 w-100 h-100 d-none"
-            style="z-index: 9999; transform: scaleY(0); transform-origin: bottom;"></div>
     </main>
-    <footer>
-        <p class="footer-heart">
-            Made with <g-emoji class="g-emoji" alias="heart"
-                fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png">
-                <img class="emoji" alt="heart" height="20" width="20"
-                    src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png"></g-emoji> by <a
-                href="https://github.com/kevdesign98">Kevin Cooray</a>
-        </p>
-    </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+
+    <audio id="snd-hover" preload="auto">
+        <source src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="snd-click" preload="auto">
+        <source src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script>
-        window.addEventListener('load', () => {
-            const tl = gsap.timeline();
 
-            // Ingresso wow: i testi arrivano dai lati opposti
-            tl.from(".col-md-6:first-child", { x: -200, opacity: 0, duration: 1.5, ease: "expo.out" })
-                .from(".col-md-6:last-child", { x: 200, opacity: 0, duration: 1.5, ease: "expo.out" }, "-=1.2");
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const hoverSnd = document.getElementById('snd-hover');
+            const clickSnd = document.getElementById('snd-click');
+            const veil = document.getElementById('warp-veil');
 
-            // Segui mouse per il Glow di sfondo
-            const glow = document.getElementById('bg-glow');
-            document.addEventListener('mousemove', (e) => {
-                gsap.to(glow, {
-                    x: e.clientX - 300,
-                    y: e.clientY - 300,
-                    duration: 1,
-                    ease: "power2.out"
-                });
-            });
+            document.querySelectorAll('.portal-link').forEach(link => {
 
-            // Cambia colore del glow in base alla scelta
-            document.querySelectorAll('.choice-container').forEach(item => {
-                const color = item.getAttribute('data-color');
-                item.addEventListener('mouseenter', () => {
-                    gsap.to(glow, { backgroundColor: color, scale: 1.5, opacity: 0.6, duration: 0.5 });
-                });
-                item.addEventListener('mouseleave', () => {
-                    gsap.to(glow, { backgroundColor: 'rgba(0,122,255,0.2)', scale: 1, opacity: 1, duration: 0.5 });
+                // Effetto Hover: Suono e Feedback
+                link.addEventListener('mouseenter', () => {
+                    hoverSnd.currentTime = 0;
+                    hoverSnd.volume = 0.2;
+                    hoverSnd.play().catch(() => { }); // Evita errori se il browser blocca audio
                 });
 
-                // Transizione esplosiva al click
-                item.addEventListener('click', function (e) {
+                // Effetto Click: Suono e Transizione
+                link.addEventListener('click', function (e) {
                     e.preventDefault();
-                    const url = this.querySelector('a').href;
-                    const curtain = document.getElementById('curtain');
+                    const target = this.getAttribute('href');
+                    const color = getComputedStyle(this).getPropertyValue('--color');
 
-                    curtain.classList.remove('d-none');
-                    curtain.style.backgroundColor = color;
+                    clickSnd.currentTime = 0;
+                    clickSnd.volume = 0.4;
+                    clickSnd.play().catch(() => { });
 
-                    gsap.to(curtain, {
+                    veil.style.background = color;
+                    gsap.to(veil, {
                         scaleY: 1,
                         duration: 0.8,
-                        ease: "expo.inOut",
-                        onComplete: () => window.location.href = url
+                        ease: "power4.inOut",
+                        onComplete: () => {
+                            window.location.href = target;
+                        }
                     });
                 });
             });
         });
-
-        // 3. TRANSIZIONE AL CLICK (Il "Sipario")
-        document.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetUrl = this.getAttribute('href');
-                const color = this.classList.contains('btn-outline-primary') ? '#007aff' : '#dd0031';
-
-                const curtain = document.getElementById('transition-curtain');
-                curtain.style.backgroundColor = color;
-
-                gsap.to(curtain, {
-                    duration: 0.8,
-                    x: "0%",
-                    ease: "expo.inOut",
-                    onComplete: () => {
-                        window.location.href = targetUrl;
-                    }
-                });
-            });
-        });
-    
     </script>
-
 </body>
 
 </html>
