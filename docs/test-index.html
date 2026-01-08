@@ -1,236 +1,46 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kevin | Portals Gateway</title>
+    <title>Kevin | Gateway</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Syne:wght@800&display=swap"
-        rel="stylesheet">
-
-    <style>
-        :root {
-            --blue-portal: #00d2ff;
-            --red-portal: #ff0055;
-            --bg-color: #030303;
-        }
-
-        body,
-        html {
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: white;
-            font-family: 'Syne', sans-serif;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        /* Container che forza il centro perfetto */
-        .gateway-wrapper {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            z-index: 10;
-        }
-
-        /* Reset link */
-        .portal-link {
-            text-decoration: none !important;
-            display: block;
-            width: 100%;
-            transition: transform 0.4s ease;
-        }
-
-        /* --- DESIGN AD ARCO --- */
-        .arch {
-            position: relative;
-            width: 100%;
-            max-width: 300px;
-            /* Larghezza controllata */
-            aspect-ratio: 2 / 3;
-            /* Mantiene la proporzione verticale */
-            margin: 0 auto;
-            border-radius: 150px 150px 15px 15px;
-            /* Arco perfetto */
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-end;
-            padding-bottom: 40px;
-            transition: all 0.5s ease;
-            overflow: hidden;
-        }
-
-        /* Colori e bagliori al passaggio */
-        .portal-link[data-type="exp"] {
-            --color: var(--blue-portal);
-            --rgb: 0, 210, 255;
-        }
-
-        .portal-link[data-type="eng"] {
-            --color: var(--red-portal);
-            --rgb: 255, 0, 85;
-        }
-
-        .arch {
-            border-bottom: 3px solid var(--color);
-        }
-
-        .portal-link:hover .arch {
-            transform: translateY(-10px);
-            border-color: var(--color);
-            box-shadow: 0 0 30px rgba(var(--rgb), 0.2);
-            background: rgba(var(--rgb), 0.03);
-        }
-
-        /* Testi interni */
-        .label-id {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.6rem;
-            letter-spacing: 4px;
-            color: var(--color);
-            margin-bottom: 5px;
-        }
-
-        .portal-name {
-            font-size: clamp(1.5rem, 3vw, 2.2rem);
-            /* Scala il testo per non uscire */
-            font-weight: 800;
-            color: white;
-            text-transform: uppercase;
-            line-height: 0.9;
-            margin: 0;
-            text-align: center;
-        }
-
-        /* Velo di transizione */
-        #warp-veil {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 9999;
-            transform: scaleY(0);
-            transform-origin: bottom;
-            pointer-events: none;
-        }
-
-        /* Fix per Mobile */
-        @media (max-width: 767px) {
-
-            body,
-            html {
-                overflow-y: auto;
-                height: auto;
-            }
-
-            .gateway-wrapper {
-                height: auto;
-                padding: 60px 0;
-            }
-
-            .arch {
-                max-width: 260px;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Syne:wght@800&family=Space+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="test.style.css">
 </head>
-
 <body>
+
     <div id="loader">
-        <div class="loader-text" id="loader-status">Initializing System...</div>
-        <div class="loader-bar">
-            <div class="loader-progress" id="loader-progress"></div>
+        <div style="font-family: 'Space Mono'; font-size: 0.7rem; letter-spacing: 3px; color: var(--blue-portal);">INITIALIZING SYSTEM</div>
+        <div class="loader-bar-container">
+            <div id="loader-progress"></div>
         </div>
     </div>
 
     <div id="warp-veil"></div>
 
-    <main class="gateway-wrapper container">
-        <div class="row w-100 justify-content-center align-items-center g-4">
-
-            <div class="col-12 col-md-5 d-flex flex-column align-items-center">
-                <a href="test1.html" class="portal-link" data-type="exp">
+    <main id="main-content" class="container-fluid">
+        <div class="row w-100 justify-content-center align-items-center g-5">
+            <div class="col-12 col-md-5">
+                <a href="TUO_LINK_WEBGL" class="portal-link" data-type="exp">
                     <div class="arch">
-                        <div class="text-center px-3">
-                            <span class="label-id">NODE::01 // WEBGL</span>
-                            <h2 class="portal-name">VIRTUAL<br>REALM</h2>
-                        </div>
+                        <span class="label-id">NODE::01</span>
+                        <h2 class="portal-name">VIRTUAL<br>REALM</h2>
                     </div>
-                    <div class="arch-shadow"></div>
                 </a>
             </div>
-
-            <div class="col-12 col-md-5 d-flex flex-column align-items-center">
-                <a href="test2.html" class="portal-link" data-type="eng">
+            <div class="col-12 col-md-5">
+                <a href="TUO_LINK_HTML" class="portal-link" data-type="eng">
                     <div class="arch">
-                        <div class="text-center px-3">
-                            <span class="label-id">CORE::02 // HTML</span>
-                            <h2 class="portal-name">ARCHIVE<br>DATA</h2>
-                        </div>
+                        <span class="label-id">CORE::02</span>
+                        <h2 class="portal-name">ARCHIVE<br>DATA</h2>
                     </div>
-                    <div class="arch-shadow"></div>
                 </a>
             </div>
-
         </div>
     </main>
 
-    <audio id="snd-hover" preload="auto">
-        <source src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="snd-click" preload="auto">
-        <source src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3" type="audio/mpeg">
-    </audio>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script>
-
-        
-        document.addEventListener('DOMContentLoaded', () => {
-            const hoverSnd = document.getElementById('snd-hover');
-            const clickSnd = document.getElementById('snd-click');
-            const veil = document.getElementById('warp-veil');
-
-            document.querySelectorAll('.portal-link').forEach(link => {
-
-                // Effetto Hover: Suono e Feedback
-                link.addEventListener('mouseenter', () => {
-                    hoverSnd.currentTime = 0;
-                    hoverSnd.volume = 0.2;
-                    hoverSnd.play().catch(() => { }); // Evita errori se il browser blocca audio
-                });
-
-                // Effetto Click: Suono e Transizione
-                link.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = this.getAttribute('href');
-                    const color = getComputedStyle(this).getPropertyValue('--color');
-
-                    clickSnd.currentTime = 0;
-                    clickSnd.volume = 0.4;
-                    clickSnd.play().catch(() => { });
-
-                    veil.style.background = color;
-                    gsap.to(veil, {
-                        scaleY: 1,
-                        duration: 0.8,
-                        ease: "power4.inOut",
-                        onComplete: () => {
-                            window.location.href = target;
-                        }
-                    });
-                });
-            });
-        });
-    </script>
+    <script src="test.script.js"></script>
 </body>
-
 </html>
