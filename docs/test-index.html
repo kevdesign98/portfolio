@@ -1,46 +1,83 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kevin | Gateway</title>
+    <title>Minimal Elegance | Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Syne:wght@800&family=Space+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Syne:wght@800&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="test.style.css">
 </head>
+
 <body>
 
-    <div id="loader">
-        <div style="font-family: 'Space Mono'; font-size: 0.7rem; letter-spacing: 3px; color: var(--blue-portal);">INITIALIZING SYSTEM</div>
-        <div class="loader-bar-container">
-            <div id="loader-progress"></div>
-        </div>
-    </div>
-
+    <canvas id="particle-canvas"></canvas>
     <div id="warp-veil"></div>
 
-    <main id="main-content" class="container-fluid">
-        <div class="row w-100 justify-content-center align-items-center g-5">
-            <div class="col-12 col-md-5">
-                <a href="TUO_LINK_WEBGL" class="portal-link" data-type="exp">
+    <div id="loader">
+        <div id="status-text"
+            style="font-family: 'Orbitron'; color: var(--blue); letter-spacing: 5px; font-size: 0.8rem;">LOADING
+            SYSTEM...</div>
+        <div class="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+        <button id="start-btn">INITIALIZE</button>
+    </div>
+
+    <div id="hero-intro">
+        <h1 class="display-2 fw-bold text-uppercase">Welcome to the Grid</h1>
+    </div>
+
+    <main id="main-content" class="container">
+        <div class="row w-100 justify-content-center g-4">
+
+            <div class="col-12 col-md-5 col-lg-4">
+                <a href="#" class="portal-card" style="--clr: var(--blue);">
                     <div class="arch">
-                        <span class="label-id">NODE::01</span>
-                        <h2 class="portal-name">VIRTUAL<br>REALM</h2>
+                        <div class="tech-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                                </path>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg>
+                        </div>
+                        <div class="portal-core"></div>
+                        <div>
+                            <h2 class="portal-name">WEBGL<br>EXPERIENCE</h2>
+                            <span class="node-id">REALM::01</span>
+                        </div>
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-md-5">
-                <a href="TUO_LINK_HTML" class="portal-link" data-type="eng">
+
+            <div class="col-12 col-md-5 col-lg-4">
+                <a href="#" class="portal-card" style="--clr: var(--red);">
                     <div class="arch">
-                        <span class="label-id">CORE::02</span>
-                        <h2 class="portal-name">ARCHIVE<br>DATA</h2>
+                        <div class="tech-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="3" y1="6" x2="15" y2="6"></line>
+                                <line x1="3" y1="12" x2="21" y2="12"></line>
+                                <line x1="3" y1="18" x2="18" y2="18"></line>
+                            </svg>
+                        </div>
+                        <div class="portal-core"></div>
+                        <div>
+                            <h2 class="portal-name">STATIC<br>ARCHIVE</h2>
+                            <span class="node-id">DATA::02</span>
+                        </div>
                     </div>
                 </a>
             </div>
+
         </div>
     </main>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="test.script.js"></script>
 </body>
+
 </html>
