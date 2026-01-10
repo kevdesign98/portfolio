@@ -26,6 +26,16 @@ window.addEventListener('load', () => {
             .to("#main-content", { opacity: 1, duration: 1.5 })
             .from(".portal-card", { y: 60, opacity: 0, stagger: 0.2, duration: 1, ease: "power4.out" }, "-=1");
     });
+
+    startBtn.addEventListener('click', () => {
+        const entryTl = gsap.timeline();
+
+        entryTl.to("#loader", { /* ... */ })
+            .set("#hero-intro", { visibility: "visible" })
+            /* ... altre animazioni ... */
+            .set("body", { overflowY: "auto" }) // <--- ABILITA LO SCROLL QUI
+            .to("#main-content", { opacity: 1, duration: 1.5 });
+    });
 });
 
 // --- PARTICELLE ---

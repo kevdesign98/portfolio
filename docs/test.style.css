@@ -10,8 +10,9 @@ body {
     color: white;
     font-family: 'Syne', sans-serif;
     margin: 0;
-    overflow: hidden;
-    height: 100vh;
+    /* Rimosso overflow: hidden per permettere lo scroll su mobile */
+    overflow-x: hidden; 
+    min-height: 100vh;
 }
 
 /* SFONDO */
@@ -82,12 +83,23 @@ body {
 }
 
 /* --- MAIN CONTENT --- */
-#main-content {
+/* #main-content {
     opacity: 0;
     visibility: hidden;
     height: 100vh;
     display: flex;
     align-items: center;
+} */
+
+/* Gestione dello scroll e del layout */
+#main-content {
+    opacity: 0;
+    visibility: hidden;
+    /* Usiamo min-height invece di height per permettere al contenitore di allungarsi */
+    min-height: 100vh; 
+    display: flex;
+    align-items: center;
+    padding: 60px 0; /* Spazio extra per non far toccare i bordi su mobile */
 }
 
 /* DESIGN PORTALI (REPLICA NANO) */
@@ -99,7 +111,7 @@ body {
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.arch {
+ .arch {
     position: relative;
     width: 100%;
     aspect-ratio: 4 / 5;
@@ -110,8 +122,20 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    overflow: hidden;
+    /* overflow: hidden; */
+}  
+
+/* Sistemiamo le card per il mobile */
+.arch {
+    position: relative;
+    width: 100%;
+     aspect-ratio: 4 / 5;
+    background: var(--card-bg);
+    border-radius: 24px;
+    padding: 30px; 
 }
+
+
 
 .arch::before {
     content: '';
@@ -126,6 +150,7 @@ body {
     opacity: 0.4;
     transition: all 0.4s ease;
 }
+
 
 .portal-core {
     position: absolute;
@@ -153,6 +178,13 @@ body {
     font-weight: 800;
     line-height: 1.1;
     text-transform: uppercase;
+}
+
+
+@media (max-width: 768px) {
+    .portal-name {
+        font-size: 1.3rem; /* Testo leggermente più piccolo su mobile */
+    }
 }
 
 .node-id {
