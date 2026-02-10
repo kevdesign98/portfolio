@@ -8,7 +8,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Syne:wght@800&display=swap"
         rel="stylesheet">
-
     <link rel="stylesheet" href="test.style.css">
 </head>
 
@@ -31,57 +30,53 @@
         <h1 class="display-2 fw-bold text-uppercase text-center">Welcome to<br> the Portfolios</h1>
     </div>
 
-
-
-    <main id="main-content" class="container">
-
-       
-        <div class="row w-100 justify-content-center g-4 py-5 mx-auto">
-             <div class="text-center">
-            <h1 class="display-1 fw-bold text-uppercase">Scegli il Portale</h1>
+   <main id="main-content" class="container">
+    <div class="row mb-5 justify-content-center">
+        <div class="col-12 text-center">
+            <h1 class="display-4 fw-bold" style="letter-spacing: -2px;">Select <span class="text-secondary">Environment</span></h1>
+            <p class="node-id">Available Nodes: 02 // Status: Ready</p>
         </div>
-            <div class="col-11 col-md-5 col-lg-4">
-                <a href="test1.html" class="portal-card" style="--clr: var(--blue);">
-                    <div class="arch">
-                        <div class="tech-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path
-                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
-                                </path>
-                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                            </svg>
-                        </div>
-                        <div class="portal-core"></div>
-                        <div>
-                            <h2 class="portal-name">WEBGL<br>EXPERIENCE</h2>
-                            <span class="node-id">REALM::01</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
+    </div>
 
-            <div class="col-11 col-md-5 col-lg-4">
-                <a href="test2.html" class="portal-card" style="--clr: var(--red);">
-                    <div class="arch">
-                        <div class="tech-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <line x1="3" y1="6" x2="15" y2="6"></line>
-                                <line x1="3" y1="12" x2="21" y2="12"></line>
-                                <line x1="3" y1="18" x2="18" y2="18"></line>
-                            </svg>
-                        </div>
-                        <div class="portal-core"></div>
-                        <div>
-                            <h2 class="portal-name">STATIC<br>ARCHIVE</h2>
-                            <span class="node-id">DATA::02</span>
-                        </div>
+    <div class="row justify-content-center g-5">
+        <div class="col-11 col-md-5">
+            <a href="https://kevdesign98.github.io/portfolio/" class="portal-card">
+                <div class="arch">
+                    <div class="tech-icon mb-4">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                             <circle cx="12" cy="12" r="10"></circle>
+                             <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                             <path d="M2 12h20"></path>
+                        </svg>
                     </div>
-                </a>
-            </div>
-
+                    <div>
+                        <span class="node-id">01 / Creative</span>
+                        <h2 class="portal-name mt-2">Immersive Lab</h2>
+                    </div>
+                </div>
+            </a>
         </div>
-    </main>
+
+        <div class="col-11 col-md-5">
+            <a href="https://kevdesign98.github.io/portfolio-html/" class="portal-card">
+                <div class="arch">
+                    <div class="tech-icon mb-4">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="3" y1="9" x2="21" y2="9"></line>
+                            <line x1="9" y1="21" x2="9" y2="9"></line>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="node-id">02 / Documentation</span>
+                        <h2 class="portal-name mt-2">Static Archive</h2>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</main>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="test.script.js"></script>
 </body>

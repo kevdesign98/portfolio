@@ -2,7 +2,7 @@ window.addEventListener('load', () => {
     const tl = gsap.timeline();
     const startBtn = document.getElementById('start-btn');
 
-    // 1. Caricamento barra
+    // 1. Loader
     tl.to("#progress-bar", {
         width: "100%",
         duration: 2,
@@ -14,63 +14,89 @@ window.addEventListener('load', () => {
         }
     });
 
-    // 2. Sequenza d'ingresso dopo il click
+    // 2. Transizione all'Hub
     startBtn.addEventListener('click', () => {
         const entryTl = gsap.timeline();
 
-        entryTl.to("#loader", { opacity: 0, duration: 0.8, onComplete: () => document.getElementById('loader').style.display = 'none' })
-            .set("#hero-intro", { visibility: "visible" })
-            .to("#hero-intro", { opacity: 1, duration: 1 })
-            .to("#hero-intro", { opacity: 0, duration: 0.8, delay: 1.2, onComplete: () => document.getElementById('hero-intro').style.display = 'none' })
-            .set("#main-content", { visibility: "visible" })
-            .to("#main-content", { opacity: 1, duration: 1.5 })
-            .from(".portal-card", { y: 60, opacity: 0, stagger: 0.2, duration: 1, ease: "power4.out" }, "-=1");
-    });
-
-    startBtn.addEventListener('click', () => {
-        const entryTl = gsap.timeline();
-
-        entryTl.to("#loader", { /* ... */ })
-            .set("#hero-intro", { visibility: "visible" })
-            /* ... altre animazioni ... */
-            .set("body", { overflowY: "auto" }) // <--- ABILITA LO SCROLL QUI
-            .to("#main-content", { opacity: 1, duration: 1.5 });
+        entryTl.to("#loader", { 
+            opacity: 0, 
+            duration: 0.8, 
+            onComplete: () => document.getElementById('loader').style.display = 'none' 
+        })
+        .set("#hero-intro", { visibility: "visible" })
+        .to("#hero-intro", { opacity: 1, duration: 1 })
+        .to("#hero-intro", { 
+            opacity: 0, 
+            duration: 0.8, 
+            delay: 1.2, 
+            onComplete: () => {
+                document.getElementById('hero-intro').style.display = 'none';
+                document.body.style.overflowY = "auto"; // Abilita scroll
+            }
+        })
+        .set("#main-content", { visibility: "visible" })
+        .to("#main-content", { opacity: 1, duration: 1.5 })
+        .from(".portal-card", { 
+            y: 40, 
+            opacity: 0, 
+            stagger: 0.2, 
+            duration: 1, 
+            ease: "power4.out" 
+        }, "-=1");
     });
 });
 
-// --- PARTICELLE ---
+// Particelle (Codice originale ottimizzato)
 const canvas = document.getElementById('particle-canvas');
 const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth; canvas.height = window.innerHeight;
 let particles = [];
+
+function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resize);
+resize();
 
 class Particle {
     constructor() {
+        this.reset();
+    }
+    reset() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
         this.vX = (Math.random() - 0.5) * 0.4;
         this.vY = (Math.random() - 0.5) * 0.4;
     }
-    draw() {
+    update() {
+        this.x += this.vX; this.y += this.vY;
+        if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
         ctx.fillStyle = "rgba(0, 210, 255, 0.15)";
         ctx.beginPath(); ctx.arc(this.x, this.y, 1.2, 0, Math.PI * 2); ctx.fill();
     }
-    update() {
-        this.x += this.vX; this.y += this.vY;
-        if (this.x < 0 || this.x > canvas.width) this.vX *= -1;
-        if (this.y < 0 || this.y > canvas.height) this.vY *= -1;
-        this.draw();
-    }
 }
-for (let i = 0; i < 100; i++) particles.push(new Particle());
-function loop() { ctx.clearRect(0, 0, canvas.width, canvas.height); particles.forEach(p => p.update()); requestAnimationFrame(loop); }
+
+for (let i = 0; i < 80; i++) particles.push(new Particle());
+function loop() { 
+    ctx.clearRect(0, 0, canvas.width, canvas.height); 
+    particles.forEach(p => p.update()); 
+    requestAnimationFrame(loop); 
+}
 loop();
 
-// --- CLICK PORTALI ---
+// Warp Effect
 document.querySelectorAll('.portal-card').forEach(card => {
-    card.addEventListener('click', (e) => {
+    card.addEventListener('click', function(e) {
         e.preventDefault();
-        const color = getComputedStyle(card).getPropertyValue('--clr');
-        gsap.to("#warp-veil", { backgroundColor: color, scaleY: 1, duration: 0.7, ease: "expo.inOut", onComplete: () => alert("Warping...") });
+        const url = this.getAttribute('href');
+        const color = getComputedStyle(this).getPropertyValue('--clr');
+        
+        gsap.to("#warp-veil", { 
+            backgroundColor: color, 
+            scaleY: 1, 
+            duration: 0.8, 
+            ease: "expo.inOut", 
+            onComplete: () => window.location.href = url 
+        });
     });
 });
