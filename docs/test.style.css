@@ -1,212 +1,88 @@
-:root {
-    --blue: #00d2ff;
-    --red: #ff0055;
-    --bg-color: #050505;
-    --card-bg: #121212;
-    --accent-1: #ffffff;
-    --accent-2: #94a3b8;
-    --bg-color: #0a0a0a;
-    --card-bg: rgba(23, 23, 23, 0.6);
-}
-
-body {
-    background-color: var(--bg-color);
-    color: white;
-    font-family: 'Syne', sans-serif;
-    margin: 0;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    /* Bloccato inizialmente per l'intro */
-    min-height: 100vh;
-}
-
-#particle-canvas {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    background: radial-gradient(circle at center, #111 0%, #000 100%);
-}
-
-#loader {
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
-    background: var(--bg-color);
+.hero-name {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
-}
-
-.progress-container {
-    width: min(240px, 80%);
-    height: 2px;
-    background: rgba(255, 255, 255, 0.1);
-    margin-top: 20px;
-}
-
-#progress-bar {
-    width: 0%;
-    height: 100%;
-    background: var(--blue);
-    box-shadow: 0 0 15px var(--blue);
-}
-
-#start-btn {
-    display: none;
-    margin-top: 25px;
-    background: transparent;
-    border: 1px solid var(--blue);
-    color: white;
-    padding: 10px 30px;
-    font-family: 'Orbitron';
-    cursor: pointer;
-    letter-spacing: 2px;
-    transition: all 0.3s;
-}
-
-#hero-intro {
-    position: fixed;
-    inset: 0;
-    z-index: 500;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    visibility: hidden;
-    background: var(--bg-color);
-    pointer-events: none;
-}
-
-#main-content {
-    opacity: 0;
-    visibility: hidden;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 60px 0;
-}
-
-.portal-card {
-    position: relative;
-    text-decoration: none !important;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.arch {
-    position: relative;
-    width: 100%;
-    min-height: 400px;
-    background: var(--card-bg);
-    border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 40px 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.arch::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border: 2px solid var(--clr);
-    border-radius: 24px;
-    clip-path: polygon(0 0, 25% 0, 25% 2%, 8% 2%, 2% 8%, 2% 25%, 0 25%, 0 75%, 2% 75%, 2% 92%, 8% 98%, 25% 98%, 25% 100%, 0 100%, 75% 100%, 75% 98%, 92% 98%, 98% 92%, 98% 75%, 100% 75%, 100% 100%, 100% 25%, 98% 25%, 98% 8%, 92% 2%, 75% 2%, 75% 0, 100% 0);
-    opacity: 0.4;
-    transition: all 0.4s ease;
-}
-
-.portal-name {
-    font-size: clamp(1.3rem, 4vw, 1.8rem);
-    font-weight: 800;
-    line-height: 1.1;
+    font-size: clamp(3rem, 12vw, 10rem);
+    font-weight: 900;
+    line-height: 0.85;
+    letter-spacing: -0.05em;
     text-transform: uppercase;
 }
 
-.node-id {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.65rem;
-    color: rgba(255, 255, 255, 0.3);
-    letter-spacing: 3px;
+.word {
+    display: flex;
+    margin-right: 0.5em;
+    /* Spazio tra le parole */
 }
 
-/* Hover fixes */
-.portal-card:hover {
-    transform: translateY(-10px);
-}
-
-.portal-card:hover .arch::before {
-    opacity: 1;
-    filter: drop-shadow(0 0 10px var(--clr));
-}
-
-#warp-veil {
-    position: fixed;
-    inset: 0;
-    z-index: 2000;
-    background: white;
-    transform: scaleY(0);
-    transform-origin: bottom;
-    pointer-events: none;
-}
-
-#particle-canvas {
-    opacity: 0.3;
-    filter: grayscale(1);
-}
-
-.arch {
-    background: var(--card-bg);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
-    padding: 48px;
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+.char-wrapper {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    /* Necessario per lo scorrimento verticale */
     overflow: hidden;
+    height: 1em;
+    /* Altezza fissa per la lettera */
 }
 
-.arch::before {
+.char-inner {
+    display: flex;
+    flex-direction: column;
+    will-change: transform;
+}
+
+.original,
+.clone {
+    height: 1em;
+    /* Ogni stato occupa esattamente un'altezza lettera */
+    display: block;
+}
+
+.interaction-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8vw;
+    /* Spazio ampio, tipico dei layout minimalisti */
+    margin-top: 5vh;
+}
+
+.nav-link {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    /* Peso deciso ma leggibile */
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    text-transform: uppercase;
+    color: #000;
+    text-decoration: none;
+    position: relative;
+    padding: 10px 0;
+}
+
+/* Effetto sottolineatura sottile ma elegante */
+.nav-link::after {
     content: '';
     position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-    opacity: 0;
-    transition: opacity 0.3s;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #000;
+    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.portal-card:hover .arch {
-    transform: translateY(-8px);
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+.nav-link:hover::after {
+    width: 100%;
 }
 
-.portal-name {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: -1px;
-    color: white;
-}
-
-.node-id {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    opacity: 0.4;
-}
-
-.tech-icon {
-    width: 32px;
-    height: 32px;
-    color: white;
-    opacity: 0.5;
-    transition: opacity 0.3s;
-}
-
-.portal-card:hover .tech-icon {
-    opacity: 1;
+.display-box {
+    width: 250px;
+    /* Dimensione fissa per il frame */
+    height: 300px;
+    background: #f0f0f0;
+    /* Grigio chiaro neutro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
