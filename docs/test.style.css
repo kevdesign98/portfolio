@@ -1,28 +1,94 @@
-.hero-name {
+/* Typography & Reset */
+body {
+    background-color: #ebeae4;
+    color: #1a1a1a;
+    font-family: 'Manrope', sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styling */
+.header-container {
+    z-index: 100;
+    /* Leggermente più alto per assicurare che stia sopra tutto */
+    box-sizing: border-box;
+    pointer-events: auto;
+}
+
+.header-location {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: clamp(0.75rem, 2vw, 0.85rem);
+    letter-spacing: 0.15em;
+    color: #1a1a1a;
+}
+
+.header-nav {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    /* Aumentato a 800 per dare più carattere ai link */
+    font-size: clamp(0.75rem, 2vw, 0.85rem);
+    letter-spacing: 0.1em;
+    color: #1a1a1a;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    font-size: clamp(3rem, 12vw, 10rem);
-    font-weight: 900;
+    align-items: center;
+    gap: 0.75rem;
+    /* Leggermente più largo per facilitare la lettura */
+}
+
+.header-nav .nav-item {
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.header-nav .nav-item:hover {
+    opacity: 0.5;
+}
+
+.header-nav .nav-separator {
+    color: rgba(26, 26, 26, 0.4);
+    font-weight: 400;
+    /* Il separatore deve essere più leggero del testo */
+    pointer-events: none;
+}
+
+/* Hero section */
+.hero-name {
+    /* La magia è qui: 18vw significa che il testo occupa quasi il 18% della larghezza viewport */
+    /* clamp(minimo, preferito, massimo) */
+    font-size: clamp(6rem, 18vw, 16rem);
+
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
     line-height: 0.85;
-    letter-spacing: -0.05em;
+    letter-spacing: -0.06em;
+    /* Molto serrato, fondamentale per l'effetto blocco */
     text-transform: uppercase;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 0 5vw;
+    /* Lascia un respiro ai lati */
+    width: 100%;
 }
 
 .word {
     display: flex;
-    margin-right: 0.5em;
-    /* Spazio tra le parole */
+    margin: 0.1em 0.25em;
+    /* Spacing for horizontal and wrapped layout */
 }
 
 .char-wrapper {
     position: relative;
     display: flex;
     flex-direction: column;
-    /* Necessario per lo scorrimento verticale */
     overflow: hidden;
-    height: 1em;
-    /* Altezza fissa per la lettera */
+    height: 1.05em;
+    /* Safe height to avoid letters getting cut off (like 'g', 'j', 'y') */
 }
 
 .char-inner {
@@ -34,32 +100,34 @@
 .original,
 .clone {
     height: 1em;
-    /* Ogni stato occupa esattamente un'altezza lettera */
     display: block;
 }
 
+/* Interaction navigation */
 .interaction-nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8vw;
-    /* Spazio ampio, tipico dei layout minimalisti */
-    margin-top: 5vh;
+    gap: clamp(1rem, 6vw, 5rem);
+    /* Responsive gaps instead of rigid 8vw */
+    margin-top: 2vh;
+    width: 100%;
 }
 
 .nav-link {
     font-family: 'Bricolage Grotesque', sans-serif;
     font-weight: 700;
-    /* Peso deciso ma leggibile */
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-size: clamp(1.2rem, 2.5vw, 2.2rem);
+    /* Adjusted font size for responsiveness */
     text-transform: uppercase;
     color: #000;
     text-decoration: none;
     position: relative;
-    padding: 10px 0;
+    padding: 8px 0;
+    white-space: nowrap;
 }
 
-/* Effetto sottolineatura sottile ma elegante */
+/* Elegant underline effect */
 .nav-link::after {
     content: '';
     position: absolute;
@@ -75,14 +143,127 @@
     width: 100%;
 }
 
+/* Display Box (Glassmorphic frame) */
 .display-box {
     width: 250px;
-    /* Dimensione fissa per il frame */
     height: 300px;
-    background: #f0f0f0;
-    /* Grigio chiaro neutro */
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.05);
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    opacity: 0;
+    transform: translateY(15px);
+    pointer-events: none;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Display Box image styling */
+.display-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 11px;
+    /* Match inner border radius */
+    opacity: 0.95;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.display-box:has(img[src=""]) {
+    background: rgba(255, 255, 255, 0.15);
+    /* Semi-transparent placeholder when empty */
+}
+
+/* Responsive tweaks for devices under 768px */
+@media (max-width: 768px) {
+    .interaction-nav {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-top: 1vh;
+    }
+
+    .display-box {
+        width: 200px;
+        height: 240px;
+        order: 2;
+        /* Ensure visual hierarchy stays Visual (top) -> Display Box (center) -> Designer (bottom) */
+    }
+
+    #trigger-visual {
+        order: 1;
+    }
+
+    #trigger-designer {
+        order: 3;
+    }
+
+    /* Underlines expand from center on mobile for centered text layout */
+    .nav-link::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (min-width: 1600px) {
+    .hero-name {
+        font-size: 14.3rem;
+        /* Limite massimo per non sgranare o eccedere */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .hero-name {
+        line-height: 0.85;
+        /* Leggermente più largo su mobile per leggibilità */
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-height: 550px) {
+    main {
+        padding-top: 60px !important;
+        padding-bottom: 20px !important;
+    }
+
+    .hero-name {
+        margin-bottom: 0.5rem;
+        /* Su schermi molto bassi, riduciamo drasticamente la dimensione */
+        font-size: clamp(3rem, 10vh, 6rem);
+    }
+
+    .display-box {
+        width: 140px;
+        height: 160px;
+    }
+}
+
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-bar-bg {
+    width: 200px;
+    height: 2px;
+    background: #eee;
+}
+
+#progress-bar {
+    width: 0%;
+    height: 100%;
+    background: #000;
 }
