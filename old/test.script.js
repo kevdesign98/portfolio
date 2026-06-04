@@ -43,7 +43,7 @@ const triggers = document.querySelectorAll('.nav-link');
 // Mappa delle immagini corrispondenti ai trigger
 const mediaMap = {
     'trigger-visual': 'assets/imgs/room.png',
-    'trigger-designer': 'assets/imgs/portfolio.png'
+    'trigger-designer': 'assets/imgs/test-image.png'
 };
 
 triggers.forEach(trigger => {

@@ -1,0 +1,223 @@
+/* --- STYLE WEBGL Importazione Font --- */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap');
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a {
+    font-family: "Nunito", sans-serif;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+/* --- Componenti Custom --- */
+
+/* Primary Button (Sostituibile con .btn-primary di BS5, ma teniamo la tua classe) */
+.primary-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 99px;
+    background: #542bec;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.primary-btn:hover {
+    background: white;
+    color: black;
+}
+
+/* Social Container (Refactored per essere più snello) */
+.social-container {
+    border-bottom: 1px solid #fff;
+}
+
+/* Loading Screen & Intro */
+#loadingscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #202020;
+    z-index: 1000;
+    color: white;
+}
+
+/* Modal Glassmorphism */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    width: 650px !important;
+    background: white !important;
+    border-radius: 20px !important;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px;
+    margin: 10px;
+}
+
+.modal-body-scroll {
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex-grow: 1;
+    padding-right: 10px;
+}
+
+/* Mouse Animation */
+.scroll-down.mouse span {
+    display: inline-block;
+    width: 30px;
+    height: 60px;
+    border: 2px solid #202020;
+    border-radius: 50px;
+}
+
+.scroll-down.mouse.effect1 span:after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    margin: 10px auto 0;
+    border-radius: 50%;
+    background: #202020;
+    animation: animateMousePointer 1.5s infinite;
+}
+
+@keyframes animateMousePointer {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+/* --- Media Queries Ottimizzate --- */
+@media (min-width: 1824px) {
+
+    .button-hide,
+    #intro-mobile,
+    .intro-swipe-mobile {
+        display: none;
+    }
+}
+
+@media (max-width: 810px) {
+
+    .intro-scroll-desktop,
+    .scroll-down.mouse.effect1 {
+        display: none !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .intro-title {
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .intro-scroll {
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .primary-btn {
+        display: block;
+    }
+}
+
+.mouse-icon {
+    width: 30px;
+    height: 50px;
+    border: 2px solid #000000;
+    /* Ciano stile bootstrap */
+    border-radius: 15px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.mouse-icon .wheel {
+    width: 4px;
+    height: 8px;
+    background: #000000;
+    border-radius: 2px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scrollAnimation 1.5s infinite;
+}
+
+@keyframes scrollAnimation {
+    0% {
+        transform: translate(-50%, 0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translate(-50%, 15px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, 30px);
+        opacity: 0;
+    }
+}
+
+@keyframes swipeAnimation {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(20px);
+    }
+}
+
+
+.title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 120px;
+    font-weight: 700;
+    fill: white;
+    letter-spacing: -0.03em;
+}
+
+.accent {
+    fill: transparent;
+    stroke: #19d4a3;
+    stroke-width: 2px;
+    paint-order: stroke;
+}
