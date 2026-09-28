@@ -31,142 +31,254 @@
     <div id="intro" x-init="setTimeout(() => { $store.modal.active = 'intro' }, 1000)"
         x-show="$store.modal.active === 'intro'" x-cloak class="modal-overlay" @click="$store.modal.close()">
 
-        <div class="modal-content p-4 border border-info border-opacity-25 shadow-lg"
-            style="background: rgba(10, 15, 30, 0.85); backdrop-filter: blur(15px); max-width: 500px;" @click.stop>
+        <div class="modal-content p-4 p-md-5 shadow-lg rounded-4 position-relative text-center"
+            style="background: rgba(245, 247, 250, 0.92); backdrop-filter: blur(20px); border: 2px solid rgba(168, 85, 247, 0.3); box-shadow: 0 10px 30px rgba(168, 85, 247, 0.15) !important; max-width: 500px; width: 90%; color: #1e293b;"
+            @click.stop>
 
-            <h2 class="text-black text-center fw-bold mb-4">Hello World! 👋🏽</h2>
+            <h2 class="text-dark fw-bold mb-4">Hello World! 👋🏽</h2>
 
-            <div class="d-none d-md-block scroll-container text-center">
+            <div class="d-none d-md-block scroll-container text-center mb-3">
                 <div class="mouse-icon">
-                    <div class="wheel"></div>
+                    <div class="wheel" style="background: #9333ea;"></div>
                 </div>
             </div>
 
-            <div class="d-md-none text-center">
-                <i class="fa-solid fa-hand-pointer fa-3x text-info mb-3"
-                    style="animation: swipeAnimation 2s infinite;"></i>
+            <div class="d-md-none text-center mb-3">
+                <i class="fa-solid fa-hand-pointer fa-3x mb-3"
+                    style="color: #9333ea; animation: swipeAnimation 2s infinite;"></i>
             </div>
 
-            <p class="text-black text-center mt-3 mb-4">
-                <span class="d-none d-md-block">Scorri su e giù per esplorare. 😎</span>
-                <span class="d-md-none">Scorri su e giù per esplorare. 😎</span>
+            <p class="text-muted fw-medium mb-4 fs-6">
+                Scorri su e giù per esplorare. 😎
             </p>
 
-            <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" @click="$store.modal.close()">
+            <button class="btn btn-dark btn-lg px-4 rounded-pill w-100 shadow-sm" @click="$store.modal.close()">
                 Got it!
             </button>
         </div>
     </div>
 
     <div x-show="$store.modal.active === 'home'" x-cloak class="modal-overlay" @click="$store.modal.close()">
-        <div class="fs-5 modal-content p-4 border border-info border-opacity-25 shadow-lg"
-            style="background: rgba(10, 15, 30, 0.85); backdrop-filter: blur(15px);" @click.stop>
+        <div class="fs-5 modal-content p-4 p-md-5 shadow-lg rounded-4 position-relative"
+            style="background: rgba(245, 247, 250, 0.92); backdrop-filter: blur(20px); border: 2px solid rgba(168, 85, 247, 0.3); box-shadow: 0 10px 30px rgba(168, 85, 247, 0.15) !important; max-width: 550px; width: 90%; color: #1e293b;"
+            @click.stop>
 
-            <h1 class="h3 mb-3 text-black">Ciao! 👋🏽</h1>
+            <!-- Intestazione -->
+            <div class="text-center mb-4">
+                <h1 class="h3 fw-bold mb-2 text-dark">
+                    Ciao! <span style="display:inline-block; animation: wave 1.5s infinite;">👋🏽</span>
+                </h1>
+                <p class="text-muted mb-1">Benvenuto nel mio mondo</p>
+                <div class="mx-auto mt-2 rounded-pill"
+                    style="width: 50px; height: 3px; background: #a855f7; box-shadow: 0 0 8px rgba(168, 85, 247, 0.5);">
+                </div>
+            </div>
 
-            <p class="text-black">Il mio nome è <strong>Kevin Cooray</strong>, e sono un Frontend Developer di
-                Pistoia.</p>
+            <!-- Presentazione -->
+            <div class="mb-4 text-center text-md-start">
+                <p class="mb-2 text-dark">
+                    Il mio nome è <strong style="color: #9333ea;">Kevin Cooray</strong>, e sono un
+                    <span class="fw-semibold" style="color: #0284c7;">Frontend Developer</span> di Pistoia.
+                </p>
+                <p class="mb-2 text-dark">
+                    Puoi contattarmi via email a
+                    <a href="mailto:kevin.cooray98@gmail.com" class="text-decoration-none fw-bold"
+                        style="color: #0284c7;">kevin.cooray98@gmail.com</a>
+                </p>
+                <p class="mb-0 text-dark">
+                    Scarica il mio <a href="assets/portfolio/Kevin-Cooray-CV.pdf" target="_blank"
+                        download="Kevin-Cooray-CV.pdf" class="text-decoration-none fw-bold" style="color: #9333ea;">CV
+                    </a>.
+                </p>
+            </div>
 
-            <p class="text-black">
-                Puoi contattarmi a <a href="mailto:kevin.cooray98@gmail.com"
-                    class="text-info text-decoration-none fw-bold">kevin.cooray98@gmail.com</a>
-                o trovarmi sui miei social.
-            </p>
+            <!-- Social Icons -->
+            <div class="mb-4 text-center">
+                <p class="text-muted small mb-3 text-uppercase tracking-wider fw-bold">I miei social</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="https://www.linkedin.com/in/kevin-cooray-236133179" target="_blank"
+                        class="btn rounded-circle d-flex align-items-center justify-content-center transition-all shadow-sm"
+                        style="width: 48px; height: 48px; border: 2px solid #9333ea; color: #9333ea; background: rgba(147, 51, 234, 0.05);">
+                        <i class="fa-brands fa-linkedin fa-lg"></i>
+                    </a>
+                    <a href="https://www.instagram.com/kevdesign_98/" target="_blank"
+                        class="btn rounded-circle d-flex align-items-center justify-content-center transition-all shadow-sm"
+                        style="width: 48px; height: 48px; border: 2px solid #9333ea; color: #9333ea; background: rgba(147, 51, 234, 0.05);">
+                        <i class="fa-brands fa-instagram fa-lg"></i>
+                    </a>
+                    <a href="https://github.com/kevdesign98" target="_blank"
+                        class="btn rounded-circle d-flex align-items-center justify-content-center transition-all shadow-sm"
+                        style="width: 48px; height: 48px; border: 2px solid #9333ea; color: #9333ea; background: rgba(147, 51, 234, 0.05);">
+                        <i class="fa-brands fa-github fa-lg"></i>
+                    </a>
+                </div>
+            </div>
 
-            <p class="text-black mb-2">Scarica il mio <a href="assets/portfolio/Kevin-Cooray-CV.pdf" target="_blank"
-                    download="Kevin-Cooray-CV.pdf" class="text-info text-decoration-none fw-bold">CV</a></p>
-
-            <p class="text-black mb-2">I miei social sono:</p>
-
-            <div class="d-flex justify-content-center gap-3 mb-4">
-                <a href="https://www.linkedin.com/in/kevin-cooray-236133179"
-                    class="btn btn-outline-info rounded-circle d-flex align-items-center justify-content-center"
-                    style="width: 50px; height: 50px;">
-                    <i class="fa-brands fa-linkedin fa-lg"></i>
+            <!-- Sezione Navigazione / Link Extra -->
+            <div
+                class="d-flex flex-column flex-sm-row gap-2 justify-content-center mb-3 pt-3 border-top border-secondary border-opacity-10">
+                <a href="URL_DELLA_HOME"
+                    class="btn fw-semibold py-2 px-3 rounded-pill text-dark d-flex align-items-center justify-content-center shadow-sm"
+                    style="border: 1px solid rgba(147, 51, 234, 0.4); background: rgba(147, 51, 234, 0.08);">
+                    <i class="fa-solid fa-house me-2" style="color: #9333ea;"></i>Torna alla Home
                 </a>
-                <a href="https://www.instagram.com/kevdesign_98/"
-                    class="btn btn-outline-info rounded-circle d-flex align-items-center justify-content-center"
-                    style="width: 50px; height: 50px;">
-                    <i class="fa-brands fa-instagram fa-lg"></i>
-                </a>
-                <a href="https://github.com/kevdesign98"
-                    class="btn btn-outline-info rounded-circle d-flex align-items-center justify-content-center"
-                    style="width: 50px; height: 50px;">
-                    <i class="fa-brands fa-github fa-lg"></i>
+                <a href="URL_DEL_PORTFOLIO_STATICO"
+                    class="btn fw-semibold py-2 px-3 rounded-pill text-dark d-flex align-items-center justify-content-center shadow-sm"
+                    style="border: 1px solid rgba(2, 132, 199, 0.4); background: rgba(2, 132, 199, 0.08);">
+                    <i class="fa-solid fa-laptop-code me-2" style="color: #0284c7;"></i>Portfolio Statico
                 </a>
             </div>
 
-            <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" @click="$store.modal.close()">
+            <!-- Pulsante Chiudi -->
+            <button class="btn btn-dark btn-lg px-4 rounded-pill w-100 shadow-sm" @click="$store.modal.close()">
                 Chiudi
             </button>
         </div>
     </div>
-
     <div id="utl" x-show="$store.modal.active === 'utl'" x-cloak class="modal-overlay" @click="$store.modal.close()">
-        <div class="modal-content p-4 border border-info border-opacity-25 shadow-lg fs-5"
-            style="background: rgba(10, 15, 30, 0.85); backdrop-filter: blur(15px); max-width: 600px;" @click.stop>
+        <div class="modal-content p-4 p-md-5 shadow-lg rounded-4 position-relative"
+            style="background: rgba(245, 247, 250, 0.92); backdrop-filter: blur(20px); border: 2px solid rgba(168, 85, 247, 0.3); box-shadow: 0 10px 30px rgba(168, 85, 247, 0.15) !important; max-width: 600px; width: 90%; color: #1e293b;"
+            @click.stop>
 
-            <img src="assets/imgs/utl-logo.png" alt="UTL Informatica Logo" class="img-fluid mb-3"
-                style="max-width: 120px;" />
+            <!-- Logo e Intestazione -->
+            <div class="mb-4 text-center text-md-start d-flex flex-column flex-md-row align-items-center gap-4">
+                <div class="p-3 bg-white rounded-3 shadow-sm border border-light">
+                    <img src="assets/imgs/utl-logo.png" alt="UTL Informatica Logo" class="img-fluid"
+                        style="max-width: 120px;" />
+                </div>
+                <div>
+                    <h2 class="h4 text-dark fw-bold mb-1">UTL Informatica</h2>
+                    <h3 class="h6 fw-semibold mb-0" style="color: #9333ea;">2019 - 2020</h3>
+                </div>
+            </div>
 
-            <h2 class="h3 text-black fw-bold">UTL Informatica</h2>
-            <h3 class="h6 text-black mb-4">2019 - 2020</h3>
+            <div class="mx-auto mb-4 rounded-pill"
+                style="width: 100%; height: 2px; background: rgba(147, 51, 234, 0.15);"></div>
 
-            <div class="text-black">
-                <p>Durante la mia esperienza in UTL Informatica, mi sono concentrato su:</p>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><i class="fa-solid fa-check text-black me-2"></i> <strong>Web Design:</strong>
-                        Creazione di siti web dinamici e reattivi utilizzando WordPress ed Elementor.</li>
-                    <li class="mb-2"><i class="fa-solid fa-check text-black me-2"></i> <strong>SEO &
-                            Indexing:</strong>
-                        Ottimizzazione dei siti tramite Google Search Console e analisi delle performance.</li>
+            <!-- Contenuto descrittivo -->
+            <div class="text-dark fs-5 mb-4">
+                <p class="mb-3">Durante la mia esperienza in UTL Informatica, mi sono concentrato su:</p>
+                <ul class="list-unstyled mt-3 d-flex flex-column gap-3">
+                    <li class="d-flex align-items-start">
+                        <i class="fa-solid fa-check me-3 mt-1 fs-5" style="color: #9333ea; width: 24px;"></i>
+                        <div>
+                            <strong class="text-dark">Web Design:</strong>
+                            <span class="text-muted">Creazione di siti web dinamici e reattivi utilizzando WordPress ed
+                                Elementor.</span>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-start">
+                        <i class="fa-solid fa-check me-3 mt-1 fs-5" style="color: #0284c7; width: 24px;"></i>
+                        <div>
+                            <strong class="text-dark">SEO & Indexing:</strong>
+                            <span class="text-muted">Ottimizzazione dei siti tramite Google Search Console e analisi
+                                delle performance.</span>
+                        </div>
+                    </li>
                 </ul>
             </div>
 
-            <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" @click="$store.modal.close()">
+            <!-- Pulsante Chiudi -->
+            <button class="btn btn-dark btn-lg px-4 rounded-pill w-100 shadow-sm" @click="$store.modal.close()">
                 Chiudi
             </button>
         </div>
     </div>
 
+
     <div id="eidos" x-show="$store.modal.active === 'eidos'" x-cloak class="modal-overlay"
         @click="$store.modal.close()">
-        <div class="modal-content p-4 border border-info border-opacity-25 shadow-lg"
-            style="background: rgba(10, 15, 30, 0.85); backdrop-filter: blur(15px); max-width: 650px;" @click.stop>
+        <div class="modal-content p-4 p-md-5 shadow-lg rounded-4 position-relative"
+            style="background: rgba(245, 247, 250, 0.92); backdrop-filter: blur(20px); border: 2px solid rgba(168, 85, 247, 0.3); box-shadow: 0 10px 30px rgba(168, 85, 247, 0.15) !important; max-width: 650px; width: 90%; color: #1e293b;"
+            @click.stop>
 
-            <img src="assets/imgs/eidos.svg" alt="Eidosmedia" class="img-fluid mb-3 w-50" />
+            <!-- Logo e Sottotitolo -->
+            <div class="mb-4 text-center text-md-start">
+                <div class="p-3 rounded-3 shadow-sm border border-light d-inline-block mb-3">
+                    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+                        style="width: 160px ;max-width: 140px; " viewBox="0 0 950.92 138.16">
+                        <path
+                            d="m95.22,134.78H8.13c-4.49,0-8.13-3.64-8.13-8.13V8.13C0,3.64,3.64,0,8.13,0h82.67c4.49,0,8.13,3.64,8.13,8.13v3.85c0,4.49-3.64,8.13-8.13,8.13H24.36c-4.49,0-8.13,3.64-8.13,8.13v18.36c0,4.49,3.64,8.13,8.13,8.13h41.22c4.49,0,8.13,3.64,8.13,8.13v3.86c0,4.49-3.64,8.13-8.13,8.13H24.36c-4.49,0-8.13,3.64-8.13,8.13v23.58c0,4.49,3.64,8.13,8.13,8.13h70.2c4.49,0,8.13,3.64,8.13,8.13v4.44c.03,4.14-3.32,7.5-7.46,7.5Z"
+                            style="fill: #2847d6; stroke-width: 0px;" />
+                        <path
+                            d="m126.56,135.1h0c-4.49,0-8.13-3.64-8.13-8.13V39.18c0-4.49,3.64-8.13,8.13-8.13h0c4.49,0,8.13,3.64,8.13,8.13v87.78c0,4.49-3.64,8.13-8.13,8.13Z"
+                            style="fill: #2847d6; stroke-width: 0px;" />
+                        <path
+                            d="m364.07,82.81c0,17.02-5.82,30.89-17.5,41.63-9.93,9.14-22.36,13.72-37.28,13.72s-27.39-4.58-37.39-13.72c-11.64-10.62-17.5-24.49-17.5-41.63s5.86-30.66,17.62-41.27c10.29-9.34,22.72-14.04,37.28-14.04s26.83,4.7,37.16,14.04c11.75,10.73,17.61,24.49,17.61,41.27Zm-16.94-.08c0-10.74-3.55-19.6-10.61-26.52-7.06-6.96-16.14-10.42-27.31-10.42s-20.41,3.5-27.51,10.5c-7.1,7-10.65,15.82-10.65,26.44s3.47,20.04,10.45,26.88c6.98,6.84,16.18,10.26,27.7,10.26s20.57-3.42,27.51-10.26c6.95-6.84,10.42-15.78,10.42-26.88Z"
+                            style="fill: #2847d6; stroke-width: 0px;" />
+                        <path
+                            d="m455.93,51.06c-2.43,3.19-6.79,4.04-10.34,2.19-9.16-4.77-18.96-7.14-29.38-7.14-18.53,0-27.78,4.14-27.78,12.36,0,4.85,3.47,8,10.45,9.46,9.49,1.04,18.97,2.1,28.46,3.22,13.64,1.7,23.36,4.74,29.14,9.14,6.42,4.85,9.61,12.24,9.61,22.14,0,11.18-3.99,19.8-12,25.88-8.01,6.08-19.57,9.14-34.76,9.14-18.47,0-33.76-4.53-45.83-13.61-3.28-2.47-4.02-7.12-1.88-10.62l.5-.81c2.41-3.93,7.57-5.04,11.43-2.51,10.11,6.61,21.95,9.94,35.54,9.94,9.41,0,16.66-1.52,21.8-4.5,5.14-2.98,7.74-6.96,7.74-11.92,0-5.52-3.19-9.42-9.49-11.68-3.51-1.24-8.97-2.06-16.38-2.54-11.56-.68-18.65-1.2-21.28-1.52-10.29-1.24-17.89-4.02-22.76-8.27-4.86-4.3-7.34-10.54-7.34-18.76,0-9.9,3.91-17.78,11.72-23.58,7.82-5.8,18.77-8.7,32.85-8.7,15.2,0,28.08,3.33,38.63,9.99,4.02,2.53,4.93,8.02,2.05,11.79l-.7.91Z"
+                            style="fill: #2847d6; stroke-width: 0px;" />
+                        <path
+                            d="m616.52,135.1c-4.49,0-8.13-3.64-8.13-8.13V39.18c0-4.49,3.64-8.13,8.13-8.13h70.32c4.49,0,8.13,3.64,8.13,8.13v2.02c0,4.49-3.64,8.13-8.13,8.13h-54.09c-4.49,0-8.13,3.64-8.13,8.13v6.24c0,4.49,3.64,8.13,8.13,8.13h32.65c4.49,0,8.13,3.64,8.13,8.13v2.02c0,4.49-3.64,8.13-8.13,8.13h-32.65c-4.49,0-8.13,3.64-8.13,8.13v10.46c0,4.49,3.64,8.13,8.13,8.13h57.2c4.49,0,8.13,3.64,8.13,8.13v2.11c.03,4.42-3.55,8-7.96,8h-73.59Z"
+                            style="fill: #2847d6; stroke-width: 0px;" />
+                        <path
+                            d="m754.45,31.09c14.62,0,26.39,4.82,35.24,14.4,8.85,9.58,13.28,21.86,13.28,36.86,0,13.64-4.67,26.72-13.96,39.24-2.63,3.62-6.78,6.72-12.48,9.3-6.22,2.82-12.68,4.22-19.37,4.22h-39.02c-4.49,0-8.13-3.64-8.13-8.13V39.18c0-4.49,3.64-8.13,8.13-8.13h36.31v.04h0Zm3.83,85.75c7.94,0,14.47-3.1,19.57-9.34,5.1-6.24,7.66-14.16,7.66-23.82,0-10.3-2.71-18.6-8.13-24.89-5.42-6.28-12.64-9.42-21.68-9.42h-21.29c-4.49,0-8.13,3.64-8.13,8.13v51.24c0,4.49,3.64,8.13,8.13,8.13h23.88v-.04h-.01Z"
+                            style="fill: #2847d6; stroke-width: 0px;" />
+                        <path
+                            d="m196.28,31.09c14.62,0,26.39,4.82,35.24,14.4,8.85,9.58,13.28,21.86,13.28,36.86,0,13.64-4.67,26.72-13.96,39.24-2.63,3.62-6.78,6.72-12.48,9.3-6.22,2.82-12.68,4.22-19.37,4.22h-39.06c-4.49,0-8.13-3.64-8.13-8.13V39.18c0-4.49,3.64-8.13,8.13-8.13h36.35v.04Zm3.79,85.75c7.94,0,14.47-3.1,19.57-9.34,5.1-6.24,7.66-14.16,7.66-23.82,0-10.3-2.71-18.6-8.13-24.89-5.42-6.28-12.64-9.42-21.68-9.42h-21.29c-4.49,0-8.13,3.64-8.13,8.13v51.24c0,4.49,3.64,8.13,8.13,8.13h23.88v-.04h0Z"
+                            style="fill: #2847d6; stroke-width: 0px;" />
+                        <path
+                            d="m824.33,135.1h0c-4.49,0-8.13-3.64-8.13-8.13V39.18c0-4.49,3.64-8.13,8.13-8.13h0c4.49,0,8.13,3.64,8.13,8.13v87.78c0,4.49-3.64,8.13-8.13,8.13Z"
+                            style="fill: #2847d6; stroke-width: 0px;" />
+                        <path
+                            d="m942.78,135.1h-.12c-3.25,0-6.19-1.93-7.47-4.92l-5.38-12.5c-1.28-2.99-4.22-4.92-7.47-4.92h-45.3c-3.25,0-6.19,1.93-7.47,4.92l-5.38,12.5c-1.28,2.99-4.22,4.92-7.47,4.92h-.12c-5.86,0-9.8-6.01-7.45-11.38l38.31-87.78c1.29-2.96,4.22-4.88,7.45-4.88h9.56c3.23,0,6.16,1.92,7.45,4.88l38.3,87.78c2.34,5.37-1.59,11.38-7.45,11.38Zm-28.06-51.87l-7.53-17.5c-2.82-6.55-12.1-6.56-14.93-.02l-7.56,17.43c-2.33,5.37,1.61,11.37,7.46,11.37h15.13c5.8,0,9.71-5.95,7.42-11.28Z"
+                            style="fill: #2847d6; stroke-width: 0px;" />
+                        <path
+                            d="m584.35,135.1c-4.49,0-8.13-3.64-8.13-8.13v-56.77c0-4.15-5.36-5.8-7.69-2.37l-24.95,40.27c-3.14,5.41-10.96,5.4-14.08-.02l-24.3-39.99c-2.3-3.45-7.69-1.82-7.68,2.34l.13,56.51c0,4.49-3.64,8.13-8.13,8.13h-1.56c-4.49,0-8.13-3.64-8.13-8.13V39.14c0-4.49,3.64-8.13,8.13-8.13h7.71c2.9,0,5.59,1.55,7.04,4.06l26.94,44.55c3.13,5.41,10.94,5.42,14.08.01l27.08-44.58c1.45-2.51,4.13-4.05,7.03-4.05h8.63c4.49,0,8.13,3.64,8.13,8.13v88.43c0,4.16-3.37,7.52-7.52,7.52h-2.72Z"
+                            style="fill: #2847d6; stroke-width: 0px;" />
+                    </svg>
+                    <!-- <img src="assets/imgs/eidos.svg" alt="Eidosmedia" class="img-fluid" style="max-width: 140px;" /> -->
+                </div>
+                <h3 class="h6 fw-semibold mb-0" style="color: #9333ea;">2021 - 2023 | Internship & Professional Growth
+                </h3>
+            </div>
 
-            <h3 class="h6 text-black mb-4 fs-5">2021 - 2023 | Internship & Professional Growth</h3>
+            <div class="mx-auto mb-4 rounded-pill"
+                style="width: 100%; height: 2px; background: rgba(147, 51, 234, 0.15);"></div>
 
-            <div class="text-black">
-                <p class="mb-3 fs-5">Dalla formazione iniziale alla gestione di progetti complessi, Eidosmedia è stato
-                    il mio
-                    trampolino di lancio nel mondo web.</p>
+            <!-- Descrizione principale -->
+            <div class="text-dark fs-5 mb-4">
+                <p class="mb-4">
+                    Dalla formazione iniziale alla gestione di progetti complessi, Eidosmedia è stato il mio trampolino
+                    di lancio nel mondo web.
+                </p>
 
-                <div class="row g-3 fs-5">
+                <!-- Griglia Tech Skills & Achievements -->
+                <div class="row g-3 mb-4">
                     <div class="col-md-6">
-                        <h6 class="text-primary fw-bold"><i class="fa-solid fa-code me-2"></i>Tech Skills</h6>
-                        <ul class="list-unstyled small ">
-                            <li class="fw-bold">HTML, CSS, JavaScript</li>
-                            <li class="fw-bold">Adobe Creative Suite</li>
-                        </ul>
+                        <div class="card h-100 border-0 rounded-3 p-3 shadow-sm"
+                            style="background: rgba(255, 255, 255, 0.7); border-left: 4px solid #9333ea !important;">
+                            <h6 class="fw-bold mb-3" style="color: #9333ea;"><i class="fa-solid fa-code me-2"></i>Tech
+                                Skills</h6>
+                            <ul class="list-unstyled mb-0 d-flex flex-column gap-2 small text-dark">
+                                <li class="fw-semibold">HTML, CSS, JavaScript</li>
+                                <li class="fw-semibold">Adobe Creative Suite</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="col-md-6">
-                        <h6 class="text-primary fw-bold"><i class="fa-solid fa-rocket me-2"></i>Achievements</h6>
-                        <ul class="list-unstyled small">
-                            <li class="fw-bold">Corporate Landing Pages</li>
-                            <li class="fw-bold">Webinar Assets & Graphics</li>
-                        </ul>
+                        <div class="card h-100 border-0 rounded-3 p-3 shadow-sm"
+                            style="background: rgba(255, 255, 255, 0.7); border-left: 4px solid #0284c7 !important;">
+                            <h6 class="fw-bold mb-3" style="color: #0284c7;"><i
+                                    class="fa-solid fa-rocket me-2"></i>Achievements</h6>
+                            <ul class="list-unstyled mb-0 d-flex flex-column gap-2 small text-dark">
+                                <li class="fw-semibold">Corporate Landing Pages</li>
+                                <li class="fw-semibold">Webinar Assets & Graphics</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <p class="fs-5 text-black mt-3 pt-2 border-top border-info border-opacity-25">
+                <!-- Nota finale soft skills -->
+                <p class="text-muted small pt-3 border-top border-secondary border-opacity-10 mb-0">
                     Ho affinato capacità di <strong>time management</strong> e <strong>comunicazione efficace</strong>,
                     dimostrando una rapida evoluzione in ambienti dinamici.
                 </p>
             </div>
 
-            <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" @click="$store.modal.close()">
+            <!-- Pulsante Chiudi -->
+            <button class="btn btn-dark btn-lg px-4 rounded-pill w-100 shadow-sm" @click="$store.modal.close()">
                 Chiudi
             </button>
         </div>
@@ -174,56 +286,61 @@
 
     <div id="val-app" x-show="$store.modal.active === 'val-app'" x-cloak class="modal-overlay"
         @click="$store.modal.close()">
-        <div class="modal-content p-4 border border-info border-opacity-25 shadow-lg"
-            style="background: rgba(10, 15, 30, 0.85); backdrop-filter: blur(15px); max-width: 700px;" @click.stop>
+        <div class="modal-content p-4 p-md-5 shadow-lg rounded-4 position-relative"
+            style="background: rgba(245, 247, 250, 0.92); backdrop-filter: blur(20px); border: 2px solid rgba(168, 85, 247, 0.3); box-shadow: 0 10px 30px rgba(168, 85, 247, 0.15) !important; max-width: 700px; width: 90%; color: #1e293b;"
+            @click.stop>
+
             <div class="modal-body-scroll">
                 <!-- Logo SVG ottimizzato -->
                 <div class="mb-4 text-center">
                     <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="200" viewBox="0 0 552 151"
                         class="img-fluid">
-                        <g fill="#0dcaf0" stroke="none">
+                        <g fill="#9333ea" stroke="none">
                         </g>
                     </svg>
                 </div>
 
-                <h2 class="h4 text-primary fw-bold mb-3">ValApp: Performance Analysis</h2>
+                <h2 class="h4 fw-bold mb-3" style="color: #9333ea;">ValApp: Performance Analysis</h2>
 
-                <div class="text-black small mb-4">
-                    <p class="fs-5">Ho sviluppato <strong>ValApp</strong>, una Single Page Application (SPA) dedicata
-                        all'analisi delle
-                        performance per i giocatori di Valorant.</p>
-                    <p class="fs-5">La sfida principale è stata gestire l'integrità del data binding con dati dinamici,
-                        spesso incompleti
-                        o oscurati (Streamer Mode) dalle API ufficiali.</p>
+                <div class="text-dark fs-5 mb-4">
+                    <p class="mb-2">Ho sviluppato <strong>ValApp</strong>, una Single Page Application (SPA) dedicata
+                        all'analisi delle performance per i giocatori di Valorant.</p>
+                    <p class="mb-0">La sfida principale è stata gestire l'integrità del data binding con dati dinamici,
+                        spesso incompleti o oscurati (Streamer Mode) dalle API ufficiali.</p>
                 </div>
 
-                <h5 class="text-black mb-3 fs-5">Key Highlights</h5>
-                <ul class="feature-list list-unstyled fs-5">
-                    <li class="d-flex align-items-start mb-3">
-                        <span class="me-3 text-info">⚡</span>
-                        <span class="text-black"><strong>Data Persistence:</strong> Implementazione di logica di
+                <div class="mx-auto mb-4 rounded-pill"
+                    style="width: 100%; height: 2px; background: rgba(147, 51, 234, 0.15);"></div>
+
+                <h5 class="mb-3 fs-6 fw-bold text-dark text-uppercase tracking-wider">Key Highlights</h5>
+                <ul class="feature-list list-unstyled fs-6 mb-4 d-flex flex-column gap-3">
+                    <li class="d-flex align-items-start">
+                        <span class="me-3 fs-5" style="color: #9333ea;">⚡</span>
+                        <span class="text-dark"><strong>Data Persistence:</strong> Implementazione di logica di
                             tracciamento via PUUID per garantire un'associazione corretta dei match, anche con profili
                             privati.</span>
                     </li>
-                    <li class="d-flex align-items-start mb-3">
-                        <span class="me-3 text-info">⚡</span>
-                        <span class="text-black"><strong>Real-time Analytics:</strong> Algoritmi per il calcolo
-                            istantaneo
-                            di K/D Ratio, Win Rate e Accuracy (HS%) partendo da payload JSON complessi.</span>
+                    <li class="d-flex align-items-start">
+                        <span class="me-3 fs-5" style="color: #0284c7;">⚡</span>
+                        <span class="text-dark"><strong>Real-time Analytics:</strong> Algoritmi per il calcolo
+                            istantaneo di K/D Ratio, Win Rate e Accuracy (HS%) partendo da payload JSON
+                            complessi.</span>
                     </li>
-                    <li class="d-flex align-items-start mb-3">
-                        <span class="me-3 text-info">⚡</span>
-                        <span class="text-black"><strong>Clean UI:</strong> Interfaccia reattiva focalizzata sulla data
+                    <li class="d-flex align-items-start">
+                        <span class="me-3 fs-5" style="color: #9333ea;">⚡</span>
+                        <span class="text-dark"><strong>Clean UI:</strong> Interfaccia reattiva focalizzata sulla data
                             visualization per rendere immediata la lettura delle statistiche di combattimento.</span>
                     </li>
                     <li class="d-flex align-items-start">
-                        <span class="me-3 text-info">⚡</span>
-                        <span class="text-black"><strong>Tech Stack:</strong> Angular, TypeScript, RxJS, Tailwind CSS,
+                        <span class="me-3 fs-5" style="color: #0284c7;">⚡</span>
+                        <span class="text-dark"><strong>Tech Stack:</strong> Angular, TypeScript, RxJS, Tailwind CSS,
                             integrazione REST API e Google Gemini.</span>
                     </li>
                 </ul>
             </div>
-            <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" @click="$store.modal.close()">
+
+            <!-- Pulsante Chiudi -->
+            <button class="btn btn-dark btn-lg px-4 rounded-pill w-100 shadow-sm" @click="$store.modal.close()">
                 Chiudi
             </button>
         </div>
@@ -231,116 +348,154 @@
 
     <div id="look-lanka" x-show="$store.modal.active === 'look-lanka'" x-cloak class="modal-overlay"
         @click="$store.modal.close()">
-        <div class="modal-content p-4 border border-info border-opacity-25 shadow-lg"
-            style="background: rgba(10, 15, 30, 0.85); backdrop-filter: blur(15px); max-width: 700px;" @click.stop>
+        <div class="modal-content p-4 p-md-5 shadow-lg rounded-4 position-relative"
+            style="background: rgba(245, 247, 250, 0.92); backdrop-filter: blur(20px); border: 2px solid rgba(168, 85, 247, 0.3); box-shadow: 0 10px 30px rgba(168, 85, 247, 0.15) !important; max-width: 700px; width: 90%; color: #1e293b;"
+            @click.stop>
+
             <div class="modal-body-scroll">
 
-                <div class="mb-4 pr-4 text-left"
-                    style="background: linear-gradient(145deg,#0d2b20,#1a4a38 45%,#0f3528);border-radius: 20px;">
-                    <svg class="ms-4 img-fluid" width="400" height="120" viewBox="0 0 900 140"
+                <!-- Banner / Intestazione grafica -->
+                <div class="mb-4 p-3 p-md-4 text-center text-md-start rounded-4 shadow-sm"
+                    style="background: linear-gradient(145deg, #132e22, #1a4a38 45%, #0f3528); border: 1px solid rgba(168, 85, 247, 0.2);">
+                    <svg class="img-fluid" width="350" height="100" viewBox="0 0 900 140"
                         xmlns="http://www.w3.org/2000/svg">
-                        <text x="0" y="105" class="title">
-                            Look<tspan class="accent">Lanka</tspan>
+                        <text x="0" y="105" class="title" fill="#ffffff" font-weight="bold" font-size="90">
+                            Look<tspan class="accent" fill="#a855f7">Lanka</tspan>
                         </text>
                     </svg>
                 </div>
 
-                <div class="text-black small mb-4">
-                    <p class="fs-5"><strong>Look Lanka</strong> è una web application moderna sviluppata con
-                        <em>Angular</em> e
-                        <em>TailwindCSS</em>, progettata per offrire un'esperienza immersiva alla scoperta dello Sri
-                        Lanka.
+                <div class="text-dark fs-5 mb-4">
+                    <p class="mb-2"><strong>Look Lanka</strong> è una web application moderna sviluppata con
+                        <em>Angular</em> e <em>TailwindCSS</em>, progettata per offrire un'esperienza immersiva alla
+                        scoperta dello Sri Lanka.
                     </p>
-                    <p class="fs-5">Il progetto fornisce itinerari dettagliati, contenuti multimediali e una guida
-                        interattiva per i
-                        viaggiatori.</p>
+                    <p class="mb-0">Il progetto fornisce itinerari dettagliati, contenuti multimediali e una guida
+                        interattiva per i viaggiatori.</p>
                 </div>
 
-                <h5 class="text-black mb-3">Key Features</h5>
-                <ul class="list-unstyled fs-5">
-                    <li class="d-flex align-items-start mb-2">
-                        <span class="me-3 text-info">⚡</span>
-                        <span class="text-black"><strong>Destination Explorer:</strong> Esplorazione delle principali
+                <div class="mx-auto mb-4 rounded-pill"
+                    style="width: 100%; height: 2px; background: rgba(147, 51, 234, 0.15);"></div>
+
+                <h5 class="mb-3 fs-6 fw-bold text-dark text-uppercase tracking-wider">Key Features</h5>
+                <ul class="list-unstyled fs-6 mb-4 d-flex flex-column gap-3">
+                    <li class="d-flex align-items-start">
+                        <span class="me-3 fs-5" style="color: #9333ea;">⚡</span>
+                        <span class="text-dark"><strong>Destination Explorer:</strong> Esplorazione delle principali
                             destinazioni turistiche.</span>
                     </li>
-                    <li class="d-flex align-items-start mb-2">
-                        <span class="me-3 text-info">⚡</span>
-                        <span class="text-black"><strong>Dashboard & Mappe:</strong> Login area con mappa interattiva
-                            per
+                    <li class="d-flex align-items-start">
+                        <span class="me-3 fs-5" style="color: #0284c7;">⚡</span>
+                        <span class="text-dark"><strong>Dashboard & Mappe:</strong> Login area con mappa interattiva per
                             pianificare il percorso.</span>
                     </li>
-                    <li class="d-flex align-items-start mb-2">
-                        <span class="me-3 text-info">⚡</span>
-                        <span class="text-black"><strong>Responsive Design:</strong> Interfaccia ottimizzata per mobile
-                            e
+                    <li class="d-flex align-items-start">
+                        <span class="me-3 fs-5" style="color: #9333ea;">⚡</span>
+                        <span class="text-dark"><strong>Responsive Design:</strong> Interfaccia ottimizzata per mobile e
                             desktop.</span>
                     </li>
                     <li class="d-flex align-items-start">
-                        <span class="me-3 text-info">⚡</span>
-                        <span class="text-black"><strong>High Performance:</strong> Bundle ottimizzati per un
-                            caricamento
+                        <span class="me-3 fs-5" style="color: #0284c7;">⚡</span>
+                        <span class="text-dark"><strong>High Performance:</strong> Bundle ottimizzati per un caricamento
                             ultra-rapido.</span>
                     </li>
                 </ul>
             </div>
-            <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" @click="$store.modal.close()">
+
+            <!-- Pulsante Chiudi -->
+            <button class="btn btn-dark btn-lg px-4 rounded-pill w-100 shadow-sm" @click="$store.modal.close()">
                 Chiudi
             </button>
         </div>
     </div>
 
-
-
-
     <div id="totem-skills" x-show="$store.modal.active === 'totem-skills'" x-cloak class="modal-overlay"
         @click="$store.modal.close()">
-        <div class="modal-content p-4 fs-5" @click.stop>
-            <h2 class="mb-4 text-primary">Le mie competenze 🛠️</h2>
+        <div class="fs-5 modal-content p-4 p-md-5 shadow-lg rounded-4 position-relative"
+            style="background: rgba(245, 247, 250, 0.92); backdrop-filter: blur(20px); border: 2px solid rgba(168, 85, 247, 0.3); box-shadow: 0 10px 30px rgba(168, 85, 247, 0.15) !important; max-width: 650px; width: 90%; color: #1e293b;"
+            @click.stop>
 
-            <div class="row g-3">
+            <!-- Intestazione -->
+            <div class="text-center mb-4">
+                <h2 class="h3 fw-bold mb-2 text-dark">
+                    Le mie competenze <span style="display:inline-block;">🛠️</span>
+                </h2>
+                <div class="mx-auto mt-2 rounded-pill"
+                    style="width: 50px; height: 3px; background: #a855f7; box-shadow: 0 0 8px rgba(168, 85, 247, 0.5);">
+                </div>
+            </div>
+
+            <!-- Griglia Card Skills -->
+            <div class="row g-3 mb-4">
+                <!-- Design Card -->
                 <div class="col-md-6">
-                    <div class="card h-100 border-0 bg-light">
+                    <div class="card h-100 border-0 rounded-3 p-2 shadow-sm"
+                        style="background: rgba(255, 255, 255, 0.7); border-left: 4px solid #9333ea !important;">
                         <div class="card-body">
-                            <h5 class="card-title text-dark">🎨 Design</h5>
-                            <span class="badge bg-secondary">Adobe Creative Suite</span>
-                            <span class="badge bg-secondary">Figma</span>
-                            <span class="badge bg-secondary">Affinity</span>
-                            <span class="badge bg-secondary">Canva</span>
-                            <span class="badge bg-secondary">UI/UX Design</span>
-                            <span class="badge bg-secondary">Mailchimp</span>
+                            <h5 class="card-title text-dark fw-bold mb-3 fs-5">🎨 Design</h5>
+                            <div class="d-flex flex-wrap gap-1.5">
+                                <span class="badge text-dark fw-medium px-2 py-1"
+                                    style="background: rgba(147, 51, 234, 0.1); border: 1px solid rgba(147, 51, 234, 0.2);">Adobe
+                                    Creative Suite</span>
+                                <span class="badge text-dark fw-medium px-2 py-1"
+                                    style="background: rgba(147, 51, 234, 0.1); border: 1px solid rgba(147, 51, 234, 0.2);">Figma</span>
+                                <span class="badge text-dark fw-medium px-2 py-1"
+                                    style="background: rgba(147, 51, 234, 0.1); border: 1px solid rgba(147, 51, 234, 0.2);">Affinity</span>
+                                <span class="badge text-dark fw-medium px-2 py-1"
+                                    style="background: rgba(147, 51, 234, 0.1); border: 1px solid rgba(147, 51, 234, 0.2);">Canva</span>
+                                <span class="badge text-dark fw-medium px-2 py-1"
+                                    style="background: rgba(147, 51, 234, 0.1); border: 1px solid rgba(147, 51, 234, 0.2);">UI/UX
+                                    Design</span>
+                                <span class="badge text-dark fw-medium px-2 py-1"
+                                    style="background: rgba(147, 51, 234, 0.1); border: 1px solid rgba(147, 51, 234, 0.2);">Mailchimp</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- Web Development Card -->
                 <div class="col-md-6">
-                    <div class="card h-100 border-0 bg-light">
+                    <div class="card h-100 border-0 rounded-3 p-2 shadow-sm"
+                        style="background: rgba(255, 255, 255, 0.7); border-left: 4px solid #0284c7 !important;">
                         <div class="card-body">
-                            <h5 class="card-title text-dark">💻 Web Development</h5>
-                            <div class="d-flex flex-wrap gap-1">
-                                <span class="badge bg-secondary">HTML</span>
-                                <span class="badge bg-secondary">CSS</span>
-                                <span class="badge bg-secondary">JS</span>
-                                <span class="badge bg-secondary">Wordpress</span>
-                                <span class="badge bg-secondary">Elementor</span>
-                                <span class="badge bg-secondary">Angular</span>
-                                <span class="badge bg-secondary">Tailwind</span>
-                                <span class="badge bg-secondary">Bootstrap</span>
-                                <span class="badge bg-secondary">AI tools</span>
-                                <span class="badge bg-secondary">Antigravity</span>
+                            <h5 class="card-title text-dark fw-bold mb-3 fs-5">💻 Web Development</h5>
+                            <div class="d-flex flex-wrap gap-1.5">
+                                <span class="badge text-dark fw-medium px-2 py-1"
+                                    style="background: rgba(2, 132, 199, 0.1); border: 1px solid rgba(2, 132, 199, 0.2);">HTML</span>
+                                <span class="badge text-dark fw-medium px-2 py-1"
+                                    style="background: rgba(2, 132, 199, 0.1); border: 1px solid rgba(2, 132, 199, 0.2);">CSS</span>
+                                <span class="badge text-dark fw-medium px-2 py-1"
+                                    style="background: rgba(2, 132, 199, 0.1); border: 1px solid rgba(2, 132, 199, 0.2);">JS</span>
+                                <span class="badge text-dark fw-medium px-2 py-1"
+                                    style="background: rgba(2, 132, 199, 0.1); border: 1px solid rgba(2, 132, 199, 0.2);">Wordpress</span>
+                                <span class="badge text-dark fw-medium px-2 py-1"
+                                    style="background: rgba(2, 132, 199, 0.1); border: 1px solid rgba(2, 132, 199, 0.2);">Elementor</span>
+                                <span class="badge text-dark fw-medium px-2 py-1"
+                                    style="background: rgba(2, 132, 199, 0.1); border: 1px solid rgba(2, 132, 199, 0.2);">Angular</span>
+                                <span class="badge text-dark fw-medium px-2 py-1"
+                                    style="background: rgba(2, 132, 199, 0.1); border: 1px solid rgba(2, 132, 199, 0.2);">Tailwind</span>
+                                <span class="badge text-dark fw-medium px-2 py-1"
+                                    style="background: rgba(2, 132, 199, 0.1); border: 1px solid rgba(2, 132, 199, 0.2);">Bootstrap</span>
+                                <span class="badge text-dark fw-medium px-2 py-1"
+                                    style="background: rgba(2, 132, 199, 0.1); border: 1px solid rgba(2, 132, 199, 0.2);">AI
+                                    tools</span>
+                                <span class="badge text-dark fw-medium px-2 py-1"
+                                    style="background: rgba(2, 132, 199, 0.1); border: 1px solid rgba(2, 132, 199, 0.2);">Antigravity</span>
                             </div>
-                            </p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="mt-4 pt-3 border-top">
-                <h5 class="mb-2">Soft Skills</h5>
-                <p class="small text-muted">Time management, problem solving, teamwork e flessibilità
+            <!-- Soft Skills Section -->
+            <div class="mb-4 pt-3 border-top border-secondary border-opacity-10 text-center text-md-start">
+                <h5 class="mb-2 text-dark fw-bold fs-6">Soft Skills</h5>
+                <p class="small text-muted mb-0">Time management, problem solving, teamwork e flessibilità
                     nell'adattamento a nuove sfide.</p>
             </div>
 
-            <button type="button" class="btn btn-outline-secondary btn-lg px-4 rounded-pill"
+            <!-- Pulsante Chiudi -->
+            <button type="button" class="btn btn-dark btn-lg px-4 rounded-pill w-100 shadow-sm"
                 @click="$store.modal.close()">
                 Chiudi
             </button>
@@ -349,40 +504,56 @@
 
     <div id="comics" x-show="$store.modal.active === 'comics'" x-cloak class="modal-overlay"
         @click="$store.modal.close()">
-        <div class="modal-content p-4 border border-info border-opacity-25 shadow-lg"
-            style="background: rgba(10, 15, 30, 0.85); backdrop-filter: blur(15px); max-width: 600px;" @click.stop>
+        <div class="modal-content p-4 p-md-5 shadow-lg rounded-4 position-relative"
+            style="background: rgba(245, 247, 250, 0.92); backdrop-filter: blur(20px); border: 2px solid rgba(168, 85, 247, 0.3); box-shadow: 0 10px 30px rgba(168, 85, 247, 0.15) !important; max-width: 600px; width: 90%; color: #1e293b;"
+            @click.stop>
 
-            <div class="mb-4 text-left">
-                <img src="assets/imgs/logo_scuola_comics.png" alt="Scuola Internazionale di Comics" class="img-fluid"
-                    style="max-width: 200px;" />
+            <!-- Logo e Intestazione -->
+            <div class="mb-4 text-center text-md-start d-flex flex-column flex-md-row align-items-center gap-4">
+                <div class="p-3 bg-white rounded-3 shadow-sm border border-light">
+                    <img src="assets/imgs/logo_scuola_comics.png" alt="Scuola Internazionale di Comics"
+                        class="img-fluid" style="max-width: 160px;" />
+                </div>
+                <div>
+                    <h2 class="h4 text-dark fw-bold mb-1">Scuola Internazionale di Comics</h2>
+                    <h3 class="h6 fw-semibold mb-0" style="color: #9333ea;">2018 - 2019 | Web Design Course</h3>
+                </div>
             </div>
 
-            <h2 class="h4 text-black fw-bold mb-1 fs-5">Scuola Internazionale di Comics</h2>
-            <h3 class="h6 text-muted mb-4 fs-5">2018 - 2019 | Web Design Course</h3>
+            <div class="mx-auto mb-4 rounded-pill"
+                style="width: 100%; height: 2px; background: rgba(147, 51, 234, 0.15);"></div>
 
-            <div class="text-black small fs-5">
-                <p class="mb-3 ">
+            <!-- Contenuto descrittivo -->
+            <div class="text-dark fs-5 mb-4">
+                <p class="mb-3">
                     Ho frequentato la <em>Scuola Internazionale di Comics</em> a Firenze, dove ho intrapreso un percorso
-                    formativo specialistico in <strong>Web Design</strong>.
+                    formativo specialistico in <strong style="color: #9333ea;">Web Design</strong>.
                 </p>
-                <p>
+                <p class="mb-3">
                     Durante questo anno accademico, ho acquisito le competenze fondamentali per:
                 </p>
-                <ul class="list-unstyled mt-3">
-                    <li class="mb-2"><i class="fa-solid fa-pen-nib text-black me-2"></i> Design di interfacce web
-                        user-centric</li>
-                    <li class="mb-2"><i class="fa-solid fa-code text-black me-2"></i> Sviluppo di siti web dinamici</li>
-                    <li><i class="fa-solid fa-gears text-black me-2"></i> Gestione e manutenzione di portali web</li>
+                <ul class="list-unstyled mt-3 d-flex flex-column gap-2">
+                    <li class="d-flex align-items-center">
+                        <i class="fa-solid fa-pen-nib me-3 fs-5" style="color: #9333ea; width: 24px;"></i>
+                        <span>Design di interfacce web user-centric</span>
+                    </li>
+                    <li class="d-flex align-items-center">
+                        <i class="fa-solid fa-code me-3 fs-5" style="color: #0284c7; width: 24px;"></i>
+                        <span>Sviluppo di siti web dinamici</span>
+                    </li>
+                    <li class="d-flex align-items-center">
+                        <i class="fa-solid fa-gears me-3 fs-5" style="color: #9333ea; width: 24px;"></i>
+                        <span>Gestione e manutenzione di portali web</span>
+                    </li>
                 </ul>
             </div>
 
-            <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" @click="$store.modal.close()">
+            <!-- Pulsante Chiudi -->
+            <button class="btn btn-dark btn-lg px-4 rounded-pill w-100 shadow-sm" @click="$store.modal.close()">
                 Chiudi
             </button>
         </div>
     </div>
-
-
 
 
     <a-scene vr-mode-ui="enabled: false">
